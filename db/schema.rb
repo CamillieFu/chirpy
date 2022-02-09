@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_000417) do
+ActiveRecord::Schema.define(version: 2022_02_09_013819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.string "author"
+    t.text "content"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "dictionaries", force: :cascade do |t|
+    t.string "words", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "kids", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.bigint "user_id", null: false
+    t.bigint "dictionary_id", null: false
+    t.string "ethnicity"
+    t.string "gender_identity"
+    t.string "sexual_orientation"
+    t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dictionary_id"], name: "index_kids_on_dictionary_id"
+    t.index ["user_id"], name: "index_kids_on_user_id"
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.string "word"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +65,6 @@ ActiveRecord::Schema.define(version: 2022_02_09_000417) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kids", "dictionaries"
+  add_foreign_key "kids", "users"
 end
