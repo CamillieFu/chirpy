@@ -1,5 +1,5 @@
 class Kid < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   belongs_to :dictionary
 
   validates :first_name, :last_name, :age, :birthday, presence: true
