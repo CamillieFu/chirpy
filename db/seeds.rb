@@ -34,6 +34,9 @@ luke.dictionary = Dictionary.new
 brenna.dictionary = Dictionary.new
 puts "done"
 
+puts "destroying articles ..."
+Article.destroy_all
+puts "done"
 puts "creating articles"
 Article.create(
   title: "Kid Fears",
