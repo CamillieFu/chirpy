@@ -43,7 +43,8 @@ Article.create(
   Both the nature and amount of abuse play a role in a child's future mental health. But all abuse works on the mind in a similar way, explains Berrill. 'What happens is a kid is psychologically ground down. They are diminished. They are traumatized emotionally and physically.'
   Why do abusers strike? There is some truth to the notion that violence begets more violence. But stress—from work, relationships and even the children themselves—is also a major factor. '[Abusers] find these kids as easy targets,' explains Berrill.
   'Rearing kids can be stressful. If you are feeling overwhelmed or stressed, immediately reach out for help,' he advises. The good news is that abusive behavior can be prevented through learning how to better cope with stress.
-  "
+  ",
+  image: ""
 )
 Article.create(
   title: "Antidepressants: The Kid Question",
@@ -63,7 +64,8 @@ that there was any link between antidepressant use and the risk of suicide in ch
 Specialists around the country believe that in contrast to a ban imposed by British regulators, the FDA is
 already charting a nuanced approach to medication availability, one that grapples with the difficult
 realities of depression and its treatment at a stage in life when impulsive behavior is at its height.
-  "
+  ",
+  image: ""
 )
 Article.create(
   title: "Stressing Your Kids Out",
@@ -79,6 +81,7 @@ explains Ann Crouter, Ph.D., professor of human development at Penn State Univer
 'In turn, their kids feel less good about themselves,' becoming depressed or developing
 feelings of low self-worth. Parents under pressure may be less tolerant of tempestuous
 adolescent behavior, Crouter believes, causing additional conflict.
-  "
+  ",
+  image: ""
 )
 puts "done"
