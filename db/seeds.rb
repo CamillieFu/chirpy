@@ -23,7 +23,13 @@ luke = Kid.create(
   birthday: "Wed, Jan 13 2010",
   user: mom
 )
-brenna = Kid.create(first_name: "Luke", last_name: "Benly", age: 13, birthday: "Thur, Feb 13 2009", user: dad)
+brenna = Kid.create(
+  first_name: "Brenna",
+  last_name: "Bentel",
+  age: 13,
+  birthday: "Thur, Feb 13 2009",
+  user: dad
+)
 luke.dictionary = Dictionary.new
 brenna.dictionary = Dictionary.new
 puts "done"
