@@ -1,0 +1,22 @@
+.article-card {
+  padding: 16px;
+  overflow: scroll;
+  margin: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 600px;
+
+  img {
+    height: 200px;
+    width: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.article {
+  p {
+    margin-bottom: 4px;
+  }
+}
