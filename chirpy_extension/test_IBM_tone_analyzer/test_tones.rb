@@ -6,7 +6,7 @@ require "ibm_watson/tone_analyzer_v3"
 
 # If using IAM
 authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
-  apikey: "C3FtYe60rE1oW62bjeRAJs-9NQ12DXyRSfhOUzqSoGRt"
+  apikey: ""
 )
 
 # If you have username & password in your credentials use:
@@ -19,7 +19,7 @@ tone_analyzer = IBMWatson::ToneAnalyzerV3.new(
   authenticator: authenticator,
   version: "2017-09-21"
 )
-tone_analyzer.service_url = "https://api.jp-tok.tone-analyzer.watson.cloud.ibm.com/instances/43d7ed2f-b2c9-4f6f-acd0-86555978ba71"
+tone_analyzer.service_url = ""
 
 utterances = [
   {
