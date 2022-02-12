@@ -5,7 +5,6 @@ require "ibm_watson/tone_analyzer_v3"
 
 class IBMToneAnalyzer::Tones
   def self.analyze_tone(json)
-
     authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
       apikey: ENV["TONE_ANALYZER_APIKEY"]
     )
@@ -24,6 +23,6 @@ class IBMToneAnalyzer::Tones
     ).result
     p tone["document_tone"]["tones"]
     end
-#     tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
+  # tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
   end
 end
