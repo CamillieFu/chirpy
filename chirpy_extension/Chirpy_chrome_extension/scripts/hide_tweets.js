@@ -2,7 +2,7 @@
 
 // Listen for messages on the content page
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.action === "hide_tweet") hide_tweet();
+  if (request.action === "hide_tweets") hide_tweets();
 });
 
 // Our image replacement script
@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 //   });
 // }
 
-function hide_tweet() {
+function hide_tweets() {
   let articles = document.getElementsByTagName("article");
   console.log(articles);
   Array.from(articles).forEach((article) => {
