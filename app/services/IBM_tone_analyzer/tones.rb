@@ -15,12 +15,8 @@ class IBMToneAnalyzer::Tones
       version: "2017-09-21"
     )
     tone_analyzer.service_url = ENV["TONE_ANALYZER_URL"]
+    # change
 
-    utterances = [
-      {
-        "text" => text
-      }
-    ]
-    tone_analyzer.tone_chat(utterances: utterances).result["utterances_tone"][0]["tones"]
+    tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
   end
 end
