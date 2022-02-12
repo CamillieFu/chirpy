@@ -23,7 +23,7 @@ class IBMToneAnalyzer::Tones
       content_type: "text/html"
     ).result
     p tone["document_tone"]["tones"]
-
+    end
 #     tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
   end
 end
