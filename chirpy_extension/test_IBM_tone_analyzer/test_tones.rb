@@ -6,7 +6,7 @@ require "ibm_watson/tone_analyzer_v3"
 
 # If using IAM
 authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
-  apikey: ENV["TONE_ANALYZER_APIKEY"]
+  apikey: ""
 )
 
 # If you have username & password in your credentials use:
@@ -19,7 +19,7 @@ tone_analyzer = IBMWatson::ToneAnalyzerV3.new(
   authenticator: authenticator,
   version: "2017-09-21"
 )
-tone_analyzer.service_url = ENV["TONE_ANALYZER_URL"]
+tone_analyzer.service_url = ""
 
 utterances = [
   {
@@ -31,8 +31,8 @@ utterances = [
     "user" => "glenn"
   }
 ]
-p "\ntone_chat example 1:\n"
-puts JSON.pretty_generate(tone_analyzer.tone_chat(utterances: utterances).result)
+# p "\ntone_chat example 1:\n"
+# puts JSON.pretty_generate(tone_analyzer.tone_chat(utterances: utterances).result)
 
 # p "\ntone example 1:\n"
 # puts JSON.pretty_generate(tone_analyzer.tone(
@@ -59,23 +59,25 @@ puts JSON.pretty_generate(tone_analyzer.tone_chat(utterances: utterances).result
 #   puts JSON.pretty_generate(tone)
 # end
 
-# p "\ntone example 4:\n"
-# File.open(Dir.getwd + "/tone-example.json") do |tone_json|
-#   tone = tone_analyzer.tone(
+# File.open("./fake_texts.json") do |tone_json|
+#   tone = tone_analyzer.tone_chat(
 #     tone_input: JSON.parse(tone_json.read),
 #     content_type: "application/json"
 #   ).result
 #   puts JSON.pretty_generate(tone)
 # end
 
+# tweets = File.open("./fake_texts.json")
+# puts JSON.pretty_generate(tone_analyzer.tone_chat(utterances: tweets).result)
+
 # p "\ntone example 5:\n"
 File.open("./fake_texts.json") do |tone_html|
-  tone_html.each do
+  tweets = JSON.parse(tone_html.read)['tweets']
+  tweets.each do |tweet|
     tone = tone_analyzer.tone(
-      tone_input: JSON.parse(tone_html.read)["tweets"]["text"],
+      tone_input: tweet["text"],
       content_type: "text/html"
     ).result
-    puts tone["document_tone"]["tones"][0]["tone_name"]
-    puts JSON.pretty_generate(tone.document_tone)
+    p tone["document_tone"]["tones"]
   end
 end
