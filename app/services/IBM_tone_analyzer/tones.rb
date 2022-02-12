@@ -16,12 +16,6 @@ class IBMToneAnalyzer::Tones
     )
     tone_analyzer.service_url = ENV["TONE_ANALYZER_URL"]
 
-    # utterances = [
-    #   {
-    #     "text" => text
-    #   }
-    # ]
-    # tone_analyzer.tone_chat(utterances: utterances).result["utterances_tone"][0]["tones"]
     tweets = JSON.parse(json)['tweets']
     tweets.each do |tweet|
       tone = tone_analyzer.tone(
@@ -29,6 +23,7 @@ class IBMToneAnalyzer::Tones
       content_type: "text/html"
     ).result
     p tone["document_tone"]["tones"]
-    end
+
+#     tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
   end
 end
