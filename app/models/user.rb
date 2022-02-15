@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_taggable_on :tags
   has_many :kids, dependent: :destroy
   has_many :dictionaries, through: :kids, dependent: :destroy
   # Include default devise modules. Others available are:
