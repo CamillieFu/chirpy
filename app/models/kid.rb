@@ -1,4 +1,5 @@
 class Kid < ApplicationRecord
+  acts_as_taggable_on :tags
   belongs_to :user
   belongs_to :dictionary
   has_many :statistics
