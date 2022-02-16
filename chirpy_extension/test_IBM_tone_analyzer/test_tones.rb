@@ -94,12 +94,3 @@ File.open("./fake_texts.json") do |tone_html|
     p tone["document_tone"]["tones"]
   end
 end
-
-# parsing analyzed json files
-json = File.open("./example_analysis.json")
-# temporarily needed until we complete scraping mechanisms #
-weets = JSON.parse(json.read)
-twats = weets["utterances_tone"].map do |tweet|
-  tweet["tones"]
-end
-tweets = twats.flatten

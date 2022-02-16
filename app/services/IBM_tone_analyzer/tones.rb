@@ -27,14 +27,14 @@ class IBMToneAnalyzer::Tones
   # tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
 
   # needed File.open just becuz we dont have twitter data yet
-    File.open("./fake_texts.json") do |tone_html|
-      tweets = JSON.parse(tone_html.read)['tweets']
-      tweets.each do |tweet|
-        tone = tone_analyzer.tone(
-          tone_input: tweet["text"],
-          content_type: "text/html"
-        ).result
-        tone["document_tone"]["tones"]
+    # File.open("./fake_texts.json") do |tone_html|
+    #   tweets = JSON.parse(tone_html.read)['tweets']
+    #   tweets.each do |tweet|
+    #     tone = tone_analyzer.tone(
+    #       tone_input: tweet["text"],
+    #       content_type: "text/html"
+    #     ).result
+    #     tone["document_tone"]["tones"]
         # do we need to save this data in a variable? or perhaps do map instead of each?
         # what data type does this return? if we make it return an array of hashes that might be good
       end

@@ -1,0 +1,23 @@
+.dash-cont {
+  padding-left: 250px;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+a:hover {
+  p {
+    font-size: 40px;
+    transition: ease, 40ms;
+  }
+}
+
+.add-kid {
+  font-size: 48px;
+  &:hover {
+    font-size: 56px;
+    transition: ease, 30ms;
+  }
+}
