@@ -19,7 +19,7 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn-white, .btn-blk {
   background-color: #fff;
   color: #777;
 }
@@ -37,7 +37,7 @@
   transition: all .4s;
 }
 
-.btn-white::after {
+.btn-white::after, .btn-blk::after {
   background-color: #fff;
 }
 

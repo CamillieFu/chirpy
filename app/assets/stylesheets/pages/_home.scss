@@ -23,7 +23,11 @@ nav {
     top: 50%;
     left: 45%;
     font-size: 1rem;
-    position: absolute;
+  }
+
+  .signup-btn {
+    position: relative !important;
+
   }
 }
 
@@ -55,4 +59,19 @@ nav {
 .text {
   padding: 2rem 20rem;
   font-size: 1.1rem;
+}
+
+nav {
+  img {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    margin-left: 16px;
+    top: 40px;
+  }
+  img:hover {
+    width: 78px;
+    height: 78px;
+    transition: ease 100ms;
+  }
 }
