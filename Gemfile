@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'ibm_watson'
 gem 'acts-as-taggable-on', '~> 9.0'
+gem 'pundit'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
