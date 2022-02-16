@@ -1,2 +1,28 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<div class="container dash-cont">
+  <h2>Hello, <%= current_user.first_name %></h2>
+  <div class="sidebar">
+    <h2 class="mt-5 mb-5 ml-2">My Chirpy</h2>
+    <a href="#" class="active">Dashboard</a>
+    <a href="#">Account</a>
+    <a href="#">Support</a>
+    <a href="#">Stats</a>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-12">
+      <div class="kid-cards d-flex">
+        <% @kids.each do |kid| %>
+        <div class="kid-card m-3">
+          <%= kid.first_name %>
+        </div>
+        <% end %>
+        <%= link_to "+", new_kid_path, class: "m-3" %>
+      </div>
+
+    </div>
+    <div class="col-lg-4 col-12">
+      <div class="profile-card">
+        <p>hello</p>
+      </div>
+    </div>
+  </div>
+</div>
