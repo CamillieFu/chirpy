@@ -1,21 +1,26 @@
 <div class="container dash-cont">
-  <h2>Hello, <%= current_user.first_name %></h2>
+  <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <div class="sidebar">
-    <h2 class="mt-5 mb-5 ml-2">My Chirpy</h2>
-    <a href="#" class="active">Dashboard</a>
-    <a href="#">Account</a>
-    <a href="#">Support</a>
-    <a href="#">Stats</a>
+    <%# <img src="/image/chirpylogo.jpeg" alt="chirpy logo"> %>
+    <%# logo path not working? %>
+    <h2>My Chirpy</h2>
+    <a href="#" class="active"><i class="fa fa-solid fa-house-user mr-2"></i>Dashboard</a>
+    <a href="#"><i class="fa fa-solid fa-user mr-2"></i>Account</a>
+    <a href="#"><i class="fa fa-solid fa-headset mr-2"></i>Support</a>
+    <a href="#"><i class="fa fa-solid fa-chart-line mr-2"></i>Stats</a>
   </div>
   <div class="row">
     <div class="col-lg-8 col-12">
-      <div class="kid-cards d-flex">
+      <div class="kid-cards d-flex align-items-center">
         <% @kids.each do |kid| %>
-        <div class="kid-card m-3">
-          <%= kid.first_name %>
-        </div>
+          <%= link_to kid_path(kid) do %>
+          <div class="kid-card">
+            <p><i class="fa fa-duotone fa-child"></i></p>
+            <%= kid.first_name %>
+          </div>
+          <% end %>
         <% end %>
-        <%= link_to "+", new_kid_path, class: "m-3" %>
+        <%= link_to "+", new_kid_path, class: "m-3 add-kid" %>
       </div>
 
     </div>
