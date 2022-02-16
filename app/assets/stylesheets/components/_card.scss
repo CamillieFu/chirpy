@@ -50,4 +50,15 @@
 
 .profile-card {
   margin-left: 16px;
+  padding-bottom: 5rem;
+  .fa-user {
+    padding: 2rem;
+    font-size: 56px;
+    background-color: #00b1fc;
+    border-radius: 16px;
+  }
+.btn {
+  padding: 8px 40px !important;
+  position: relative !important;
+}
 }
