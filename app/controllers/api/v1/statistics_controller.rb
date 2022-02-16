@@ -18,7 +18,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def create
-    @statistic = Statstatistic.new(statistic_params)
+    @statistic = Statistic.new(statistic_params)
     @statistic.kid_id = current_user.kid.id
     authorize @statistic
     if @statistic.save
