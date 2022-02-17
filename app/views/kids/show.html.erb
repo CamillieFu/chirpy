@@ -5,10 +5,11 @@
       <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
       <% if @dictionary = [] %>
         <p>No words in this dictionary yet.</p>
+        <p></p>
       <% else %>
         <%= @dictionary.words %>
       <% end %>
-      <%= link_to "Add Some Words", edit_kid_dictionary_path(@kid), class: "btn btn-outline-primary mt-3" %>
+
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
       <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>
