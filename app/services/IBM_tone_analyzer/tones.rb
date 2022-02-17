@@ -14,6 +14,12 @@ class IBMToneAnalyzer::Tones
       version: "2017-09-21"
     )
     tone_analyzer.service_url = ENV["TONE_ANALYZER_URL"]
+<<<<<<< HEAD
     tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
+=======
+
+    tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
+
+>>>>>>> master
   end
 end

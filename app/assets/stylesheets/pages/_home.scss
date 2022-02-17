@@ -16,14 +16,17 @@ nav {
 }
 
 .container-non-bs {
-  height: 98vh;
+  min-height: 98vh;
 
   .btn {
     position: absolute;
     top: 50%;
     left: 45%;
     font-size: 1rem;
-    position: absolute;
+  }
+
+  .signup-btn {
+    position: relative !important;
   }
 }
 
@@ -46,9 +49,8 @@ nav {
 
 .content {
   width: 100%;
-  background: black;
+  background: #5E5B52;
   min-height: 100vh;
-  z-index: 2;
   position: absolute;
 }
 

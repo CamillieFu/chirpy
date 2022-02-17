@@ -1,29 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 puts "Deleting users ..."
 User.destroy_all
-puts "Done."
-puts "Deleting kids ..."
-Kid.destroy_all
 puts "Done."
 puts "Creating users ..."
 mom = User.create(email: "mom@gmail.com", password: 1234567, first_name: "Mom", last_name: "Mommy")
 dad = User.create(email: "dad@gmail.com", password: 1234567, first_name: "Dad", last_name: "Daddy")
 puts "Done."
 puts "Creating kids ..."
-luke = Kid.create(
+luke = Kid.new(
   first_name: "Luke",
   last_name: "Benly",
   age: 12,
   birthday: "Wed, Jan 13 2010",
   user: mom
 )
-brenna = Kid.create(
+brenna = Kid.new(
   first_name: "Brenna",
   last_name: "Bentel",
   age: 13,
@@ -32,6 +23,8 @@ brenna = Kid.create(
 )
 luke.dictionary = Dictionary.new
 brenna.dictionary = Dictionary.new
+luke.save
+brenna.save
 puts "done"
 
 puts "destroying articles ..."
@@ -47,7 +40,7 @@ Article.create(
   Why do abusers strike? There is some truth to the notion that violence begets more violence. But stress—from work, relationships and even the children themselves—is also a major factor. '[Abusers] find these kids as easy targets,' explains Berrill.
   'Rearing kids can be stressful. If you are feeling overwhelmed or stressed, immediately reach out for help,' he advises. The good news is that abusive behavior can be prevented through learning how to better cope with stress.
   ",
-  image: ""
+  image: "blue"
 )
 Article.create(
   title: "Antidepressants: The Kid Question",
@@ -68,7 +61,7 @@ Specialists around the country believe that in contrast to a ban imposed by Brit
 already charting a nuanced approach to medication availability, one that grapples with the difficult
 realities of depression and its treatment at a stage in life when impulsive behavior is at its height.
   ",
-  image: ""
+  image: "blue"
 )
 Article.create(
   title: "Stressing Your Kids Out",
@@ -85,6 +78,6 @@ explains Ann Crouter, Ph.D., professor of human development at Penn State Univer
 feelings of low self-worth. Parents under pressure may be less tolerant of tempestuous
 adolescent behavior, Crouter believes, causing additional conflict.
   ",
-  image: ""
+  image: "blue"
 )
 puts "done"

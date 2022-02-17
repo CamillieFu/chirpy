@@ -1,27 +1,31 @@
 <div class="container dash-cont">
-  <h2>Hello, <%= current_user.first_name %></h2>
-  <div class="sidebar">
-    <h2 class="mt-5 mb-5 ml-2">My Chirpy</h2>
-    <a href="#" class="active">Dashboard</a>
-    <a href="#">Account</a>
-    <a href="#">Support</a>
-    <a href="#">Stats</a>
-  </div>
+  <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
+  <%= render 'shared/sidebar' %>
   <div class="row">
-    <div class="col-lg-8 col-12">
-      <div class="kid-cards d-flex">
+    <div class="col-lg-7 col-12">
+      <div class="kid-cards d-flex align-items-center">
         <% @kids.each do |kid| %>
-        <div class="kid-card m-3">
-          <%= kid.first_name %>
-        </div>
+          <%= link_to kid_path(kid) do %>
+          <div class="kid-card">
+            <p><i class="fa fa-duotone fa-child"></i></p>
+            <%= kid.first_name %>
+          </div>
+          <% end %>
         <% end %>
-        <%= link_to "+", new_kid_path, class: "m-3" %>
+        <%= link_to "+", new_kid_path, class: "m-3 add-kid" %>
       </div>
 
     </div>
-    <div class="col-lg-4 col-12">
-      <div class="profile-card">
-        <p>hello</p>
+    <div class="col-lg-5 col-12">
+      <div class="profile-card white-card text-center">
+        <h3 class="mt-4">My Profile</h3>
+        <div class="text-center">
+          <p><i class="fa fa-duotone fa-user"></i></p>
+          <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+          <p><%= "#{current_user.email}" %></p>
+          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
+          <%# <img src="" alt="avatar if we provide one"> %>
+        </div>
       </div>
     </div>
   </div>
