@@ -4,7 +4,7 @@ require "ibm_watson/authenticators"
 require "ibm_watson/tone_analyzer_v3"
 
 class IBMToneAnalyzer::Tones
-  def self.analyze_tone(json)
+  def self.analyze_tone(text)
     authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
       apikey: ENV["TONE_ANALYZER_APIKEY"]
     )
@@ -14,12 +14,6 @@ class IBMToneAnalyzer::Tones
       version: "2017-09-21"
     )
     tone_analyzer.service_url = ENV["TONE_ANALYZER_URL"]
-<<<<<<< HEAD
-    tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
-=======
-
-    tone_analyzer.tone(tone_input: text, content_type: "text/plain").result["document_tone"]["tones"][0]
-
->>>>>>> master
+    tone_analyzer.tone(tone_input: text, content_type: "text/plain").result
   end
 end

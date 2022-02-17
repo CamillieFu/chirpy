@@ -1,15 +1,27 @@
 class Api::V1::StatisticsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User
 
+  This create returns the JSON from the IBM method
   def create
-    @statistic = Statistic.new(statistic_params)
-    @statistic.kids = current_user.kids
+    string = params[:content]
+    analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
+    tones = analyzed_string["document_tone"]["tones"]
+    @statistic = Statistic.new(tweet_stats)
+    @statistic.kid = current_user.kids.first
+    # Each stat would be assigned to the correct user kid, unfortunately a user has many kids...
+    # We could have a
     authorize @statistic
-    if @statistic.save
-      render_true
-    else
-      render_error
-    end
+    render json: tones
+  end
+
+    # @statistic = Statistic.new(statistic_params)
+    # @statistic.kid = current_user.kids.first
+    # authorize @statistic
+    # if @statistic.save
+    #   render_true
+    # else
+    #   render_error
+    # end
   end
 
   # def create
@@ -68,7 +80,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def statistic_params
-    params.require(:statistics).permit(:total_tweet)
+    params.require(:statistic).permit(:text)
   end
 
   def render_true

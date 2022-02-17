@@ -26,11 +26,11 @@ document.querySelectorAll("article").forEach((tweet) => {
     headers: {
       "Content-type": "application/json; charset=UTF-8",
       "X-User-Email": user.email,
-      "X-User-Token": user.token
+      "X-User-Token": user.token,
     }
   })
-  .then(response => response.json())
-  .then((json) => {
-    console.log(json)
-  })
-})
+    .then(response => response.json())
+    .then((json) => {
+      console.log(json);
+    });
+});
