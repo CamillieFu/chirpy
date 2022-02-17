@@ -1,9 +1,9 @@
 class KidsController < ApplicationController
   before_action :set_kid, only: %i[show edit update destroy]
+
   def show
     authorize @kid
     @dictionary = @kid.dictionary
-    # authorize @dictionary
   end
 
   def create
