@@ -1,28 +1,31 @@
 class Api::V1::StatisticsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User
 
-  This create returns the JSON from the IBM method
   def create
     string = params[:content]
     analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
     tones = analyzed_string["document_tone"]["tones"]
-    @statistic = Statistic.new(tweet_stats)
+    # Above create returns the JSON from the IBM method
+
+    @statistic = Statistic.new(tones_stat)
     @statistic.kid = current_user.kids.first
     # Each stat would be assigned to the correct user kid, unfortunately a user has many kids...
-    # We could have a
+    # Can the Kid take their parents email and then have a unique api key?
     authorize @statistic
-    render json: tones
+    if !bad_tweet?(tones) && @statistic.save
+      render :false_show, status: :created
+      # render false_show is there for explanation of what this is doing
+      # In our render we could pass simple boolean true or false based on the existence of an angry tweet
+      # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
+    elsif bad_tweet?(tones) && @statistic.save
+      render :true_show, status: :created
+      # In our render we could pass simple boolean true or false based on the existence of an angry tweet
+      # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
+    else
+      render_error
+    end
   end
 
-    # @statistic = Statistic.new(statistic_params)
-    # @statistic.kid = current_user.kids.first
-    # authorize @statistic
-    # if @statistic.save
-    #   render_true
-    # else
-    #   render_error
-    # end
-  end
 
   # def create
   #   parsed_json_string = JSON.parse(json)
@@ -58,10 +61,10 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   private
 
   def bad_tweet?(tweet)
-    # If an angry tweet has a score of 0.75 or higher(or whatever our user has assigned (enumeberable?)), it is bad
+    # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
   end
 
-  def tweet_stats
+  def tones_stat
     # Only be taking in one tweet at a time so got rid of the array total
     {
       angry_tweets: @tweets.count { |tweet| tweet["tone_id"] == "angry" },
@@ -85,6 +88,10 @@ class Api::V1::StatisticsController < Api::V1::BaseController
 
   def render_true
     render json: { bad: "true" }, status: :created
+  end
+
+  def render_false
+    render json: { bad: "false" }, status: :created
   end
 
   def render_error
