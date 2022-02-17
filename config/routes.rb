@@ -12,4 +12,10 @@ Rails.application.routes.draw do
     end
   end
   resources :articles, only: %i[index show]
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :statistics, only: %i[show create]
+    end
+  end
 end
