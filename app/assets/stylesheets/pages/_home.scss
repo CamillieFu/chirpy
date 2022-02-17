@@ -1,1 +1,62 @@
 // Specific CSS for your home-page
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  padding: 3rem 10rem;
+  justify-content: right;
+}
+
+.container-non-bs {
+  height: 98vh;
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    font-size: 1rem;
+  }
+
+  .signup-btn {
+    position: relative !important;
+
+  }
+}
+
+// .container-non-bs img {
+//   width: 100%;
+//   position: absolute;
+//   height: 100vh;
+//   object-fit: cover;
+//   height: 110%;
+//   z-index: -1;
+// }
+
+.main-title {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  font-size: 10rem;
+  transform: translate(-50%, -30%);
+}
+
+.content {
+  width: 100%;
+  background: black;
+  min-height: 100vh;
+  z-index: 2;
+  position: absolute;
+}
+
+.text {
+  padding: 2rem 20rem;
+  font-size: 1.1rem;
+}
