@@ -1,15 +1,19 @@
 <div class="container">
   <h1 class="border-bottom pb-2 mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-between">
-    <div class="col-lg-7 col-12 mt-5 dictionary-card white-card">
+    <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
       <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
       <% if @dictionary = [] %>
         <p>No words in this dictionary yet.</p>
       <% else %>
         <%= @dictionary.words %>
       <% end %>
+      <%= link_to "Add Some Words", edit_kid_dictionary_path(@kid), class: "btn btn-outline-primary mt-3" %>
     </div>
-    <div class="stats-card white-card mt-5 col-lg-4 col-12">
+    <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
+      <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>
+      <p>Devices: Macbook Pro, Iphone S</p>
+      <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path, class: "btn btn-outline-primary mt-3" %>
     </div>
   </div>
   <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate"  %>
