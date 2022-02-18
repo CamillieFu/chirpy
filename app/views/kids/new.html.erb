@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <h2 class="mt-4">Add a New Child</h2>
+      <p>
+        <em>All the information collected will be used only to help curate
+        a user experience matching the unique and amazing qualities of your child.
+        It will never be used for anything else.</em>
+      </p>
+      <%= render 'form', kid: @kid %>
+      <%= link_to 'Cancel', dashboards_path, class: 'btn btn-outline-secondary m-3 float-right' %>
+    </div>
+  </div>
+</div>
