@@ -45,6 +45,10 @@ class KidsController < ApplicationController
     redirect_to dashboards_path
   end
 
+  def add
+
+  end
+
   private
 
   def kid_params
