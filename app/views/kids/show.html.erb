@@ -5,10 +5,11 @@
       <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
       <% if @dictionary = [] %>
         <p>No words in this dictionary yet.</p>
-        <p></p>
       <% else %>
         <%= @dictionary.words %>
       <% end %>
+      <input type="text">
+      <input type="submit">
 
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
