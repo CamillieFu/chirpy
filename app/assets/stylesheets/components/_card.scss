@@ -13,6 +13,16 @@
     object-fit: cover;
     border-radius: 8px;
   }
+
+  h3 {
+    font-family: utopia-std, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  h3:hover {
+    color: #00b1fc;
+  }
 }
 
 .article {
