@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = policy_scope(Article).all
+    authorize @articles
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = policy_scope(Article).find(params[:id])
+    authorize @article
   end
 end
