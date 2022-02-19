@@ -3,22 +3,16 @@
   <div class="row justify-content-between">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
       <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
-      <% if @dictionary = [] %>
+      <% if @dictionary.words.empty? %>
         <p>No words in this dictionary yet.</p>
       <% else %>
-        <%= @dictionary.words %>
+        <%= @dictionary.words.join(", ") %>
       <% end %>
       <%# need help %>
-      <form class="input-group mb-3" accept-charset="UTF-8" action="add" method="post">
-        <input type="text" placeholder="Add a word to block" class="form-control" name="word">
-        <div class="input-group-append">
-          <button class="btn btn-outline-primary" type="button">Add</button>
-        </div>
-      </form>
-      <%# <%= form_for @kid, url: {action: "edit"}, html: {class: "nifty_form"} do |f| %>
-        <%# <%= f.text_field :input %>
-        <%# <%= f.submit "Add" %>
-      <%# <% end %>
+      <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-4" do |form| %>
+        <%= form.text_field :word, placeholder: "Add a word to block", class: "form-control" %>
+        <%= form.submit "Add", class: "btn btn-outline-primary" %>
+      <% end %>
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
       <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>

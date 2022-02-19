@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
+  post 'kids/:id/', to: 'kids#add', as: "add_word"
   devise_for :users
   root to: 'pages#home'
   resources :dashboards, only: :index
