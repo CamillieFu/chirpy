@@ -1,8 +1,7 @@
 <div class="container">
   <h1 class="text-center">Articles</h1>
   <div class="row justify-content-center">
-  <%# might be nice to make a tabs thing here to search by topic etc %>
-    <div class="articles col-lg-6 col-md-8 col-12">
+    <%# <div class="articles"> %>
       <% @articles.each do |article| %>
         <%= link_to article_path(article) do %>
           <div class="article-card d-flex">
@@ -15,6 +14,6 @@
           </div>
         <% end %>
       <% end %>
-    </div>
+    <%# </div> %>
   </div>
 </div>
