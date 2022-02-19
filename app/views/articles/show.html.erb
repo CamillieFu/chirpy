@@ -1,8 +1,17 @@
-<div class="container my-3">
-  <div class="article">
-    <h1><%= @article.title %></h1>
-    <p><em><%= @article.author %></em></p>
-    <p class="mb-3"><%= @article.date %></p>
-    <p><%= @article.content %></p>
+<div class="container my-5">
+  <div class="row justify-content-center">
+      <h1 class="my-5"><%= @article.title %></h1>
+    <div class="col-12 col-sm-6">
+      <div>
+        <img class="my-5 img-fluid" style="height: 350px" src="https://source.unsplash.com/featured/?antidepressants/720x400">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 article">
+      <div class="d-flex justify-content-between">
+        <p><em><%= @article.author %></em></p>
+        <p class="mb-3"><%= @article.date.strftime("%b %d, %Y") %></p>
+      </div>
+      <p><%= @article.content %></p>
+    </div>
   </div>
 </div>
