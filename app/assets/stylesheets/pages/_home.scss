@@ -25,23 +25,24 @@ height: 100vh;
 }
 
 
-  .btn-white {
+.btn-white {
     position: absolute;
     top: 50%;
     left: 45%;
     font-size: 1rem;
 
-.banner-text {
+  .banner-text {
   text-align: center;
   padding-top: 180px;
   color: white;
 
-  h1{
-    font-size: 180px;
-  }
+    h1 {
+      font-size: 180px;
+    }
 
-  p{
-    font-size: 20px;
+    p {
+      font-size: 20px;
+    }
   }
 }
 
@@ -103,7 +104,7 @@ height: 100vh;
   padding: 70px 0;
 }
 
-.title-text{
+.title-text {
   text-align: center;
   padding-bottom: 70px;
 
@@ -134,7 +135,7 @@ height: 100vh;
 .features {
   flex-basis: 50%;
 
-  h1{
+  h1 {
     text-align: left;
     margin-bottom: 10px;
     font-weight: 100;
@@ -159,7 +160,7 @@ height: 100vh;
   margin-bottom: 40px;
 }
 
-.feature-text p{
+.feature-text p {
   padding: 0 20px;
   text-align: initial;
 }
@@ -174,10 +175,10 @@ height: 100vh;
   .title-text h1 {
     font-size: 35px;
   }
-  .features{
+  .features {
     flex-basis: 100%;
   }
-  .features-img{
+  .features-img {
     flex-basis: 100%;
   }
   .features-img img {
