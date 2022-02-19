@@ -5,6 +5,7 @@
     <% if user_signed_in? %>
       <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
       <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
+      <%= link_to 'Sign Out', dashboards_path, class: "btn btn-white btn-animate" %>
     <%  else %>
       <%= link_to 'Log In', new_user_session_path, class: "btn btn-white btn-animate" %>
     <% end %>
