@@ -1,0 +1,15 @@
+<%= simple_form_for (kid) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :birthday, as: :date %>
+  <%# will update later to automatically calculate age based off birthday? %>
+  <%= f.input :age, as: :select, collection: 0..100 %>
+  <%= f.input :ethnicity, as: :select,
+      collection: ["Caucasian", "African Descent", "Hispanic Pacific Islander",
+                "American Indian or Alaska Native", "Asian", "Multi-ethnic" ] %>
+
+  <%= f.input :sexual_orientation, as: :select,
+      collection: %w[Heterosexual Bisexual Pansexual Gay Lesbian Asexual ] %>
+  <%= f.input :gender_identity, as: :select, collection: %w[Male Female Transgender Other] %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
