@@ -92,7 +92,7 @@ height: 100vh;
 
 // features
 
-#feature {
+.feature {
   width: 100%;
   padding: 70px 0;
 }
@@ -119,6 +119,7 @@ height: 100vh;
     position: relative;
     z-index: 1;
     display: inline-block;
+    padding-top: 24px;
   }
 }
 
@@ -149,7 +150,7 @@ height: 100vh;
   img {
     width: 70%;
     border-radius: 10px;
-
+    padding-bottom: 50px;
   }
 }
 
