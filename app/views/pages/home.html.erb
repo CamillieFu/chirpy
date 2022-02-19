@@ -5,7 +5,7 @@
     <% if user_signed_in? %>
       <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
       <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
-      <%= link_to 'Sign Out', dashboards_path, class: "btn btn-white btn-animate" %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-white btn-animate" %>
     <%  else %>
       <%= link_to 'Log In', new_user_session_path, class: "btn btn-white btn-animate" %>
     <% end %>
@@ -44,7 +44,7 @@
   </div>
   <div class="feature-box">
     <div class="features-img">
-      <img src="https://media.istockphoto.com/vectors/young-mother-holding-a-baby-vector-id1328456877?s=2048x2048" alt="">
+      <img src="https://media.istockphoto.com/vectors/young-mother-holding-a-baby-vector-id1328456877?k=20&m=1328456877&s=612x612&w=0&h=UF841OHNrD2MogZD0hJIYzsWAIL8auLEmRXfS_Xdb4w=" alt="">
     </div>
     <div class="features">
       <h1>Complete Customization.</h1>
