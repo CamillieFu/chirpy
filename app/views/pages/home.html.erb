@@ -3,11 +3,9 @@
 
   <div class="signIn">
     <% if user_signed_in? %>
-      <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
       <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-white btn-animate" %>
     <%  else %>
-      <%= link_to 'Log In', new_user_session_path, class: "btn btn-white btn-animate" %>
     <% end %>
       <%# <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark %>
       <%# <a href="#" class="btn btn-white btn-animate">Log In</a> %>
@@ -17,7 +15,13 @@
     <h1>Chirpy.</h1>
     <p>Towards a more positive future, together.</p>
     <div class="banner-btn">
-      <a href="#" class="btn btn-white btn-animate">Start Here</a>
+      <% if user_signed_in? %>
+        <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
+        <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
+      <%  else %>
+        <%= link_to 'Log In', new_user_session_path, class: "btn btn-white btn-animate" %>
+      <% end %>
+      <%# <a href="#" class="btn btn-white btn-animate">Start Here</a> %>
     </div>
   </div>
 </section>
