@@ -15,10 +15,8 @@
           <button class="btn btn-outline-primary" type="button">Add</button>
         </div>
       </form>
-      <%# <%= form_for @kid, url: {action: "edit"}, html: {class: "nifty_form"} do |f| %>
-        <%# <%= f.text_field :input %>
-        <%# <%= f.submit "Add" %>
-      <%# <% end %>
+
+
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
       <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>
@@ -26,5 +24,5 @@
       <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path, class: "btn btn-outline-primary mt-3" %>
     </div>
   </div>
-  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate"  %>
+  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-primary" %>
 </div>
