@@ -2,15 +2,17 @@
   padding-left: 250px;
 }
 
-a {
-  text-decoration: none !important;
-  color: inherit;
-}
+.kid-cards {
+  a {
+    text-decoration: none !important;
+    color: inherit;
+  }
 
-a:hover {
-  p {
-    font-size: 40px;
-    transition: ease, 40ms;
+  a:hover {
+    p {
+      font-size: 40px;
+      transition: ease, 40ms;
+    }
   }
 }
 

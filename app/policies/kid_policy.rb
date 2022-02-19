@@ -24,4 +24,8 @@ class KidPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def add?
+    true
+  end
 end
