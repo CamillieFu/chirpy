@@ -1,15 +1,15 @@
 <%= simple_form_for (kid) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :birthday, as: :date %>
+  <%= f.input :first_name%>
+  <%= f.input :last_name%>
+  <%= f.input :birthday, as: :date, start_year: Date.today.year - 3, end_year: Date.today.year - 20, order: [:day, :month, :year]%>
   <%# will update later to automatically calculate age based off birthday? %>
-  <%= f.input :age, as: :select, collection: 0..100 %>
-  <%= f.input :ethnicity, as: :select,
+  <%= f.input :age, as: :integer, as: :hidden, :input_html => { :id => "calc_age"} %>
+  <%= f.input :ethnicity,
       collection: ["Caucasian", "African Descent", "Hispanic Pacific Islander",
-                "American Indian or Alaska Native", "Asian", "Multi-ethnic" ] %>
+                "American Indian or Alaska Native", "Asian", "Multi-ethnic" ], prompt: "Ethnicity", label: false  %>
 
-  <%= f.input :sexual_orientation, as: :select,
-      collection: %w[Heterosexual Bisexual Pansexual Gay Lesbian Asexual ] %>
-  <%= f.input :gender_identity, as: :select, collection: %w[Male Female Transgender Other] %>
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.input :sexual_orientation,
+      collection: %w[Heterosexual Bisexual Pansexual Gay Lesbian Asexual ], prompt: "Sexual Orientation", label: false  %>
+  <%= f.input :gender_identity, collection: %w[Male Female Transgender Other], prompt: "Gender Identity", label: false  %>
+  <%= f.submit "Add a Child", class: "btn btn-outline-primary float-right" %>
 <% end %>
