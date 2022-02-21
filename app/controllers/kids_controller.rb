@@ -15,7 +15,7 @@ class KidsController < ApplicationController
     if @kid.save
       redirect_to dashboards_path
     else
-      render :new
+      render "dashboards/index"
     end
   end
 
