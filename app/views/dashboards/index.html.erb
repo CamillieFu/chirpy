@@ -1,6 +1,8 @@
+<%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
+
   <div class="row justify-content-between">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
@@ -33,11 +35,6 @@
     </div>
   </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newKidModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="newKidModal" tabindex="-1" role="dialog" aria-labelledby="newKidModalTitle" aria-hidden="true">
