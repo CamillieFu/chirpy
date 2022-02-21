@@ -1,8 +1,9 @@
-<div class="container">
-  <%= link_to 'Dashboard', dashboards_path, class: "btn btn-outline-secondary mr-3 mb-5 mt-3" %>
+<%= render 'shared/navbar' %>
+<div class="container dash-cont">
+  <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
-  <h1 class="text-center m-3">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-  <div class="row justify-content-left articles">
+  <h1 class="text-center m-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+  <div class="row justify-content-center articles">
   <%# might be nice to make a tabs thing here to search by topic etc %>
     <% @articles.each do |article| %>
       <%= link_to article_path(article) do %>

@@ -1,7 +1,9 @@
+<%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
-  <div class="row justify-content-between">
+
+  <div class="row justify-content-center">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
         <% @kids.each do |kid| %>
@@ -20,7 +22,8 @@
 
     </div>
     <%# <div class="col-lg-5 col-12 mt-3"> %>
-      <div class="profile-card white-card text-center ml-5 col-md-12 col-lg-4 col-12 mt-3">
+    <%# need to adjust the left margin/prevent overlapping %>
+      <div class="profile-card white-card text-center col-md-8 col-lg-4 col-8 mt-3">
         <h3 class="mt-4">My Profile</h3>
         <div class="text-center">
           <p><i class="fa fa-duotone fa-user"></i></p>
@@ -33,11 +36,6 @@
     </div>
   </div>
 </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newKidModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="newKidModal" tabindex="-1" role="dialog" aria-labelledby="newKidModalTitle" aria-hidden="true">
