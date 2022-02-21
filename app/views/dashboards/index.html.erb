@@ -6,7 +6,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
-        <% @kids.each do |kid| %>
+        <% current_user.kids.each do |kid| %>
           <%= link_to kid_path(kid) do %>
           <div class="kid-card">
             <p><i class="fa fa-duotone fa-child"></i></p>
