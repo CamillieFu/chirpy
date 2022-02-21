@@ -2,11 +2,14 @@
   <h1 class="border-bottom pb-2 mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-between">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
-      <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
+      <h3><%= "#{@kid.first_name}'s Blocked Word List" %></h3>
       <% if @dictionary.words.empty? %>
-        <p>No words in this dictionary yet.</p>
+        <p>No blocked words yet.</p>
       <% else %>
-        <%= @dictionary.words.join(", ") %>
+        <% @words.each do |word| %>
+        <li class="word-list"><%= word %></li>
+        <%= link_to 'x', remove_word_path, class: "remove-word" %>
+        <% end %>
       <% end %>
       <%# need help %>
       <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-4" do |form| %>
@@ -15,7 +18,7 @@
       <% end %>
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
-      <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>
+      <h3><%= "#{@kid.first_name}'s Detail's" %></h3>
       <p>Devices: Macbook Pro, Iphone S</p>
       <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path, class: "btn btn-outline-primary mt-3" %>
     </div>

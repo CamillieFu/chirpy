@@ -1,9 +1,10 @@
 class KidsController < ApplicationController
-  before_action :set_kid, only: %i[show edit update destroy add]
+  before_action :set_kid, only: %i[show edit update destroy add remove]
 
   def show
     authorize @kid
     @dictionary = @kid.dictionary
+    @words = @dictionary.words
   end
 
   def create
@@ -53,6 +54,18 @@ class KidsController < ApplicationController
     dictionary.save
     authorize @kid
 
+    redirect_to kid_path(@kid)
+  end
+
+  def remove
+    # will refactor later if I  have time to a dictionary controller?
+    raise
+    word = params[:word]
+    dictionary = @kid.dictionary
+    word = dictionary.words(word)
+    word.delete
+    dictionary.save
+    authorize @kid
     redirect_to kid_path(@kid)
   end
 
