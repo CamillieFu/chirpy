@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "My first Chrome Extension",
+  "name": "Chirpy",
   "description": "Chrome extension workshop for Le Wagon Tokyo",
-  "author": "Your name",
+  "author": "Chirpy team",
   "version": "1",
   "permissions": ["tabs"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["scripts/hide_tweets.js"]
+      "js": ["scripts/get_tweets.js"]
     }
   ],
   "background": {
@@ -16,7 +16,7 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "My first Chrome Extension"
+    "default_title": "Chirpy"
   },
   "icons": {
     "16": "images/icon16.png",

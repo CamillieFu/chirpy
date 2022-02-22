@@ -2,30 +2,31 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User
 
   def create
-    string = params[:content]
-    analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
-    tones = analyzed_string["document_tone"]["tones"]
+    render_true
+    # string = params[:content]
+    # analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
+    # tones = analyzed_string["document_tone"]["tones"]
+    # render json: tones
     # Above create returns the JSON from the IBM method
 
-    @statistic = Statistic.new(tones_stat)
-    @statistic.kid = current_user.kids.first
+    # @statistic = Statistic.new(tones_stat)
+    # @statistic.kid = current_user.kids.first
     # Each stat would be assigned to the correct user kid, unfortunately a user has many kids...
     # Can the Kid take their parents email and then have a unique api key?
-    authorize @statistic
-    if !bad_tweet?(tones) && @statistic.save
-      render :false_show, status: :created
+    # authorize @statistic
+    # if !bad_tweet?(tones) && @statistic.save
+      # render :false_show, status: :created
       # render false_show is there for explanation of what this is doing
       # In our render we could pass simple boolean true or false based on the existence of an angry tweet
       # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
-    elsif bad_tweet?(tones) && @statistic.save
-      render :true_show, status: :created
+    # elsif bad_tweet?(tones) && @statistic.save
+      # render :true_show, status: :created
       # In our render we could pass simple boolean true or false based on the existence of an angry tweet
       # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
-    else
-      render_error
-    end
+    # else
+      # render_error
+    # end
   end
-
 
   # def create
   #   parsed_json_string = JSON.parse(json)
