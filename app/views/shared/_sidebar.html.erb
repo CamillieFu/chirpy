@@ -2,8 +2,9 @@
     <%# <img src="/image/chirpylogo.jpeg" alt="chirpy logo"> %>
     <%# logo path not working? %>
     <h2>Chirpy</h2>
-    <a href="/dashboards" class="active nav-link" onclick="toggleActive()"><i class="fa fa-solid fa-house-user mr-2"></i>Dashboard</a>
-    <a href="/articles" class="nav-link" onclick="toggleActive()"><i class="fa fa-solid fa-newspaper mr-2"></i></i>Articles</a>
-    <a href="#" class="nav-link" onclick="toggleActive()"><i class="fa fa-solid fa-headset mr-2"></i>Support</a>
-    <a href="/users/sign_out" class="nav-link" onclick="toggleActive()"><i class="fa fa-light fa-arrow-right mr-2"></i>Sign Out</a>
+
+    <a href="/dashboards" class="nav-link <%= current_class?(dashboards_path) %>"><i class="fa fa-solid fa-house-user mr-2"></i>Dashboard</a>
+    <a href="/articles" class="nav-link <%= current_class?(articles_path) %>"><i class="fa fa-solid fa-newspaper mr-2"></i></i>Articles</a>
+    <a href="#" class="nav-link"><i class="fa fa-solid fa-headset mr-2"></i>Support</a>
+    <a href="/users/sign_out" class="nav-link"><i class="fa fa-light fa-arrow-right mr-2"></i>Sign Out</a>
   </div>
