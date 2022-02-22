@@ -90,6 +90,25 @@ height: 100vh;
   }
 }
 
+// what are we section
+
+#what-we-do {
+  height: 100vh;
+  background-color: white;
+
+  h1 {
+    font-size: 50px;
+    margin: auto;
+    font-weight: bold;
+    color: #ff9a9e;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-top: 24px;
+  }
+}
+
+
 // features
 
 .feature {
