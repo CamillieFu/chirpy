@@ -7,8 +7,9 @@
         <p>No blocked words yet.</p>
       <% else %>
         <% @words.each do |word| %>
-        <li class="word-list"><%= word %></li>
-        <%= link_to 'x', remove_word_path, class: "remove-word" %>
+        <li class="word-list"><%= word %>
+          <%= link_to 'x', remove_word_path, class: "remove-word" %>
+        </li>
         <% end %>
       <% end %>
       <%# need help with delete word function and position %>
