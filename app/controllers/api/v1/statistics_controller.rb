@@ -61,8 +61,14 @@ class Api::V1::StatisticsController < Api::V1::BaseController
 
   private
 
-  def bad_tweet?(tweet)
+  def bad_tweet?(tweets)
     # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
+    tweets.each do |tweet|
+      if tweet.tone_id == "anger" && tweet.score > 0.5
+        render_true
+      else
+        render_false
+      end
   end
 
   def tones_stat
