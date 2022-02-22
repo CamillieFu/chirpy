@@ -3,7 +3,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
 
   def create
     render_true
-    # string = params[:content]
+    # @string = params[:content]
     # analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
     # tones = analyzed_string["document_tone"]["tones"]
     # render json: tones
@@ -64,11 +64,16 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   def bad_tweet?(tweets)
     # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
     tweets.each do |tweet|
-      if tweet.tone_id == "anger" && tweet.score > 0.5
-        render_true
+      if tweet[:tone_id] == "anger" && tweet[:score] > 0.5
+        puts "this is an angry tweet"
+      elsif tweet[:tone_id] == "sadness" && tweet[:score] > 0.5
+        puts "this is a sad tweet"
+      elsif tweet[:tone_id] == "fear" && tweet[:score] > 0.5
+        puts "this is a fearful tweet"
       else
-        render_false
+        puts "this tweet is an OK tweet"
       end
+    end
   end
 
   def tones_stat
@@ -102,7 +107,6 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def render_error
-    render json: { errors: @statistic.errors.full_messages },
-      status: :unprocessable_entity
+    render json: { errors: @statistic.errors.full_messages }, status: :unprocessable_entity
   end
 end
