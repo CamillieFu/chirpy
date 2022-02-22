@@ -44,4 +44,6 @@ word_array = string.split.map do |word|
   word_array.any?
 end
 
+# words array needs to be check if there are any TRUE FALSE cases and then the tweet is rendered or not.
+
 # bad_tweet?(tweets)
