@@ -8,11 +8,10 @@
       <% else %>
         <% @words.each do |word| %>
         <li class="word-list"><%= word %>
-          <%= link_to 'x', remove_word_path, class: "remove-word" %>
+          <%= link_to 'x', remove_word_path(@kid, word), method: :delete, class: "remove-word" %>
         </li>
         <% end %>
       <% end %>
-      <%# need help with delete word function and position %>
       <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-4" do |form| %>
         <%= form.text_field :word, placeholder: "Add a word to block", class: "form-control" %>
         <%= form.submit "Add", class: "btn btn-outline-primary" %>
