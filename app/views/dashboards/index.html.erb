@@ -1,9 +1,9 @@
-<%= render 'shared/navbar' %>
+<%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
 
-  <div class="row justify-content-center">
+  <div class="row justify-content-around">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
         <% current_user.kids.each do |kid| %>
