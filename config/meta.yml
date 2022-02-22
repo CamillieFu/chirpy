@@ -2,4 +2,4 @@ meta_product_name: "Chirpy"
 meta_title: "Chirpy - Protect your children without overreach"
 meta_description: "Filter what your children see on the web and learn how to discuss difficult topics with them"
 meta_image: "logo.png" # should exist in `app/assets/images/`
-# twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: "@chirpy_account"   # required for Twitter Cards
