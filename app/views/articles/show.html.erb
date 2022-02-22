@@ -1,8 +1,26 @@
-<div class="container my-3">
-  <div class="article">
-    <h1><%= @article.title %></h1>
-    <p><em><%= @article.author %></em></p>
-    <p class="mb-3"><%= @article.date %></p>
-    <p><%= @article.content %></p>
+<%= render 'shared/sidebar'%>
+<div class="container dash-cont my-5">
+  <div class="row justify-content-center">
+    <h1 class=" text-center my-5"><%= @article.title %></h1>
+    <div class="col-12 col-lg-5 article">
+      <div class="d-flex mb-3">
+        <div class="d-flex align-items-center">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/gazwai", class: "avatar-large", alt: "avatar" %>
+        </div>
+        <div class="mx-3 align-items-center">
+          <p><em><%= @article.author %></em></p>
+          <p><%= @article.date.strftime("%b %d, %Y") %></p>
+        </div>
+      </div>
+      <p><%= @article.content %></p>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-12 col-lg-5">
+      <div>
+        <img class="mb-5 img-fluid rounded-lg" style="height: 350px" src="https://source.unsplash.com/featured/?<%= @article.title.split.first %>/720x400">
+        <h3><em>"<%= @article.content.split(".")[5] %>"</em></h3>
+      </div>
+    </div>
   </div>
+  <%= link_to 'Back to Articles', articles_path, class: '"btn btn-white btn-animate position-absolute' %>
 </div>

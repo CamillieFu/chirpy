@@ -1,10 +1,12 @@
+<%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
-  <div class="row">
-    <div class="col-lg-7 col-12">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
-        <% @kids.each do |kid| %>
+        <% current_user.kids.each do |kid| %>
           <%= link_to kid_path(kid) do %>
           <div class="kid-card">
             <p><i class="fa fa-duotone fa-child"></i></p>
@@ -12,12 +14,16 @@
           </div>
           <% end %>
         <% end %>
-        <%= link_to "+", new_kid_path, class: "m-3 add-kid" %>
+        <div class="new-kid ml-5 mb-3">
+          <%= link_to "+", new_kid_path, class: "m-3 add-kid", data: {toggle: "modal", target: "#newKidModal"} %>
+          <%# ask TA how to make sure no overlap happens when adjusting screen size %>
+        </div>
       </div>
 
     </div>
-    <div class="col-lg-5 col-12">
-      <div class="profile-card white-card text-center">
+    <%# <div class="col-lg-5 col-12 mt-3"> %>
+    <%# need to adjust the left margin/prevent overlapping %>
+      <div class="profile-card white-card text-center col-md-8 col-lg-4 col-8 mt-3">
         <h3 class="mt-4">My Profile</h3>
         <div class="text-center">
           <p><i class="fa fa-duotone fa-user"></i></p>
@@ -26,6 +32,22 @@
           <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
           <%# <img src="" alt="avatar if we provide one"> %>
         </div>
+      <%# </div> %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newKidModal" tabindex="-1" role="dialog" aria-labelledby="newKidModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'kids/new', kid: @kid %>
       </div>
     </div>
   </div>

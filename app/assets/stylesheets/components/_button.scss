@@ -1,20 +1,19 @@
-.btn:link,
-.btn:visited {
+.btn-white:link,
+.btn-white:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
-  display: inline-block;
   border-radius: 100px;
   transition: all .2s;
-  position: absolute;
+  display: inline-block;
 }
 
-.btn:hover {
+.btn-white:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn:active {
+.btn-white:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -24,7 +23,7 @@
   color: #777;
 }
 
-.btn::after {
+.btn-white::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -41,7 +40,7 @@
   background-color: #fff;
 }
 
-.btn:hover::after {
+.btn-white:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
@@ -49,4 +48,14 @@
 .btn-animated {
   animation: moveInBottom 5s ease-out;
   animation-fill-mode: backwards;
+}
+
+.remove-word {
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px 5px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  // position: absolute;
+  // need help with the positioning
+  top: 40px;
 }

@@ -1,60 +1,210 @@
 // Specific CSS for your home-page
-section {
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  color: white;
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 }
 
-nav {
+#banner {
+background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+background-size: cover;
+background-position: center;
+height: 100vh;
+}
+
+.logo {
+  width: 140px;
   position: absolute;
-  display: flex;
-  width: 100%;
-  padding: 3rem 10rem;
-  justify-content: right;
+  top: 4%;
+  left: 10%;
 }
 
-.container-non-bs {
-  min-height: 98vh;
+.signIn {
+  position: absolute;
+  top: 4%;
+  right: 10%;
+}
 
-  .btn {
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    font-size: 1rem;
+.banner-text {
+  text-align: center;
+  padding-top: 180px;
+  color: white;
+
+  h1 {
+    font-size: 180px;
   }
 
-  .signup-btn {
-    position: relative !important;
+  p {
+    font-size: 20px;
   }
 }
 
-// .container-non-bs img {
-//   width: 100%;
-//   position: absolute;
+.banner-btn {
+  margin: 70px auto 0;
+  display: inline-block;
+}
+
+// .sideNav {
+//   background-color: #fad0c4;
+//   width: 250px;
 //   height: 100vh;
-//   object-fit: cover;
-//   height: 110%;
-//   z-index: -1;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   z-index: 2;
+//   color: white;
+
+//   nav ul li {
+//       list-style: none;
+//       margin: 50px 20px;
+//     }
+
+//   nav ul li a{
+//       text-decoration: none;
+//       color: white;
+//     }
 // }
 
-.main-title {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  font-size: 10rem;
-  transform: translate(-50%, -30%);
+// .menuBtn{
+//   width: 50px;
+//   height: 50px;
+//   text-align: center;
+//   position: fixed;
+//   right: 30px;
+//   top: 20px;
+//   border-radius: 3px;
+
+//   img {
+//     width: 20px;
+//     margin-top: 15px;
+//   }
+// }
+
+
+@media screen and (max-width: 770px) {
+  .banner-text h1 {
+    font-size: 44px;
+  }
+  .banner-btn a {
+    display: block;
+    margin: 20px auto;
+  }
 }
 
-.content {
+// what are we section
+
+#what-we-do {
+  height: 100vh;
+  background-color: white;
+
+  h1 {
+    font-size: 50px;
+    margin: auto;
+    font-weight: bold;
+    color: #ff9a9e;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-top: 24px;
+  }
+}
+
+
+// features
+
+.feature {
   width: 100%;
-  background: #5E5B52;
-  min-height: 100vh;
-  position: absolute;
+  padding: 70px 0;
 }
 
-.text {
-  padding: 2rem 20rem;
-  font-size: 1.1rem;
+.title-text {
+  text-align: center;
+  padding-bottom: 70px;
+
+  p {
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fad0c4;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin: auto;
+    font-weight: bold;
+    color: #fad0c4;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-top: 24px;
+  }
+}
+
+.feature-box {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+
+.features {
+  flex-basis: 50%;
+
+  h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #fad0c4;
+  }
+}
+
+.features-img {
+  flex-basis: 50%;
+  margin: auto;
+
+  img {
+    width: 70%;
+    border-radius: 10px;
+    padding-bottom: 50px;
+  }
+}
+
+.features-description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.feature-text p {
+  padding: 0 20px;
+  text-align: initial;
+}
+
+// .feature-icon .fa {
+//   width: 50px;
+//   height: 50px;
+//   font-size: 30px;
+//   line-height: 50px;
+//   color: #ff9a9e;
+//   border-radius: 8px;
+//   border: 1px solid #ff9a9e;
+// }
+
+@media screen and (max-width: 770px) {
+  .title-text h1 {
+    font-size: 35px;
+  }
+  .features {
+    flex-basis: 100%;
+  }
+  .features-img {
+    flex-basis: 100%;
+  }
+  .features-img img {
+    width: 100%;
+  }
 }

@@ -1,0 +1,15 @@
+<%= simple_form_for (kid) do |f| %>
+  <%= f.input :first_name, placeholder: "First Name", label: "Name"%>
+  <%= f.input :last_name, placeholder: "Last Name",label: false%>
+  <%= f.input :birthday, as: :date, html5: true, :input_html => { id: "dob"}%>
+  <%# will update later to automatically calculate age based off birthday? %>
+  <%= f.input :age, as: :integer, as: :hidden, :input_html => { id: "calc_age"} %>
+  <%= f.input :ethnicity,
+      collection: ["Caucasian", "African Descent", "Hispanic Pacific Islander",
+                "American Indian or Alaska Native", "Asian", "Multi-ethnic" ], prompt: "Ethnicity", label: false, input_html: { class: 'select2', style:"width: 100%" }  %>
+
+  <%= f.input :sexual_orientation,
+      collection: %w[Heterosexual Bisexual Pansexual Gay Lesbian Asexual ], prompt: "Sexual Orientation", label: false, input_html: { class: 'select2', style:"width: 100%" }  %>
+  <%= f.input :gender_identity, collection: %w[Male Female Transgender Other], prompt: "Gender Identity", label: false, input_html: { class: 'select2', style:"width: 100%" }  %>
+  <%= f.submit "Confirm", class: "btn btn-outline-primary float-right" %>
+<% end %>

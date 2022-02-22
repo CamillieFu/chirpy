@@ -1,9 +1,16 @@
+// Article's card
 .article-card {
   padding: 16px;
   overflow: scroll;
   margin: 16px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  width: 600px;
+  width: 500px;
+  height: 260px;
+  color: black;
+  &:hover {
+    padding: -20px;
+  }
+
 
   img {
     height: 200px;
@@ -11,7 +18,21 @@
     min-height: 200px;
     min-width: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+
+  h3 {
+    font-family: utopia-std, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+}
+
+.articles {
+  a {
+    text-decoration: none !important;
   }
 }
 
@@ -21,6 +42,11 @@
   }
 }
 
+.author-font {
+  font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
+}
+
+// Kid's card
 .kid-cards {
   padding: 16px;
 }
@@ -37,8 +63,8 @@
 .kid-card {
   margin-bottom: 24px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);  border-radius: 16px;
+  border-radius: 16px;
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   margin-right: 24px;
   width: 10rem;
   padding: 3rem 0 3rem 0;
@@ -48,17 +74,32 @@
   }
 }
 
+
 .white-card {
   margin-left: 16px;
   padding-bottom: 5rem;
   .fa-user {
     padding: 2rem;
     font-size: 56px;
-    background-color: #00b1fc;
+    background-color: #fcb9bb;
     border-radius: 16px;
   }
 .btn {
-  padding: 8px 40px !important;
   position: relative !important;
+  }
 }
+
+.stats-card {
+  height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .article-card {
+    width: 300px;
+
+    img {
+      // for some reason couln't make the picture smaller?
+      display: none;
+    }
+  }
 }

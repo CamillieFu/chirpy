@@ -2,7 +2,7 @@
 function sendHide_tweetsMsg() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     // Finds tabs that are active in the current window
-    chrome.tabs.sendMessage(tabs[0].id, { action: "hide_tweets" }); // Sends a message (object) to the first tab (tabs[0])
+    chrome.tabs.sendMessage(tabs[0].id, { action: "get_tweets" }); // Sends a message (object) to the first tab (tabs[0])
   });
 }
 
