@@ -2,20 +2,20 @@
 <div class="container dash-cont">
   <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
-  <h1 class="text-center m-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-  <div class="row justify-content-center articles">
-  <%# might be nice to make a tabs thing here to search by topic etc %>
-    <% @articles.each do |article| %>
-      <%= link_to article_path(article) do %>
-        <div class="article-card d-flex">
-          <div class="article-card-info ml-2 mt-1">
-            <h3><%= article.title %></h3>
-            <p class="author-font"><em>By <%= article.author %></em></p>
-            <p class="pb-4"><%= article.content.truncate(120, omission: ' ... (continued)') %></p>
-          </div>
-          <img src="https://images.unsplash.com/photo-1644561219849-1f91f0d19852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80" alt="">
-        </div>
-      <% end %>
+  <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+  <p><i class="fa-solid fa-magnifying-glass"></i></p>
+  <div data-controller="refresh-list">
+    <%= form_with url: articles_path, method: :get, html: { data: { refresh_list_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                        class: "search-bar form-control",
+                        placeholder: "Search all articles",
+                        value: params[:query],
+                        data: {
+                          refresh_list_target: "searchInput",
+                          action: "keyup->refresh-list#update"
+                        }
+      %>
     <% end %>
+    <%= render 'list', articles: @articles %>
   </div>
 </div>
