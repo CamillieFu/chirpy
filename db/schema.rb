@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_150812) do
+ActiveRecord::Schema.define(version: 2022_02_22_121915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,17 +48,10 @@ ActiveRecord::Schema.define(version: 2022_02_16_150812) do
   end
 
   create_table "statistics", force: :cascade do |t|
-    t.integer "total_tweets"
-    t.integer "angry_tweets"
-    t.integer "sad_tweets"
-    t.integer "fearful_tweets"
-    t.integer "joyful_tweets"
-    t.integer "analytical_tweets"
-    t.integer "confident_tweets"
-    t.integer "tentative_tweets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "kid_id"
+    t.integer "tone"
     t.index ["kid_id"], name: "index_statistics_on_kid_id"
   end
 
