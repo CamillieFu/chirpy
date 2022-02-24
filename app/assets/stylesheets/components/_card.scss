@@ -1,10 +1,20 @@
+// Article's card
 .article-card {
   padding: 16px;
   overflow: scroll;
   margin: 16px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 500px;
+<<<<<<< HEAD
   height: 250px;
+=======
+  height: 260px;
+  color: black;
+  &:hover {
+    padding: -20px;
+  }
+
+>>>>>>> master
 
   img {
     height: 200px;
@@ -12,7 +22,21 @@
     min-height: 200px;
     min-width: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+
+  h3 {
+    font-family: utopia-std, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+}
+
+.articles {
+  a {
+    text-decoration: none !important;
   }
 }
 
@@ -22,26 +46,20 @@
   }
 }
 
-.kid-cards {
-  padding: 16px;
+.author-font {
+  font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
 }
 
-.white-card {
-  background: white;
+// Kid's card
+.kid-cards {
   padding: 16px;
-  border-radius: 16px;
-  margin-bottom: 24px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
 }
 
 .kid-card {
   margin-bottom: 24px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 16px;
-
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #9ed2fa 0%, #09c6f9 74%);  overflow-x: hidden;
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
   margin-right: 24px;
   width: 10rem;
   padding: 3rem 0 3rem 0;
@@ -51,17 +69,37 @@
   }
 }
 
+
 .white-card {
   margin-left: 16px;
   padding-bottom: 5rem;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   .fa-user {
     padding: 2rem;
     font-size: 56px;
-    // background-color: #fad0c4;
-    background-color: #71c5f9;
+    background-color: #fcb9bb;
     border-radius: 16px;
   }
 .btn {
   position: relative !important;
+  }
+}
+
+.stats-card {
+  height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+  .article-card {
+    width: 300px;
+
+    img {
+      // for some reason couln't make the picture smaller?
+      display: none;
+    }
   }
 }

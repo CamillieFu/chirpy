@@ -2,23 +2,42 @@
   <h1 class="border-bottom pb-2 mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-between">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
-      <h3><%= "#{@kid.first_name}'s Dictionary" %></h3>
+      <h3><%= "#{@kid.first_name}'s Blocked Word List" %></h3>
       <% if @dictionary.words.empty? %>
-        <p>No words in this dictionary yet.</p>
+        <p>No blocked words yet.</p>
       <% else %>
-        <%= @dictionary.words.join(", ") %>
+        <% @words.each do |word| %>
+        <li class="word-list"><%= word %>
+          <%= link_to 'x', remove_word_path(@kid, word), method: :delete, class: "remove-word" %>
+        </li>
+        <% end %>
       <% end %>
-      <%# need help %>
       <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-4" do |form| %>
         <%= form.text_field :word, placeholder: "Add a word to block", class: "form-control" %>
         <%= form.submit "Add", class: "btn btn-outline-primary" %>
       <% end %>
     </div>
     <div class="stats-card white-card mt-5 col-lg-4 col-12 text-center">
-      <h3><%= "#{@kid.first_name} #{@kid.last_name}" %></h3>
+      <h3><%= "#{@kid.first_name}'s Detail's" %></h3>
       <p>Devices: Macbook Pro, Iphone S</p>
-      <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path, class: "btn btn-outline-primary mt-3" %>
+      <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path(@kid), class: "btn btn-outline-primary mt-3", data: {toggle: "modal", target: "#editKidModal"} %>
     </div>
   </div>
-  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate position-absolute"  %>
+  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate position-absolute mb-5"  %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editKidModal" tabindex="-1" role="dialog" aria-labelledby="editKidModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'kids/edit', kid: @kid %>
+      </div>
+    </div>
+  </div>
 </div>

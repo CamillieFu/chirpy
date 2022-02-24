@@ -2,30 +2,31 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User
 
   def create
-    string = params[:content]
-    analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
-    tones = analyzed_string["document_tone"]["tones"]
+    render_true
+    # @string = params[:content]
+    # analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
+    # tones = analyzed_string["document_tone"]["tones"]
+    # render json: tones
     # Above create returns the JSON from the IBM method
 
-    @statistic = Statistic.new(tones_stat)
-    @statistic.kid = current_user.kids.first
+    # @statistic = Statistic.new(tones_stat)
+    # @statistic.kid = current_user.kids.first
     # Each stat would be assigned to the correct user kid, unfortunately a user has many kids...
     # Can the Kid take their parents email and then have a unique api key?
-    authorize @statistic
-    if !bad_tweet?(tones) && @statistic.save
-      render :false_show, status: :created
+    # authorize @statistic
+    # if !bad_tweet?(tones) && @statistic.save
+      # render :false_show, status: :created
       # render false_show is there for explanation of what this is doing
       # In our render we could pass simple boolean true or false based on the existence of an angry tweet
       # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
-    elsif bad_tweet?(tones) && @statistic.save
-      render :true_show, status: :created
+    # elsif bad_tweet?(tones) && @statistic.save
+      # render :true_show, status: :created
       # In our render we could pass simple boolean true or false based on the existence of an angry tweet
       # Could we use enumberable for User for the score filter? 0.25, 0.5, 0.75 for angry, sad and fearful?
-    else
-      render_error
-    end
+    # else
+      # render_error
+    # end
   end
-
 
   # def create
   #   parsed_json_string = JSON.parse(json)
@@ -60,8 +61,19 @@ class Api::V1::StatisticsController < Api::V1::BaseController
 
   private
 
-  def bad_tweet?(tweet)
+  def bad_tweet?(tweets)
     # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
+    tweets.each do |tweet|
+      if tweet[:tone_id] == "anger" && tweet[:score] > 0.5
+        puts "this is an angry tweet"
+      elsif tweet[:tone_id] == "sadness" && tweet[:score] > 0.5
+        puts "this is a sad tweet"
+      elsif tweet[:tone_id] == "fear" && tweet[:score] > 0.5
+        puts "this is a fearful tweet"
+      else
+        puts "this tweet is an OK tweet"
+      end
+    end
   end
 
   def tones_stat
@@ -95,7 +107,6 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def render_error
-    render json: { errors: @statistic.errors.full_messages },
-      status: :unprocessable_entity
+    render json: { errors: @statistic.errors.full_messages }, status: :unprocessable_entity
   end
 end

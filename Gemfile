@@ -37,8 +37,9 @@ gem 'ibm_watson'
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'pundit'
 gem 'simple_token_authentication'
+gem 'rack-cors'
 
-
+gem 'pg_search', '~> 2.3.0'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

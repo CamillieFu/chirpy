@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <h1 class="text-center">Articles</h1>
   <div class="row justify-content-center">
@@ -15,5 +16,26 @@
         <% end %>
       <% end %>
     <%# </div> %>
+=======
+<%# <%= render 'shared/navbar' %>
+<div class="container dash-cont">
+  <%= render 'shared/sidebar'%>
+  <% mytime = Date.today %>
+  <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+  <p><i class="fa-solid fa-magnifying-glass"></i></p>
+  <div data-controller="refresh-list">
+    <%= form_with url: articles_path, method: :get, html: { data: { refresh_list_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                        class: "search-bar form-control",
+                        placeholder: "Search all articles",
+                        value: params[:query],
+                        data: {
+                          refresh_list_target: "searchInput",
+                          action: "keyup->refresh-list#update"
+                        }
+      %>
+    <% end %>
+    <%= render 'list', articles: @articles %>
+>>>>>>> master
   </div>
 </div>

@@ -90,9 +90,28 @@ height: 100vh;
   }
 }
 
+// what are we section
+
+#what-we-do {
+  height: 100vh;
+  background-color: white;
+
+  h1 {
+    font-size: 50px;
+    margin: auto;
+    font-weight: bold;
+    color: #ff9a9e;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding-top: 24px;
+  }
+}
+
+
 // features
 
-#feature {
+.feature {
   width: 100%;
   padding: 70px 0;
 }
@@ -119,6 +138,7 @@ height: 100vh;
     position: relative;
     z-index: 1;
     display: inline-block;
+    padding-top: 24px;
   }
 }
 
@@ -149,7 +169,7 @@ height: 100vh;
   img {
     width: 70%;
     border-radius: 10px;
-
+    padding-bottom: 50px;
   }
 }
 

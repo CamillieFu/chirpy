@@ -1,9 +1,10 @@
 class KidsController < ApplicationController
-  before_action :set_kid, only: %i[show edit update destroy add]
+  before_action :set_kid, only: %i[show edit update destroy add remove]
 
   def show
     authorize @kid
     @dictionary = @kid.dictionary
+    @words = @dictionary.words
   end
 
   def create
@@ -14,7 +15,8 @@ class KidsController < ApplicationController
     if @kid.save
       redirect_to dashboards_path
     else
-      render :new
+      flash.now[:alert] = "Sorry, child wasn't added"
+      render "dashboards/index"
     end
   end
 
@@ -33,7 +35,8 @@ class KidsController < ApplicationController
     if @kid.save
       redirect_to kid_path(@kid)
     else
-      render :edit
+      flash[:alert] = "Details were not updated"
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -46,14 +49,29 @@ class KidsController < ApplicationController
   end
 
   def add
+    authorize @kid
     word = params[:word]
     dictionary = @kid.dictionary
     words = dictionary.words
-    words << word
+    if words.include?(word)
+      redirect_to kid_path(@kid), flash:{ alert: "Word is already being blocked!"}
+    else
+      words << word
+      dictionary.save
+
+      redirect_to kid_path(@kid)
+    end
+  end
+
+  def remove
+    # will refactor later if I  have time to a dictionary controller?
+    word = params[:word]
+    dictionary = @kid.dictionary
+    dictionary.words.delete(word)
     dictionary.save
     authorize @kid
-
     redirect_to kid_path(@kid)
+    # raise
   end
 
   private
