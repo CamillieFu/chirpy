@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-  <h1 class="text-center">Articles</h1>
-  <div class="row justify-content-center">
-    <%# <div class="articles"> %>
-      <% @articles.each do |article| %>
-        <%= link_to article_path(article) do %>
-          <div class="article-card d-flex">
-            <img src="https://images.unsplash.com/photo-1644561219849-1f91f0d19852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80" alt="">
-            <div class="article-card-info ml-2 mt-1">
-              <%=  article.title %><br>
-              <p><em><%= article.author %></em></p>
-              <%= article.content.truncate(80, omission: ' ... (continued)') %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <%# </div> %>
-=======
 <%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <%= render 'shared/sidebar'%>
@@ -36,6 +17,5 @@
       %>
     <% end %>
     <%= render 'list', articles: @articles %>
->>>>>>> master
   </div>
 </div>

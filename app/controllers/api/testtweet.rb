@@ -16,20 +16,20 @@ tweets = [
       }
     ]
 
- def bad_tweet?(tweets)
-    # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
-    tweets.each do |tweet|
-      if tweet[:tone_id] == "anger" && tweet[:score] > 0.5
-        puts "this is an angry tweet"
-      elsif tweet[:tone_id] == "sadness" && tweet[:score] > 0.5
-        puts "this is a sad tweet"
-      elsif tweet[:tone_id] == "fear" && tweet[:score] > 0.5
-        puts "this is a fearful tweet"
-      else
-        puts "this tweet is an OK tweet"
-      end
+def bad_tweet?(tweets)
+  # If an angry tweet has a score of 0.75 or higher(or whatever our user.kids has assigned (enumeberable?)), it is bad
+  tweets.each do |tweet|
+    if tweet[:tone_id] == "anger" && tweet[:score] > 0.5
+      puts "this is an angry tweet"
+    elsif tweet[:tone_id] == "sadness" && tweet[:score] > 0.5
+      puts "this is a sad tweet"
+    elsif tweet[:tone_id] == "fear" && tweet[:score] > 0.5
+      puts "this is a fearful tweet"
+    else
+      puts "this tweet is an OK tweet"
     end
   end
+end
 
 string = "Get fucked you idiot, go and dig a hole."
 bad_words = %w[fucked shit poop]
@@ -41,8 +41,8 @@ word_array = string.split.map do |word|
   else
     puts "no worries"
   end
-  word_array.any?
 end
+# word_array.any?
 
 # words array needs to be check if there are any TRUE FALSE cases and then the tweet is rendered or not.
 
