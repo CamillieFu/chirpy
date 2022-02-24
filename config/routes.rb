@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete 'kids/:id/:word', to: 'kids#remove', as: "remove_word"
   devise_for :users
   root to: 'pages#home'
+  get 'pages/support'
+
   resources :dashboards, only: :index
   resources :kids do
     resources :dictionaries do
