@@ -29,3 +29,5 @@ document.addEventListener("turbolinks:load", () => {
   initSelect2();
   initCalc_age();
 });
+
+import "controllers"
