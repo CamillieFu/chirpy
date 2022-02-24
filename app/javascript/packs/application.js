@@ -23,11 +23,13 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initSelect2 } from "../components/init_select2";
 import { initCalc_age } from "../components/calc_age";
+import { initToggleSearch } from "../components/init_toggle_search";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   initSelect2();
   initCalc_age();
+  initToggleSearch();
 });
 
 import "controllers"
