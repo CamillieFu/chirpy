@@ -33,8 +33,8 @@ puts "done"
 puts "creating articles"
 
 # method to get all the urls on the page
-def fetch_articles_url
-  global_news_url = "https://globalnews.ca/tag/childrens-mental-health/"
+def fetch_articles_url(url)
+  global_news_url = url
   html_content = URI.open(global_news_url, 'Accept-Language' => 'en').read
   doc = Nokogiri::HTML(html_content)
   archive = doc.search('#archive-latestStories').search('li')
@@ -45,8 +45,6 @@ def fetch_articles_url
     a.search('a').attribute('href').value
   end
 end
-
-fetch_articles_url
 
 # method to scrape the info on each individual url
 def scrape_article(url)
@@ -64,17 +62,25 @@ def scrape_article(url)
   }
 end
 
-urls = fetch_articles_url
-
+first_urls = fetch_articles_url("https://globalnews.ca/tag/childrens-mental-health/")
+second_urls = fetch_articles_url("https://globalnews.ca/tag/teen-mental-health/")
 # scrape the urls and save them as new article instances
+puts "there are #{first_urls.count} article urls."
 count = 0
-articles = []
-puts "there are #{urls.count} article urls."
-urls.each do |url|
+first_urls.each do |url|
   article = scrape_article(url)
-  new_article = Article.create(article)
+  Article.create(article)
   puts "done making article #{count + 1}"
-  articles << new_article
   count += 1
 end
-puts "action completed"
+puts "first articles completed"
+
+puts "there are #{second_urls.count} article urls."
+count = 0
+second_urls.each do |url|
+  article = scrape_article(url)
+  Article.create(article)
+  puts "done making article #{count + 1}"
+  count += 1
+end
+puts "second articles completed"
