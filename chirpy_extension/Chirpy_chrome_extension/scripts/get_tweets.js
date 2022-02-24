@@ -31,8 +31,8 @@ function get_tweets() {
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
-        "X-User-Email": "dad@gmail.com",
-        "X-User-Token": "y5gUinZNzd5BxCcjS9xh",
+        "X-User-Email": "mom@gmail.com",
+        "X-User-Token": "axdYihbg6ZsV4KshuJzv",
       }
     })
       .then(response => response.json())
