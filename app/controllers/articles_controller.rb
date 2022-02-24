@@ -3,9 +3,9 @@ class ArticlesController < ApplicationController
     @query = params[:query]
     @articles = policy_scope(Article).order(created_at: :desc)
     if params[:query].present?
-      @articles = Article.search_by_title_content_and_author(params[:query])
+      @articles = Article.search_by_content_and_title(params[:query])
     else
-      @article = Article.all
+      @articles = Article.all
     end
     authorize @articles
 

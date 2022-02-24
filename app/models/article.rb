@@ -3,11 +3,10 @@ class Article < ApplicationRecord
   validates :title, :date, :author, :content, :image, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_content_and_author,
+  pg_search_scope :search_by_content_and_title,
                   against: {
-                    title: 'A',
-                    content: 'B',
-                    author: 'C'
+                    content: 'A',
+                    title: 'B'
                   },
                   using: {
                     tsearch: { prefix: true }
