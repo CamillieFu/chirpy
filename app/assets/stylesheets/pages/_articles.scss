@@ -1,4 +1,13 @@
-body {
-  font-family: "Libre Caslon Text", "Open Sans", sans-serif;
+p.article-content {
   font-weight: 400; /* if you want the light version */
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-weight: 600; /* if you want the light version */
+  line-height: 1.5;
+  text-align: justify;
 }
