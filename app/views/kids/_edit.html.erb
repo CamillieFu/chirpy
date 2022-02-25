@@ -6,5 +6,5 @@
         It will never be used for anything else.</em>
       </p>
       <%= render 'kids/form', kid: @kid %>
-      <%= link_to 'Cancel', dashboards_path, class: 'btn btn-outline-danger float-left' %>
+      <%= link_to 'Cancel', kid_path(@kid), class: 'btn btn-outline-danger float-left' %>
 </div>

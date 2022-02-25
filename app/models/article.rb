@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   acts_as_taggable_on :tags
-  validates :title, :date, :author, :content, :image, presence: true
+  validates :title, :date, :author, :content, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_content_and_title,
