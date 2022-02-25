@@ -1,10 +1,9 @@
 <%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
-  <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
-
-  <div class="row justify-content-around">
+  <div class="row justify-content-around mt-5">
     <div class="col-lg-6 col-12">
+      <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
       <div class="kid-cards d-flex align-items-center">
         <% current_user.kids.each do |kid| %>
           <%= link_to kid_path(kid) do %>
@@ -23,7 +22,7 @@
     </div>
     <%# <div class="col-lg-5 col-12 mt-3"> %>
     <%# need to adjust the left margin/prevent overlapping %>
-      <div class="profile-card white-card text-center col-md-8 col-lg-4 col-8 mt-3">
+      <div class="profile-card white-card text-center col-md-8 col-lg-4 col-8 mt-5">
         <h3 class="mt-4">My Profile</h3>
         <div class="text-center">
           <p><i class="fa fa-duotone fa-user"></i></p>
