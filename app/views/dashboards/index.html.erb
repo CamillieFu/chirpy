@@ -1,9 +1,17 @@
 <%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <%= render 'shared/sidebar' %>
-  <div class="row justify-content-around mt-5">
-    <div class="col-lg-6 col-12">
-      <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-12">
+      <div class="card-identity mt-5" style="background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)">
+        <div class="card-identity-content">
+          <div class="card-identity-avatar">
+              <img src="https://kitt.lewagon.com/placeholder/users/gazwai" alt="avatar" class="card-identity-img">
+              <h2>Hello, <%= current_user.first_name %></h2>
+          </div>
+          <p>Have a nice day!</p>
+        </div>
+      </div>
       <div class="kid-cards d-flex align-items-center">
         <% current_user.kids.each do |kid| %>
           <%= link_to kid_path(kid) do %>
