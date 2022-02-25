@@ -38,7 +38,7 @@ function get_tweets() {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data["bad"] == "false") {
+          if (data["bad"] == "true") {
             tweet.style.display = "none";
             tweet.classList.add("checked");
           } else {
