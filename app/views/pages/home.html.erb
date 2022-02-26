@@ -1,16 +1,6 @@
 <section id="banner">
   <%# <%= image_tag('logo.png') %>
 
-  <div class="signIn">
-    <% if user_signed_in? %>
-      <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-white btn-animate" %>
-    <%  else %>
-    <% end %>
-      <%# <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark %>
-      <%# <a href="#" class="btn btn-white btn-animate">Log In</a> %>
-  </div>
-
   <div class="banner-text">
     <h1>Chirpy.</h1>
     <p>Towards a more positive future, together.</p>
@@ -56,12 +46,14 @@
       <div class="feature-text">
         <p>The Chirpy extension provides you with piece of mind and protection at the click of a button.</p>
         <p>Using technology developed by the brilliant minds at IBM we can automatically remove harmful content without your child ever even having to see it.</p>
-        <p>And if you want to take it a step further you are able to input your own custom list of topics you want to remove from the web in our 'Dictionary' tab</p>
-        <p>Download Chirpy today, and make a positive change!</p>
+        <p>And, if you want to take it a step further you are able to input your own custom list of topics you want to remove from the web in our 'Dictionary' tab.</p>
+        <p>Learn about your kids, use our library of articles to get up to date with what kids are going through these days.</p>
 
         <div class="banner-btn">
-        <%= link_to 'Download Now!', dashboards_path, class: "btn btn-white btn-animate" %>
+          <p class="text-center pb-1">Download Chirpy today, and make a positive change!</p>
+          <%= link_to 'Download Now!', dashboards_path, class: "btn btn-white btn-animate" %>
         </div>
+
       </div>
     </div>
   </div>
