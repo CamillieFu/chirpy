@@ -1,8 +1,8 @@
 <%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
-  <h2 class="mt-5 pl-2">Hello, <%= current_user.first_name %></h2>
+  <h2 class="mt-5 ml-5 mb-4">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
-  <div class="row justify-content-around">
+  <div class="row justify-content-evenly ml-3">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
         <% current_user.kids.each do |kid| %>
@@ -28,7 +28,7 @@
           <p><i class="fa fa-duotone fa-user"></i></p>
           <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
           <p><%= "#{current_user.email}" %></p>
-          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
+          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
           <%# <img src="" alt="avatar if we provide one"> %>
         </div>
       <%# </div> %>
