@@ -6,22 +6,20 @@
     <div class="row justify-content-center">
       <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
       <div class="col-11">
-        <div class="search-bar">
-          <%= form_with url: articles_path, method: :get, html: { data: { refresh_list_target: 'form' } } do |f| %>
-            <%= f.text_field :query,
-                              class: "search-bar-input",
-                              placeholder: "Search all articles",
-                              aria: { label: "search" },
-                              value: params[:query],
-                              data: {
-                                refresh_list_target: "searchInput",
-                                action: "keyup->refresh-list#update"
-                              } %>
-            <%= button_tag type: 'submit', class: "search-bar-submit", aria: { label: "submit-search" } do %>
-              <i class="fas fa-search"></i>
-            <% end %>
+        <%= form_with url: articles_path, method: :get, class: 'search-bar', html: { data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                            class: "search-bar-input",
+                            placeholder: "Search all articles",
+                            aria: { label: "search" },
+                            value: params[:query],
+                            data: {
+                              refresh_list_target: "searchInput",
+                              action: "keyup->refresh-list#update"
+                            } %>
+          <%= button_tag type: 'submit', class: "search-bar-submit", aria: { label: "submit-search" } do %>
+            <i class="fas fa-search"></i>
           <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
     <%= render 'list', articles: @articles %>
