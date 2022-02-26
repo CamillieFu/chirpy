@@ -38,10 +38,10 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def bad_dictionary?(content)
-    word_array = content.split.map do |word|
-      current_user.kids.first.dictionary.words.include?(word)
-    end
-    word_array.any?(true)
+    dictionary_words = current_user.kids.first.dictionary.words&.map(&:upcase)
+    dictionary_words = dictionary_words || []
+    word_array = content.upcase.split
+    dictionary_words.size == (dictionary_words - word_array).size
   end
 
   def tones_stat
