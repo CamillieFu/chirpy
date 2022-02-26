@@ -38,11 +38,17 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   end
 
   def bad_dictionary?(content)
-    dictionary_words = current_user.kids.first.dictionary.words&.map(&:upcase)
-    dictionary_words = dictionary_words || []
-    word_array = content.upcase.split
-    dictionary_words.size == (dictionary_words - word_array).size
+    kids_dictionary = current_user.kids.first.dictionary.words.map(&:upcase)
+    word_array = content.upcase.split.map do |word|
+      kids_dictionary.include?(word)
+    end
+    word_array.any?(true)
   end
+    # dictionary_words = current_user.kids.first.dictionary.words&.map(&:upcase)
+    # dictionary_words = dictionary_words || []
+    # word_array = content.upcase.split
+    # # dictionary_words.size == (dictionary_words - word_array).size
+    # word_array.any?(true)
 
   def tones_stat
     # Only be taking in one tweet at a time so got rid of the array total
