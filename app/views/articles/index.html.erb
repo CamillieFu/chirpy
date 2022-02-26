@@ -2,10 +2,10 @@
 <div class="container dash-cont">
   <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
-  <div data-controller="refresh-list">
+  <div class="mb-3" data-controller="refresh-list">
     <div class="row justify-content-center">
       <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-      <div class="col-11">
+      <div class="col-11 pl-0">
         <%= form_with url: articles_path, method: :get, class: 'search-bar', html: { data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
                             class: "search-bar-input",
