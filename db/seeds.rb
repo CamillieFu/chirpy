@@ -84,3 +84,12 @@ second_urls.each do |url|
   count += 1
 end
 puts "second articles completed"
+
+puts "making fake stats"
+100.times do
+  Statistic.create(
+    tone: rand(0..6),
+    kid: Kid.first
+  )
+end
+puts "done with stats"
