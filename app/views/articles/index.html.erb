@@ -2,20 +2,24 @@
 <div class="container dash-cont">
   <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
-  <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-  <p><i class="fa-solid fa-magnifying-glass"></i></p>
   <div data-controller="refresh-list">
-    <%= form_with url: articles_path, method: :get, html: { data: { refresh_list_target: 'form' } } do |f| %>
-      <%= f.text_field :query,
-                        class: "search-bar form-control",
-                        placeholder: "Search all articles",
-                        value: params[:query],
-                        data: {
-                          refresh_list_target: "searchInput",
-                          action: "keyup->refresh-list#update"
-                        }
-      %>
-    <% end %>
+    <div class="row justify-content-center">
+      <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+      <div class="col-12">
+        <i id="search-btn" class="fa fa-search fa-2x float"></i>
+        <%= form_with url: articles_path, method: :get, html: { data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                            class: "form-control hideaway",
+                            id: "search-bar",
+                            placeholder: "Search all articles",
+                            value: params[:query],
+                            data: {
+                              refresh_list_target: "searchInput",
+                              action: "keyup->refresh-list#update"
+                            } %>
+        <% end %>
+      </div>
+    </div>
     <%= render 'list', articles: @articles %>
   </div>
 </div>
