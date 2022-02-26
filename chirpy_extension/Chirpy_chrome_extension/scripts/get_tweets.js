@@ -52,25 +52,21 @@ function get_tweets() {
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           "X-User-Email": "mom@gmail.com",
-          "X-User-Token": "4ACAHRgMXiubQZmyt3X-",
+          "X-User-Token": "ssDfQhr11iByJFxJCn4W",
         },
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data["bad"] == "true") {
+          if (data["bad"] === "true") {
             tweet.style.display = "none";
             tweet.classList.add("checked");
             console.log("bad");
-          } else {
+          } else if (data["bad"] === "false") {
             tweet.classList.add("checked");
-            console.log("good");
+            console.log("not bad");
+          } else {
+            console.log(data);
           }
-        })
-        .catch((error) => {
-          console.error(
-            "There has been a problem with your fetch operation:",
-            error
-          );
         });
     }
   });
