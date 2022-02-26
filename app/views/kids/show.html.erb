@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="border-bottom pb-2 mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
+  <h1 class="border-bottom mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-around">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
       <h3><%= "#{@kid.first_name}'s Blocked Word List" %></h3>
@@ -35,22 +35,8 @@
       <%= pie_chart Statistic.group(:tone).count %>
     </div>
   </div>
-  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate position-absolute mb-5"  %>
+  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate position-absolute btn-outline"  %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="editKidModal" tabindex="-1" role="dialog" aria-labelledby="editKidModalTitle" aria-hidden="true">

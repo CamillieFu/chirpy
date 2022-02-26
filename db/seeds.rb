@@ -3,12 +3,12 @@ puts "Deleting users ..."
 User.destroy_all
 puts "Done."
 puts "Creating users ..."
-mom = User.create(email: "mom@gmail.com", password: 1234567, first_name: "Mom", last_name: "Mommy")
-dad = User.create(email: "dad@gmail.com", password: 1234567, first_name: "Dad", last_name: "Daddy")
+mom = User.create(email: "mom@gmail.com", password: 1234567, first_name: "Caroline", last_name: "Benly")
+dad = User.create(email: "dad@gmail.com", password: 1234567, first_name: "Yann", last_name: "Benly")
 puts "Done."
 puts "Creating kids ..."
 luke = Kid.new(
-  first_name: "Luke",
+  first_name: "Yann",
   last_name: "Benly",
   age: 12,
   birthday: "Wed, Jan 13 2010",
@@ -16,7 +16,7 @@ luke = Kid.new(
 )
 brenna = Kid.new(
   first_name: "Brenna",
-  last_name: "Bentel",
+  last_name: "Benly",
   age: 13,
   birthday: "Thur, Feb 13 2009",
   user: dad
