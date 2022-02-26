@@ -18,7 +18,7 @@
 
 .search-bar {
   display: flex;
-  border: 2px solid $chirpy-pink;
+  border: 2px solid $chirpy-pink-light;
   background: white;
   border-radius: 50px;
   height: $search-bar-size;
@@ -69,7 +69,7 @@
     }
 
     .search-bar-submit {
-      background: $chirpy-pink;
+      background: $chirpy-pink-light;
       color: white;
     }
 

@@ -1,14 +1,16 @@
 // Article's card
 .article-card {
   padding: 16px;
-  overflow: scroll;
-  margin: 16px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  width: 500px;
-  height: 260px;
+  // overflow: scroll;
+  margin: 8px 0px 0px 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  width: 95%;
   color: black;
   &:hover {
-    padding: -20px;
+    // padding: -20px;
+    h3 {
+      color: $chirpy-pink-dark;
+    }
   }
 
   img {
