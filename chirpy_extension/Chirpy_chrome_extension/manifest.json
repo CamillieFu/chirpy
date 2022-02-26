@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Chirpy",
-  "description": "Chiry filter with IBM Tone Analyzer",
+  "description": "Chirpy filter with IBM Tone Analyzer",
   "author": "Chirpy team",
   "version": "1",
   "permissions": ["tabs"],

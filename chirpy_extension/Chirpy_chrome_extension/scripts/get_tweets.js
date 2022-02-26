@@ -60,8 +60,10 @@ function get_tweets() {
           if (data["bad"] == "true") {
             tweet.style.display = "none";
             tweet.classList.add("checked");
+            console.log("bad");
           } else {
             tweet.classList.add("checked");
+            console.log("good");
           }
         })
         .catch((error) => {
