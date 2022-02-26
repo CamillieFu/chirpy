@@ -23,7 +23,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
   private
 
   def bad_tweet?(tweets)
-    tweets.each do |tweet|
+    tone_array = tweets.map do |tweet|
       if tweet[:tone_id] == "anger" && tweet[:score] > 0.5
         true
       elsif tweet[:tone_id] == "sadness" && tweet[:score] > 0.5
@@ -34,11 +34,12 @@ class Api::V1::StatisticsController < Api::V1::BaseController
         false
       end
     end
+    tone_array.any?(true)
   end
 
   def bad_dictionary?(content)
     word_array = content.split.map do |word|
-      current_user.kids.first.dictionary.words.includes?(word)
+      current_user.kids.first.dictionary.words.include?(word)
     end
     word_array.any?(true)
   end
