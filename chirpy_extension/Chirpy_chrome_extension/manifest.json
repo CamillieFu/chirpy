@@ -19,9 +19,9 @@
     "default_title": "Chirpy"
   },
   "icons": {
-    "16": "images/icon16.png",
-    "32": "images/icon32.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
+    "16": "images/chirpy16.png",
+    "32": "images/chirpy36.png",
+    "48": "images/chirpy48.png",
+    "128": "images/chirpy128.png"
   }
 }

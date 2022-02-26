@@ -11,7 +11,6 @@
     padding: -20px;
   }
 
-
   img {
     height: 200px;
     width: 200px;
@@ -27,7 +26,6 @@
     font-size: 1.5rem;
     font-weight: 700;
   }
-
 }
 
 .articles {
@@ -43,7 +41,7 @@
 }
 
 .author-font {
-  font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
+  font-family: Pluto, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 // Kid's card
@@ -55,7 +53,12 @@
   margin-bottom: 24px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 16px;
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
   margin-right: 24px;
   width: 10rem;
   padding: 3rem 0 3rem 0;
@@ -64,7 +67,6 @@
     font-size: 36px;
   }
 }
-
 
 .white-card {
   margin-left: 16px;
@@ -80,8 +82,8 @@
     background-color: #fcb9bb;
     border-radius: 16px;
   }
-.btn {
-  position: relative !important;
+  .btn {
+    position: relative !important;
   }
 }
 
