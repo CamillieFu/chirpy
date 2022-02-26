@@ -52,7 +52,7 @@ function get_tweets() {
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           "X-User-Email": "mom@gmail.com",
-          "X-User-Token": "ssDfQhr11iByJFxJCn4W",
+          "X-User-Token": "4ACAHRgMXiubQZmyt3X-",
         },
       })
         .then((response) => response.json())

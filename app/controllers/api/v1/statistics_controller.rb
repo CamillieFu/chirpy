@@ -5,7 +5,15 @@ class Api::V1::StatisticsController < Api::V1::BaseController
     string = params[:content]
     analyzed_string = IBMToneAnalyzer::Tones.analyze_tone(string)
     tones = analyzed_string["document_tone"]["tones"]
-    Statistic.create(tones)
+    # Statistic.create(tones)
+    @statistic = Statistic.new
+    authorize @statistic
+    tweet_scores = tones.map { |tone| tone[:score] }
+    selected_tone = tones.select { |tone| tone[:score] == tweet_scores.max }
+    tone = selected_tone[0][:tone_id]
+    @statistic.tone = tone
+    @statistic.kid = current_user.kids.first
+    @statistic.save
     # @statistic = Statistic.new(tones_stat)
     # @statistic.kid = current_user.kids.first
     # Each stat would be assigned to the correct user kid, unfortunately a user has many kids...
