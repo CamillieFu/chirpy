@@ -86,10 +86,12 @@ end
 puts "second articles completed"
 
 puts "making fake stats"
-100.times do
+Statistic.destroy_all
+1000.times do
   Statistic.create(
     tone: rand(0..6),
-    kid: Kid.first
+    kid: Kid.first,
+    created_at: rand((DateTime.now - 1.months)..DateTime.now)
   )
 end
 puts "done with stats"
