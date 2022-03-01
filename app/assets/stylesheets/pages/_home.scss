@@ -6,9 +6,15 @@
 
 #banner {
 background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-background-size: contain;
+background-size: 400% 400%;
 background-position: center;
 height: 100vh;
+animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left;}
+  100% {background-position: right;}
 }
 
 .logo {
@@ -42,42 +48,6 @@ height: 100vh;
   margin: 70px auto 0;
   display: inline-block;
 }
-
-// .sideNav {
-//   background-color: #fad0c4;
-//   width: 250px;
-//   height: 100vh;
-//   position: fixed;
-//   right: 0;
-//   top: 0;
-//   z-index: 2;
-//   color: white;
-
-//   nav ul li {
-//       list-style: none;
-//       margin: 50px 20px;
-//     }
-
-//   nav ul li a{
-//       text-decoration: none;
-//       color: white;
-//     }
-// }
-
-// .menuBtn{
-//   width: 50px;
-//   height: 50px;
-//   text-align: center;
-//   position: fixed;
-//   right: 30px;
-//   top: 20px;
-//   border-radius: 3px;
-
-//   img {
-//     width: 20px;
-//     margin-top: 15px;
-//   }
-// }
 
 
 @media screen and (max-width: 770px) {
