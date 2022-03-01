@@ -9,6 +9,7 @@ background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 background-size: cover;
 background-position: center;
 height: 100vh;
+object-fit: cover;
 }
 
 .logo {
@@ -92,20 +93,9 @@ height: 100vh;
 
 // what are we section
 
-#what-we-do {
-  height: 100vh;
-  // background-color: white;
-
-  h1 {
-    font-size: 50px;
-    margin: auto;
-    // font-weight: bold;
-    color: #fad0c4;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    padding-top: 24px;
-  }
+.download-btn {
+  margin: 50px auto 50px;
+  display: inline-block;
 }
 
 // features
@@ -118,6 +108,7 @@ height: 100vh;
 .title-text {
   text-align: center;
   padding-bottom: 70px;
+  padding-top: 70px;
 
   p {
     margin: auto;
