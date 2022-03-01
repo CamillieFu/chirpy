@@ -30,31 +30,46 @@
 </div> %>
 
 <%# features %>
-<section id="what-we-do">
+<section id="feature">
   <div class="title-text">
-    <h1>WHAT ARE WE ABOUT AT CHIRPY?</h1>
+    <h1>WHAT IS CHIRPY?</h1>
+    <%# <h1>Why use Chirpy?</h1> %>
   </div>
   <div class="feature-box">
-    <div class="features-img">
-      <img src="https://media.istockphoto.com/photos/happy-indian-family-with-child-daughter-having-fun-using-laptop-at-picture-id1310078124?k=20&m=1310078124&s=612x612&w=0&h=BBsPtRntcCKOeauddDoHntgQaEIFVTBoaNH6EDK214s=" alt="">
-    </div>
     <div class="features">
+      <h2>EXTENSION</h2>
       <div class="features-description">
-      <%# <div class="feature-icon">
-        <i class="fa fa-solid fa-hand-holding-heart"></i>
-      </div> %>
-      <div class="feature-text">
-        <p>The Chirpy extension provides you with piece of mind and protection at the click of a button.</p>
-        <p>Using technology developed by the brilliant minds at IBM we can automatically remove harmful content without your child ever even having to see it.</p>
-        <p>And, if you want to take it a step further you are able to input your own custom list of topics you want to remove from the web in our 'Dictionary' tab.</p>
-        <p>Learn by using our article library to get up to date with what the kids are going through these days.</p>
-
-        <div class="banner-btn">
-          <p class="text-center pb-1">Download Chirpy today, and make a positive change!</p>
-          <%= link_to 'Download Now!', dashboards_path, class: "btn btn-pink btn-animate" %>
+        <div class="feature-text">
+          <p>The Chirpy extension provides you with piece of mind and protection at the click of a button.</p>
         </div>
       </div>
+      <h2>TECHNOLOGY</h2>
+      <div class="features-description">
+        <div class="feature-text">
+          <p>Using technology developed by the brilliant minds at IBM we can automatically remove harmful content without your child ever even having to see it.</p>
+        </div>
+      </div>
+      <h2>CUSTOMIZATION</h2>
+      <div class="features-description">
+        <div class="feature-text">
+          <p>And, if you want to take it a step further you are able to input your own custom list of topics you want to remove from the web in our 'Dictionary'tab.</p>
+        </div>
+      </div>
+      <h2>RESOURCES</h2>
+      <div class="features-description">
+        <div class="feature-text">
+          <p>Learn by using our article library to get up to date with what the kids are going through these days.</p>
+        </div>
+      </div>
+      <div class="banner-btn">
+        <p class="text-center">Download Chirpy today, and make a positive change!</p>
+        <%=link_to 'Download Now!', dashboards_path,class: "btn btn-pink btn-animate"%>
+      </div>
     </div>
+    <div class="features-img">
+      <img src="https://images.unsplash.com/photo-1640622302099-f10b18de7b16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseSUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+    </div>
+  </div>
 </section>
 
 
