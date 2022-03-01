@@ -44,7 +44,7 @@ function get_tweets() {
   document.querySelectorAll("article").forEach((tweet) => {
     let c_list = Array.from(tweet.classList);
     if (!c_list.includes("checked")) {
-      fetch("http://localhost:3000/api/v1/statistics", {
+      fetch("https://www.chirpyapp.net/", {
         method: "POST",
         body: JSON.stringify({
           content: tweet.innerText,
@@ -52,7 +52,7 @@ function get_tweets() {
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           "X-User-Email": "mom@gmail.com",
-          "X-User-Token": "ssDfQhr11iByJFxJCn4W",
+          "X-User-Token": "o6XfWTy3Q7wHXykn7vBW",
         },
       })
         .then((response) => response.json())
