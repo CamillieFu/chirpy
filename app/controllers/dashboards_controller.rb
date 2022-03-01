@@ -4,5 +4,7 @@ class DashboardsController < ApplicationController
     @kids = current_user.kids.all
     authorize @kids
     @kid = Kid.new
+    @articles = policy_scope(Article).order(created_at: :desc)
+    authorize @articles
   end
 end

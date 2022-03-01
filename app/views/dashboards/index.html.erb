@@ -2,7 +2,7 @@
 <div class="container dash-cont">
   <h2 class="mt-5 ml-5 mb-4">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
-  <div class="row justify-content-evenly ml-3">
+  <div class="row justify-content-between ml-3">
     <div class="col-lg-6 col-12">
       <div class="kid-cards d-flex align-items-center">
         <% current_user.kids.each do |kid| %>
@@ -20,8 +20,6 @@
       </div>
 
     </div>
-    <%# <div class="col-lg-5 col-12 mt-3"> %>
-    <%# need to adjust the left margin/prevent overlapping %>
       <div class="profile-card white-card text-center col-md-8 col-lg-4 col-8 mt-3">
         <h3 class="mt-4">My Profile</h3>
         <div class="text-center">
@@ -31,10 +29,30 @@
           <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
           <%# <img src="" alt="avatar if we provide one"> %>
         </div>
-      <%# </div> %>
     </div>
   </div>
+<div class="suggested-articles ml-5 mb-4 mt-5">
+  <h3 class="text-center">Suggested Articles For You</h3>
+  <div class="row justify-content-center">
+    <% @articles.each_with_index do |article, index| %>
+      <% break if index == 3 %>
+      <%= link_to article_path(article) do %>
+        <div class="article-card d-flex suggested-article">
+          <div class="article-card-info ml-2 mt-1">
+            <h6><%= article.title %></h6>
+            <p class="author-font"><em>By <%= article.author %></em></p>
+            <p class="pb-4"><%= article.content.truncate(100, omission: ' ... (continued)') %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+</div>
+
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="newKidModal" tabindex="-1" role="dialog" aria-labelledby="newKidModalTitle" aria-hidden="true">
