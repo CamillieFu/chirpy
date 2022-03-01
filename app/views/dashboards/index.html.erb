@@ -8,7 +8,11 @@
         <% current_user.kids.each do |kid| %>
           <%= link_to kid_path(kid) do %>
           <div class="kid-card">
-            <p><i class="fa fa-duotone fa-child"></i></p>
+            <% if kid.photo.attached? %>
+              <%= cl_image_tag kid.photo.key, height: 176, width: 94, crop: :fill %>
+            <% else %>
+              <p><i class="fa fa-duotone fa-child"></i></p>
+            <% end %>
             <%= kid.first_name %>
           </div>
           <% end %>
