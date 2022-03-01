@@ -44,7 +44,7 @@ function get_tweets() {
   document.querySelectorAll("article").forEach((tweet) => {
     let c_list = Array.from(tweet.classList);
     if (!c_list.includes("checked")) {
-      fetch("https://www.chirpyapp.net/", {
+      fetch("https://www.chirpyapp.net/api/v1/statistics", {
         method: "POST",
         body: JSON.stringify({
           content: tweet.innerText,
