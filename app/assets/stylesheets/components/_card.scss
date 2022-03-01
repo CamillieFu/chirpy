@@ -91,7 +91,7 @@
 
 .suggested-article {
   height: 200px;
-  width: 320px;
+  width: 300px;
   overflow: scroll;
   .author-font {
   font-size: 14px;
@@ -107,3 +107,7 @@
 //     }
 //   }
 // }
+
+.profile-card {
+  height: 35rem;
+}
