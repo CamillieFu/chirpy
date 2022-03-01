@@ -62,7 +62,7 @@
     #fad0c4 100%
   );
   margin-right: 24px;
-  width: 10rem;
+  width: 11rem;
   padding: 3rem 0 3rem 0;
   text-align: center;
   p {
@@ -89,13 +89,21 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .article-card {
-    width: 300px;
-
-    img {
-      // for some reason couln't make the picture smaller?
-      display: none;
-    }
-  }
+.suggested-article {
+  height: 200px;
+  width: 320px;
+  overflow: scroll;
+  .author-font {
+  font-size: 14px;
+ }
 }
+// @media screen and (max-width: 600px) {
+//   .article-card {
+//     width: 300px;
+
+//     img {
+//       // for some reason couln't make the picture smaller?
+//       display: none;
+//     }
+//   }
+// }
