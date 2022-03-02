@@ -6,9 +6,17 @@
 
 #banner {
 background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-background-size: cover;
+background-size: 200% 200%;
+// Uncomment this and comment out line 9 and also 14 here.
+// background-size: contain;
 background-position: center;
 height: 100vh;
+animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {background-position: left;}
+  100% {background-position: right;}
 }
 
 .logo {
@@ -43,42 +51,6 @@ height: 100vh;
   display: inline-block;
 }
 
-// .sideNav {
-//   background-color: #fad0c4;
-//   width: 250px;
-//   height: 100vh;
-//   position: fixed;
-//   right: 0;
-//   top: 0;
-//   z-index: 2;
-//   color: white;
-
-//   nav ul li {
-//       list-style: none;
-//       margin: 50px 20px;
-//     }
-
-//   nav ul li a{
-//       text-decoration: none;
-//       color: white;
-//     }
-// }
-
-// .menuBtn{
-//   width: 50px;
-//   height: 50px;
-//   text-align: center;
-//   position: fixed;
-//   right: 30px;
-//   top: 20px;
-//   border-radius: 3px;
-
-//   img {
-//     width: 20px;
-//     margin-top: 15px;
-//   }
-// }
-
 
 @media screen and (max-width: 770px) {
   .banner-text h1 {
@@ -92,20 +64,9 @@ height: 100vh;
 
 // what are we section
 
-#what-we-do {
-  height: 100vh;
-  // background-color: white;
-
-  h1 {
-    font-size: 50px;
-    margin: auto;
-    // font-weight: bold;
-    color: #fad0c4;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    padding-top: 24px;
-  }
+.download-btn {
+  margin: 50px auto 50px;
+  display: inline-block;
 }
 
 // features
@@ -118,6 +79,7 @@ height: 100vh;
 .title-text {
   text-align: center;
   padding-bottom: 70px;
+  padding-top: 70px;
 
   p {
     margin: auto;
