@@ -1,8 +1,15 @@
 <% current_user.kids.each do |kid| %>
   <%= link_to kid_path(kid) do %>
-  <div class="kid-card">
-    <p><i class="fa fa-duotone fa-child"></i></p>
-    <%= kid.first_name %>
-  </div>
+      <% if kid.photo.attached? %>
+        <div class="kid-card" style="height: 144px width: 176px">
+          <%= cl_image_tag kid.photo.key, height: 80, width: 80, gravity: :face, crop: :thumb, :className=>"img-fluid", :style=>"border-radius: 50%" %>
+          <p class="mt-3 mb-0" style="font-size: 16px"><%= kid.first_name %></p>
+        </div>
+      <% else %>
+        <div class="kid-card">
+          <p><i class="fa fa-duotone fa-child"></i></p>
+          <%= kid.first_name %>
+        </div>
+      <% end %>
   <% end %>
 <% end %>
