@@ -1,0 +1,5 @@
+meta_product_name: "Chirpy"
+meta_title: "Chirpy. Protect your children without overreach"
+meta_description: "Using technology developed by the brilliant minds at IBM we can automatically remove harmful content without your child ever even having to see it."
+meta_image: "teen1.png" # should exist in `app/assets/images/`
+# twitter_account: "@chirpy_account"   # required for Twitter Cards
