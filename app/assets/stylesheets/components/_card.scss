@@ -1,16 +1,17 @@
 // Article's card
 .article-card {
   padding: 16px;
-  overflow: scroll;
-  margin: 16px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  width: 500px;
-  height: 260px;
+  // overflow: scroll;
+  margin: 8px 0px 0px 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  width: 95%;
   color: black;
   &:hover {
-    padding: -20px;
+    // padding: -20px;
+    h3 {
+      color: $chirpy-pink-dark;
+    }
   }
-
 
   img {
     height: 200px;
@@ -23,11 +24,10 @@
   }
 
   h3 {
-    font-family: utopia-std, Georgia, serif;
+    // font-family: utopia-std, Georgia, serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    // font-weight: 700;
   }
-
 }
 
 .articles {
@@ -42,31 +42,27 @@
   }
 }
 
-.author-font {
-  font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
-}
+// .author-font {
+//   font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
+// }
 
 // Kid's card
 .kid-cards {
   padding: 16px;
 }
 
-.white-card {
-  background: white;
-  padding: 16px;
-  border-radius: 16px;
-  margin-bottom: 24px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-}
-
 .kid-card {
   margin-bottom: 24px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 16px;
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
   margin-right: 24px;
-  width: 10rem;
+  width: 11rem;
   padding: 3rem 0 3rem 0;
   text-align: center;
   p {
@@ -74,32 +70,44 @@
   }
 }
 
-
 .white-card {
   margin-left: 16px;
   padding-bottom: 5rem;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   .fa-user {
     padding: 2rem;
     font-size: 56px;
     background-color: #fcb9bb;
     border-radius: 16px;
   }
-.btn {
-  position: relative !important;
+  .btn {
+    position: relative !important;
   }
 }
 
-.stats-card {
-  height: 300px;
+.suggested-article {
+  height: 200px;
+  width: 300px;
+  overflow: scroll;
+  .author-font {
+  font-size: 14px;
+ }
 }
+// @media screen and (max-width: 600px) {
+//   .article-card {
+//     width: 300px;
 
-@media screen and (max-width: 600px) {
-  .article-card {
-    width: 300px;
+//     img {
+//       // for some reason couln't make the picture smaller?
+//       display: none;
+//     }
+//   }
+// }
 
-    img {
-      // for some reason couln't make the picture smaller?
-      display: none;
-    }
-  }
+.profile-card {
+  height: 35rem;
 }

@@ -1,5 +1,4 @@
 const initCalc_age = () => {
-  console.log("hello");
   const date_present = document.getElementById("calc_age");
   if (date_present) {
     const dob = document.getElementById("dob");

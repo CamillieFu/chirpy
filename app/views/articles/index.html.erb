@@ -1,21 +1,27 @@
-<%= render 'shared/navbar' %>
+<%# <%= render 'shared/navbar' %>
 <div class="container dash-cont">
   <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
-  <h1 class="text-center m-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-  <div class="row justify-content-center articles">
-  <%# might be nice to make a tabs thing here to search by topic etc %>
-    <% @articles.each do |article| %>
-      <%= link_to article_path(article) do %>
-        <div class="article-card d-flex">
-          <div class="article-card-info ml-2 mt-1">
-            <h3><%= article.title %></h3>
-            <p class="author-font"><em>By <%= article.author %></em></p>
-            <p class="pb-4"><%= article.content.truncate(120, omission: ' ... (continued)') %></p>
-          </div>
-          <img src="https://images.unsplash.com/photo-1644561219849-1f91f0d19852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80" alt="">
-        </div>
-      <% end %>
-    <% end %>
+  <div class="mb-3" data-controller="refresh-list">
+    <div class="row justify-content-center">
+      <h1 class="text-center mt-5">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+      <div class="col-11 pl-0 mb-1">
+        <%= form_with url: articles_path, method: :get, class: 'search-bar', html: { data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                            class: "search-bar-input",
+                            placeholder: "Search all articles",
+                            aria: { label: "search" },
+                            value: params[:query],
+                            data: {
+                              refresh_list_target: "searchInput",
+                              action: "keyup->refresh-list#update"
+                            } %>
+          <%= button_tag type: 'submit', class: "search-bar-submit", aria: { label: "submit-search" } do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'list', articles: @articles %>
   </div>
 </div>

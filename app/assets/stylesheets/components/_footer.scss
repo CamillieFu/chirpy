@@ -7,14 +7,14 @@
   margin-top: 54px;
 ;
 
-  .title-text {
+  .title-text-footer {
     text-align: center;
     padding-bottom: 36px;
 
     p {
       margin: auto;
       font-size: 20px;
-      font-weight: bold;
+      // font-weight: bold;
       color: white;
       position: relative;
       z-index: 1;
@@ -69,22 +69,22 @@
 
 .social-links {
   text-align: center;
+}
 
-  .fa-brands {
-      height: 40px;
-      width: 40px;
-      font-size: 20px;
-      line-height: 40px;
-      border: 1px solid white;
-      margin: 40px 5px 0;
-      color: white;
-      cursor: pointer;
-      transition: .5s;
+.social-links .fab {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid white;
+    margin: 40px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
     }
 
-    .fa-brands:hover{
+  .social-links .fab:hover {
       background: #ff9a9e;
       color: white;
       transform: translateY(-7px);
     }
-}

@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
   "name": "Chirpy",
-  "description": "Chrome extension workshop for Le Wagon Tokyo",
+  "description": "Chirpy filter with IBM Tone Analyzer",
   "author": "Chirpy team",
   "version": "1",
   "permissions": ["tabs"],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*.twitter.com/*"],
       "js": ["scripts/get_tweets.js"]
     }
   ],
@@ -19,9 +19,9 @@
     "default_title": "Chirpy"
   },
   "icons": {
-    "16": "images/icon16.png",
-    "32": "images/icon32.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
+    "16": "images/chirpy16.png",
+    "32": "images/chirpy36.png",
+    "48": "images/chirpy48.png",
+    "128": "images/chirpy128.png"
   }
 }

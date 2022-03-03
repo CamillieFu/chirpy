@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   post 'kids/:id/', to: 'kids#add', as: "add_word"
   # ask about where this route should be to avoid confusion with kids#destroy
   # need help with route - not connecting
-  delete 'kids/:id/', to: 'kids#remove', as: "remove_word"
+  delete 'kids/:id/:word', to: 'kids#remove', as: "remove_word"
   devise_for :users
   root to: 'pages#home'
+  get 'pages/support'
+
   resources :dashboards, only: :index
   resources :kids do
     resources :dictionaries do

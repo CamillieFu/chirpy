@@ -49,26 +49,29 @@ class KidsController < ApplicationController
   end
 
   def add
+    authorize @kid
     word = params[:word]
     dictionary = @kid.dictionary
     words = dictionary.words
-    words << word
-    dictionary.save
-    authorize @kid
+    if words.include?(word)
+      redirect_to kid_path(@kid), flash:{ alert: "Word is already being blocked!"}
+    else
+      words << word
+      dictionary.save
 
-    redirect_to kid_path(@kid)
+      redirect_to kid_path(@kid)
+    end
   end
 
   def remove
     # will refactor later if I  have time to a dictionary controller?
-    raise
     word = params[:word]
     dictionary = @kid.dictionary
-    word = dictionary.words(word)
-    word.delete
+    dictionary.words.delete(word)
     dictionary.save
     authorize @kid
     redirect_to kid_path(@kid)
+    # raise
   end
 
   private

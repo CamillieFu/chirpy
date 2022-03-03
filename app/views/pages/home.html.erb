@@ -1,16 +1,6 @@
 <section id="banner">
   <%# <%= image_tag('logo.png') %>
 
-  <div class="signIn">
-    <% if user_signed_in? %>
-      <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-white btn-animate" %>
-    <%  else %>
-    <% end %>
-      <%# <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-dark %>
-      <%# <a href="#" class="btn btn-white btn-animate">Log In</a> %>
-  </div>
-
   <div class="banner-text">
     <h1>Chirpy.</h1>
     <p>Towards a more positive future, together.</p>
@@ -40,9 +30,41 @@
 </div> %>
 
 <%# features %>
-<section id="what-we-do">
+<section id="feature">
   <div class="title-text">
-    <h1>WHAT ARE WE ABOUT AT CHIRPY?</h1>
+    <h1>WHAT'S CHIRPY ALL ABOUT?</h1>
+    <%# <h1>Why use Chirpy?</h1> %>
+  </div>
+  <div class="feature-box">
+    <div class="features">
+      <%# <div class="features-description"> %>
+        <div class="feature-text">
+          <p>The Chirpy extension provides you with complete protection at just the simple click of a button.</p>
+        </div>
+      <%# </div> %>
+      <%# <div class="features-description"> %>
+        <div class="feature-text">
+          <p>Using technology developed by the brilliant minds at IBM we can automatically remove harmful content without your child ever even laying eyes on it.</p>
+        </div>
+      <%# </div> %>
+      <%# <div class="features-description"> %>
+        <div class="feature-text">
+          <p>If you want to take it that little step further you are able to add another layer of customization and protection in our 'Dictionary' tab.</p>
+        </div>
+      <%# </div> %>
+      <%# <div class="features-description"> %>
+        <div class="feature-text">
+          <p>Learn with your kids by using our library to get complete up to date articles and studies about youth and what they go through.</p>
+        </div>
+      <%# </div> %>
+      <div class="download-btn">
+        <p class="text-center">So what are you waiting for? Download Chirpy today, and make a positive change!</p>
+        <%=link_to 'Download Now!', dashboards_path,class: "btn btn-pink btn-animate"%>
+      </div>
+    </div>
+    <div class="features-img">
+      <img src="https://images.unsplash.com/photo-1640622302099-f10b18de7b16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseSUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+    </div>
   </div>
 </section>
 
@@ -54,7 +76,7 @@
   </div>
   <div class="feature-box">
     <div class="features-img">
-      <img src="https://media.istockphoto.com/vectors/young-mother-holding-a-baby-vector-id1328456877?k=20&m=1328456877&s=612x612&w=0&h=UF841OHNrD2MogZD0hJIYzsWAIL8auLEmRXfS_Xdb4w=" alt="">
+      <img src="https://images.unsplash.com/photo-1643818656778-714d7ba6b420?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFtaWx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
     </div>
     <div class="features">
       <h2>Complete Customization.</h2>
@@ -124,7 +146,7 @@
       </div>
     </div>
     <div class="features-img">
-      <img src="https://media.istockphoto.com/vectors/young-mother-holding-a-baby-vector-id1328456862?k=20&m=1328456862&s=612x612&w=0&h=bD8Ph8Hvzk04UCb9iIA2Cdjjp1AXknJU-9AmfEjVHPw=" alt="">
+      <img src="https://images.unsplash.com/photo-1640622302099-f10b18de7b16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseSUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
     </div>
   </div>
 </section>
