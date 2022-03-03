@@ -108,45 +108,46 @@
   </div>
 </section>
 
-<section id="feature">
+<%# testimonials %>
+
+<section id="testimonial">
   <div class="title-text">
-    <h1>WHAT DO OUR USERS THINK?</h1>
-    <%# <h1>Why use Chirpy?</h1> %>
+    <h1>WHAT DO OUR USERS HAVE TO SAY?</h1>
   </div>
-  <div class="feature-box">
-    <div class="features">
-      <h2>Keiran - Melbourne, Australia.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"Since starting to use Chirpy, I never feel the need to be paranoid about what my kids see online."</i></p>
+  <div class="test-row">
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/KeiranBrown1301", alt: "avatar" %>
+        <div class="user-info">
+          <h3>Keiran B, AUS<i class="fab fa-twitter"></i></h3>
+          <small>@KeiranBrown1301</small>
         </div>
       </div>
-      <h2>Megumi - Saitama, Japan.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"The internet is very different to when I was young, so I want my kids to be safe when they are surfing the web."</i></p>
+      <p>Since starting to use Chirpy, I never feel the need to be paranoid about what my kids see online.</p>
+    </div>
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/angrysun", alt: "avatar" %>
+        <div class="user-info">
+          <h3>Steven V, USA <i class="fab fa-twitter"></i></h3>
+          <small>@angrysun</small>
         </div>
-      </div>
-      <h2>Steven - New York, United States.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"I feel more confident to talk to my kids about recent trends online, all because of Chirpy."</i></p>
-        </div>
+    </div>
+    <p>The internet is very different to when I was young, so I want my kids to be safe when they are surfing the web.</p>
+    </div>
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/CamillieFu", alt: "avatar" %>
+      <div class="user-info">
+        <h3>Camillie F, JP <i class="fab fa-twitter"></i></h3>
+        <small>@gazwai</small>
       </div>
     </div>
-    <div class="features-img">
-      <img src="https://images.unsplash.com/photo-1640622302099-f10b18de7b16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseSUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+    <p>I feel more confident to talk to my kids about recent trends online, all because of Chirpy and their amazing extension.</p>
     </div>
   </div>
 </section>
+
+
 
   <%= render 'shared/footer' %>
