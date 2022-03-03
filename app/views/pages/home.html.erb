@@ -56,12 +56,11 @@
         </div>
       </div>
       <div class="download-btn">
-        <p class="feature-text">So what are you waiting for? Download Chirpy today, and make a positive change!</p>
         <%=link_to 'Download Now!', dashboards_path,class: "btn btn-pink btn-animate"%>
       </div>
     </div>
     <div class="features-img">
-      <img src="https://images.unsplash.com/photo-1552130633-955831ed0a13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1605169935945-4b54e1373e6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
     </div>
   </div>
 </section>
@@ -108,43 +107,42 @@
   </div>
 </section>
 
-<section id="feature">
+<%# testimonials %>
+
+<section id="testimonial">
   <div class="title-text">
-    <h1>WHAT DO OUR USERS THINK?</h1>
-    <%# <h1>Why use Chirpy?</h1> %>
+    <h1>WHAT DO OUR USERS HAVE TO SAY?</h1>
   </div>
-  <div class="feature-box">
-    <div class="features">
-      <h2>Keiran - Melbourne, Australia.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"Since starting to use Chirpy, I never feel the need to be paranoid about what my kids see online."</i></p>
+  <div class="test-row">
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/KeiranBrown1301", alt: "avatar" %>
+        <div class="user-info">
+          <h4>Keiran B, AUS<i class="fab fa-twitter"></i></h4>
+          <p>@KeiranBrown1301</p>
         </div>
       </div>
-      <h2>Megumi - Saitama, Japan.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"The internet is very different to when I was young, so I want my kids to be safe when they are surfing the web."</i></p>
-        </div>
-      </div>
-      <h2>Steven - New York, United States.</h2>
-      <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
-        <div class="feature-text">
-          <p><i>"I feel more confident to talk to my kids about recent trends online, all because of Chirpy."</i></p>
-        </div>
-      </div>
+      <p>Since starting to use Chirpy, I never feel the need to be paranoid about what my kids see online.</p>
     </div>
-    <div class="features-img">
-      <img src="https://images.unsplash.com/photo-1640622302099-f10b18de7b16?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZhbWlseSUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/angrysun", alt: "avatar" %>
+        <div class="user-info">
+          <h4>Steven V, USA <i class="fab fa-twitter"></i></h4>
+          <p>@angrysun</p>
+        </div>
+    </div>
+    <p>The internet is very different to when I was young, so I want my kids to be safe when they are surfing the web.</p>
+    </div>
+    <div class="testimonial-col">
+      <div class="user">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/CamillieFu", alt: "avatar" %>
+      <div class="user-info">
+        <h4>Camillie F, JP <i class="fab fa-twitter"></i></h4>
+        <p>@CamilleFu</p>
+     </div>
+    </div>
+    <p>I feel more confident to talk to my kids about recent trends online, all because of Chirpy and their amazing extension.</p>
     </div>
   </div>
 </section>
