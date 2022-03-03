@@ -5,4 +5,5 @@ class Kid < ApplicationRecord
   has_many :statistics
 
   validates :first_name, :last_name, :birthday, presence: true
+  has_one_attached :photo
 end
