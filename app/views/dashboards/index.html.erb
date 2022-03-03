@@ -5,7 +5,7 @@
   <div class="content row justify-content-around">
     <div class="col-lg-8">
       <div class="kid-cards d-flex align-items-center flex-wrap">
-        <%= render 'kids' %>
+        <%= render 'kids', kids: @kids %>
         <div class="new-kid ml-5 mb-3">
           <%= link_to "+", new_kid_path, class: "m-3 add-kid", data: {toggle: "modal", target: "#newKidModal"} %>
           <%# ask TA how to make sure no overlap happens when adjusting screen size %>
