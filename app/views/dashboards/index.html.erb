@@ -3,32 +3,32 @@
   <h2 class="mt-5 ml-5 mb-4">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
   <div class="content row justify-content-around">
-      <div class="row col-lg-8 ">
-        <div class="kid-cards d-flex align-items-center flex-wrap">
-          <%= render 'kids' %>
-          <div class="new-kid ml-5 mb-3">
-            <%= link_to "+", new_kid_path, class: "m-3 add-kid", data: {toggle: "modal", target: "#newKidModal"} %>
-            <%# ask TA how to make sure no overlap happens when adjusting screen size %>
-          </div>
-        </div>
-        <div class="suggested-articles ml-4 mb-4 mt-5 white-card">
-          <h3>Suggested Articles For You</h3>
-          <%= render 'articles', articles: @articles %>
+    <div class="row col-lg-8">
+      <div class="kid-cards d-flex align-items-center flex-wrap">
+        <%= render 'kids' %>
+        <div class="new-kid ml-5 mb-3">
+          <%= link_to "+", new_kid_path, class: "m-3 add-kid", data: {toggle: "modal", target: "#newKidModal"} %>
+          <%# ask TA how to make sure no overlap happens when adjusting screen size %>
         </div>
       </div>
+      <div class="suggested-articles ml-4 mb-4 mt-5 white-card">
+        <h3>Suggested Articles For You</h3>
+        <%= render 'articles', articles: @articles %>
+      </div>
+    </div>
 
-      <div class="row col-lg-4 col-sm-8 justify-content-around">
-        <div class="profile-card white-card text-center mt-3 col-12">
-          <h3 class="mt-4">My Profile</h3>
-          <div class="text-center">
-            <p><i class="fa fa-duotone fa-user"></i></p>
-            <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-            <p><%= "#{current_user.email}" %></p>
-            <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
-            <%# <img src="" alt="avatar if we provide one"> %>
-          </div>
+    <div class="row col-lg-4">
+      <div class=" d-flex profile-card white-card text-center mt-3 col-12">
+        <h3 class="mt-4">My Profile</h3>
+        <div class="text-center">
+          <p><i class="fa fa-duotone fa-user"></i></p>
+          <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+          <p><%= "#{current_user.email}" %></p>
+          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
+          <%# <img src="" alt="avatar if we provide one"> %>
+        </div>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 
