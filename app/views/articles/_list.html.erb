@@ -6,7 +6,7 @@
           <div class="article-card-info ml-2 mt-1">
             <h3><%= article.title %></h3>
             <p class="author-font"><em>By <%= article.author %></em></p>
-            <p class="pb-4"><%= article.content.truncate(200, omission: ' ... (continued)') %></p>
+            <%= simple_format(article.content.truncate(200, omission: ' ... (continued)'))%>
           </div>
         </div>
       <% end %>

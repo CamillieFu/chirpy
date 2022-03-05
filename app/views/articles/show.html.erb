@@ -12,7 +12,7 @@
           <p><%= @article.date.strftime("%b %d, %Y") %></p>
         </div>
       </div>
-      <p class="article-content"><%= @article.content %></p>
+      <p class="article-content"><%= simple_format(@article.content) %></p>
     </div>
   </div>
   <%# <%= link_to 'Back to Articles', articles_path, class: '"btn btn-white btn-animate position-absolute float-right' %>

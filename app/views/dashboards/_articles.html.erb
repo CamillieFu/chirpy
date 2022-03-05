@@ -2,10 +2,10 @@
   <% break if index == 3 %>
   <%= link_to article_path(article) do %>
     <div class="article-card suggested-article">
-      <div class="article-card-info ml-2 mt-1">
+      <div class="article-card-info ml-2">
         <h6><%= article.title %></h6>
         <p class="author-font"><em>By <%= article.author %></em></p>
-        <p class="pb-4"><%= article.content.truncate(100, omission: ' ... (continued)') %></p>
+        <p class=""><%= simple_format(article.content.truncate(100, omission: ' ... (continued)')) %></p>
       </div>
     </div>
   <% end %>
