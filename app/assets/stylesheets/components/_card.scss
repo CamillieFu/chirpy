@@ -4,23 +4,14 @@
   // overflow: scroll;
   margin: 8px 0px 0px 16px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
-  width: 95%;
+  max-width: 80vw;
+  min-width: 80vw;
   color: black;
   &:hover {
     // padding: -20px;
     h3 {
       color: $chirpy-pink-dark;
     }
-  }
-
-  img {
-    height: 200px;
-    width: 200px;
-    min-height: 200px;
-    min-width: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-left: 4px;
   }
 
   h3 {
@@ -43,17 +34,6 @@
     color: black;
   }
 }
-
-.article {
-  p {
-    margin-bottom: 4px;
-    font-weight: 300;
-  }
-}
-
-// .author-font {
-//   font-family: Pluto, 'Helvetica Neue', Helvetica, Arial, sans-serif!important;;
-// }
 
 // Kid's card
 .kid-cards {
@@ -114,16 +94,6 @@
   }
 }
 
-// @media screen and (max-width: 600px) {
-//   .article-card {
-//     width: 300px;
-
-//     img {
-//       // for some reason couln't make the picture smaller?
-//       display: none;
-//     }
-//   }
-// }
 
 .profile-card {
   height: 27rem;
