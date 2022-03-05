@@ -3,9 +3,9 @@
   <%= render 'shared/sidebar'%>
   <% mytime = Date.today %>
   <div class="mb-3" data-controller="refresh-list">
-    <div class="row justify-content-center sticky-top bg-white border-bottom pb-2 box-sh-b">
-      <h1 class="text-center mt-3">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-      <div class="col-11 pl-0 mb-1">
+    <h1 class="text-center mt-4">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
+    <div class="search row justify-content-center pb-2 box-sh-b">
+      <div class="col-11 mb-1 pl-0">
         <%= form_with url: articles_path, method: :get, class: 'search-bar', html: { data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
                             class: "search-bar-input",
