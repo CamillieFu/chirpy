@@ -5,9 +5,9 @@
     <h1 class="my-5 article-title" style="width: 80%"><%= @article.title %></h1>
       <div class="d-flex mb-3">
         <div class="d-flex align-items-center">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/gazwai", class: "avatar-large", alt: "avatar" %>
+          <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/gazwai", class: "avatar-large", alt: "avatar" %>
         </div>
-        <div class="mx-3 align-items-center">
+        <div class="align-items-center">
           <p><em><%= @article.author %></em></p>
           <p><%= @article.date.strftime("%b %d, %Y") %></p>
         </div>

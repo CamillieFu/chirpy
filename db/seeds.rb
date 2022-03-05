@@ -1,4 +1,3 @@
-
 puts "Deleting users ..."
 User.destroy_all
 puts "Done."
@@ -84,6 +83,20 @@ second_urls.each do |url|
   count += 1
 end
 puts "second articles completed"
+
+puts "adding Qanon article"
+Article.create(
+  title: 'Why Teens Are Falling for Conspiracy Theories',
+  date: 'SEP 19, 2020',
+  author: 'Sofia Barnett',
+  content: "OF ALL THE bits of sleepover gossip ever uttered, this was the most unexpected. 'Basically, Hillary Clinton sex traffics children and sacrifices them to Satan or something,' said my friend Beth, straightfaced. 'It is called Pizzagate, or whatever.' It was a Friday night a few weeks ago and even though it was a typical girls night in, it was not a typical conversation—but I took the bait. 'It’s called Pizza what?' I asked, totally unsure of what I was getting myself into. 'Dude, you haven’t heard? Hillary and that one guy, John something? Podesta? They are involved in this massive underground sex trafficking operation. I saw it on TikTok. It is everywhere.' Half convinced she was kidding, I asked if she actually believed something so obviously ridiculous. 'I swear, it is legit,' Beth replied. “There’s been like five videos talking about it in a row. It’s clearly not a coincidence.'
+  At the completion of Beth’s ode to Pizzagate, I stared at her, eyebrows raised, mouth open. Taking note of my expression, she rolled her eyes. Then I did too. But for the rest of the night, I watched my two best friends gush over the medley of conspiracy theories that had been flickering across their TikTok “For You” pages and Twitter feeds, listening to them debate which celebrity had exploited the most children and who had sacrificed who to what Hollywood god. As the conversation intensified, and the lack of actual evidence became more and more obvious, I was overwhelmed by a wave of hysteria. It all seemed so ridiculous. How could these seemingly well-educated teenagers—rising high school seniors, even—be gullible enough to take a 60-second social media video for the truth? Conspiracy theories always seemed so juvenile to me. I knew better. Others, it seemed, did not.
+  On the surface, it makes sense that young people would latch on to conspiracy theories on TikTok. The platform skews young—reportedly one-third of its daily users in the US are 14 or younger—and celebrity gossip has long been the lingua franca of social media for people of all ages. Right-wing conspiracy groups like QAnon have been spreading made-up stories about those in power on networks like Facebook for years. Now those ideas have jumped to TikTok, where they’re being metabolized by much younger consumers. Those things all scan. What doesn’t, however, is why teens believe them.
+  The short answer? TikTok is full of crazy ideas—conspiracies are no different. They've been normalized by the platform where many young people spend most of their time. “Many of these conspiracy sites and stories are entertaining. They are social gathering spots. They are exciting,” says Nancy Rosenblum, Senator Joseph S. Clark Professor of Ethics in Politics and Government at Harvard University and coauthor of A Lot of People Are Saying: The New Conspiracism and the Assault on Democracy. “It’s small wonder that teenagers who ‘live on the screen’ would be drawn to the drama.”
+  Easy access to social media’s redistribution tools worsens this problem. With every like, share, send, and retweet, teenagers are popularizing this content worldwide. “On social media, repetition substitutes for validation,” says Russel Muirhead, a professor of democracy and politics at Dartmouth College and Rosenblum’s coauthor. “Repetition is what breathes air into conspiracy theories, and social media is all about repetition. But repeating something that’s false does not make it more true! Teenagers are just as vulnerable to this as grown-ups.”
+  "
+)
+puts "done"
 
 puts "making fake stats"
 Statistic.destroy_all
