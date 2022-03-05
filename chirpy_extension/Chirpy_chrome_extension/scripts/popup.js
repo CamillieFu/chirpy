@@ -20,5 +20,5 @@ document
   .addEventListener("click", (event) => openRequestedPopup());
 
 function openRequestedPopup() {
-  window.open("https://www.chirpyapp.net", "_blank");
+  window.open("https://www.chirpyapp.net/dashboards", "_blank");
 }
