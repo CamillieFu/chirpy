@@ -17,7 +17,7 @@ import 'aos/dist/aos.css';
 
 const initAOS = () => {
     AOS.init({
-      duration: 2500,
+      duration: 2000,
     });
 }
 
