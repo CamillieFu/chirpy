@@ -49,7 +49,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
 
   def bad_dictionary?(content)
     kids_dictionary = current_user.kids.first.dictionary.words.map(&:upcase)
-    word_array = content.upcase.split.map do |word|
+    word_array = content.upcase.gsub(/(\W|_)/, ' ').gsub(/\s+/, ' ').split.map do |word|
       kids_dictionary.include?(word)
     end
     word_array.any?(true)
