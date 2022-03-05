@@ -1,7 +1,7 @@
 <% current_user.kids.each do |kid| %>
   <%= link_to kid_path(kid) do %>
     <% if kid.photo.attached? %>
-      <div class="kid-card" style="background-image: url('<%= cl_image_path kid.photo.key, height: 190, width: 176, crop: :fill %>')">
+      <div class="kid-card with-image" style="background-image: url('<%= cl_image_path kid.photo.key, height: 200, width: 200, crop: :limit, crop: :fill %>')">
       </div>
     <% else %>
       <div class="kid-card">
