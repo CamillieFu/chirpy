@@ -21,8 +21,8 @@ ActiveStorage.start();
 // External imports
 import "bootstrap";
 
-
 // Internal imports, e.g:
+import { loadDynamicBannerText } from "../components/home.js";
 import { initSelect2 } from "../components/init_select2";
 import { initCalc_age } from "../components/calc_age";
 
@@ -30,6 +30,7 @@ document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   initSelect2();
   initCalc_age();
+  loadDynamicBannerText();
 });
 
 import "controllers"

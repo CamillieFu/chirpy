@@ -3,7 +3,9 @@
 
   <div class="banner-text">
     <h1>Chirpy.</h1>
-    <p>Towards a more positive future, together.</p>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
     <div class="banner-btn">
       <% if user_signed_in? %>
         <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
