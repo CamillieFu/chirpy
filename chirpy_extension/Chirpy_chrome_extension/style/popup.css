@@ -105,6 +105,10 @@ a {
   margin-top: 12px;
 }
 
+#signout_icon {
+  margin-left: 95px;
+}
+
 .text-muted {
   opacity: 0.5;
 }
