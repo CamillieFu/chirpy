@@ -14,3 +14,11 @@ document
 // TODO: Write a function to send a message to the active tab to 'hide_tweets' it
 
 // TODO: Add an event listener to trigger the function above when clicking the 'Hide_tweets' button
+
+document
+  .querySelector("#go_to_chirpy")
+  .addEventListener("click", (event) => openRequestedPopup());
+
+function openRequestedPopup() {
+  window.open("https://www.chirpyapp.net", "_blank");
+}

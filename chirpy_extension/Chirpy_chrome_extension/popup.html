@@ -9,10 +9,37 @@
     <link rel="stylesheet" href="style/popup.css" />
   </head>
   <body>
-    <button id="hide_tweets">
-      <h1>CHIRPIFY</h1>
-      <span><img src="images/chirpy48.png" alt="" /></span>
-    </button>
+    <div class="page-frame-content">
+      <div class="page-frame-header">
+        <img src="images/chirpy48.png" alt="" />
+        <h3>Chirpy <strong class="header-color-text">for Chrome</strong></h3>
+      </div>
+
+      <div class="page-frame-body-container">
+        <div class="page-frame-body">
+          <div>
+            <h1>Hello, Camille!</h1>
+            <p><small class="text-muted">Parent</small></p>
+          </div>
+
+          <div>
+            <h3>Chirpify your content</h3>
+            <button id="hide_tweets" class="btn btn-flat">
+              <h3>Chirpify</h3>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-frame-footer">
+        <h3>Visit Chirpy.net:</h3>
+        <div>
+          <button id="go_to_chirpy" class="btn btn-flat">
+            <h3>Go to chirpy</h3>
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="scripts/popup.js"></script>
   </body>
 </html>

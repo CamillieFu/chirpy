@@ -3,53 +3,108 @@
 /*================================*/
 
 body {
+  width: 320px;
+  height: 276px;
+  background-color: rgb(255, 255, 255);
   text-align: center;
-  font-family: "Helvetica";
-  width: 300px;
+  user-select: none;
   margin: 0;
   padding: 0;
   border: 0;
-  color: white;
-  background-color: #ff9a9e;
+}
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.content-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+.page-frame-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-frame-header {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(245, 245, 245);
+  padding: 16px;
+  height: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.page-frame-body {
+  flex-grow: 1;
+  overflow: scroll;
+  width: 240px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  user-select: none;
-  border-radius: 8px;
+  justify-content: space-around;
 }
-
-h1 {
-  font-size: 1.8em;
-  font-weight: 100;
-  margin: 0.8em;
-}
-
-button {
-  cursor: pointer;
-  width: 90%;
-  height: 3em;
-  font-size: 1.5em;
-  padding: 0 1em;
-  margin: 0.5em;
-  background-image: linear-gradient(
-    45deg,
-    #ff9a9e 0%,
-    #fad0c4 99%,
-    #fad0c4 100%
-  );
-  opacity: 0.9;
-  color: black;
-  border-radius: 8px;
+.page-frame-body-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  outline: none;
 }
 
-button:hover {
-  border: solid 1px white;
+.page-frame-footer {
+  background-color: rgb(255, 255, 255);
+  border-top: 2px solid rgb(245, 245, 245);
+  padding: 16px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-color-text {
+  color: pink;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: pink;
+  transition: background 0.3s ease;
+  border: 0;
+  opacity: 0.6;
+}
+
+.btn-flat:hover {
+  background: pink;
+  color: white;
   opacity: 1;
 }
 
-button:disabled {
+.btn-flat:disabled {
   opacity: 0.3;
+}
+
+#go_to_chirpy {
+  margin-left: 24px;
+}
+
+#hide_tweets {
+  margin-top: 12px;
+}
+
+.text-muted {
+  opacity: 0.5;
 }
