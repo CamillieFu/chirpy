@@ -4,7 +4,7 @@
   <% mytime = Date.today %>
   <div class="mb-3" data-controller="refresh-list">
     <h1 class="text-center mt-4">Popular Articles for <%= mytime.strftime("%B #{mytime.day.ordinalize} %Y") %></h1>
-    <div class="search row justify-content-center pb-2 box-sh-b">
+    <div class="search row justify-content-center pb-2">
       <div class="col-11 mb-1 pl-0">
         <%= form_with url: articles_path, method: :get, class: 'search-bar', html: { data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
