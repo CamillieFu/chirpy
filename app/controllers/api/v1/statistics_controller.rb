@@ -52,7 +52,15 @@ class Api::V1::StatisticsController < Api::V1::BaseController
     word_array = content.upcase.gsub(/(\W|_)/, ' ').gsub(/\s+/, ' ').split.map do |word|
       kids_dictionary.include?(word)
     end
-    word_array.any?(true)
+    if word_array.any?(true)
+      statistic = Statistic.new
+      statistic.tone = 7
+      # can return a boolean since we know that it is true
+      true
+    else
+      # basically will be false - can also change this to just 'return false'
+      # word_array.any?(true)
+      false
   end
 
   def render_true
