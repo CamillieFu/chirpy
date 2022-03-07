@@ -54,7 +54,9 @@ class KidsController < ApplicationController
     dictionary = @kid.dictionary
     words = dictionary.words
     if words.include?(word)
-      redirect_to kid_path(@kid), flash:{ alert: "Word is already being blocked!"}
+      redirect_to kid_path(@kid), flash: { alert: "Word is already being blocked!" }
+    elsif word.empty?
+      redirect_to kid_path(@kid), flash: { alert: "Please enter in a word" }
     else
       words << word
       dictionary.save
