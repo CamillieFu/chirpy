@@ -61,6 +61,7 @@ class Api::V1::StatisticsController < Api::V1::BaseController
       # basically will be false - can also change this to just 'return false'
       # word_array.any?(true)
       false
+    end
   end
 
   def render_true
