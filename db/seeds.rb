@@ -104,7 +104,7 @@ puts "making fake stats"
 Statistic.destroy_all
 1000.times do
   Statistic.create(
-    tone: rand(0..6),
+    tone: rand(0..7),
     kid: Kid.first,
     created_at: rand((DateTime.now - 1.months)..DateTime.now)
   )
