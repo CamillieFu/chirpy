@@ -19,7 +19,7 @@
     </div>
     <div class="white-card mt-5 col-lg-4 col-12 text-center">
       <h3><%= "#{@kid.first_name}'s Detail's" %></h3>
-      <p>Devices: Macbook Pro, Iphone S</p>
+      <p>Devices: Macbook Pro, iPhone SE</p>
       <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path(@kid), class: "btn btn-outline-primary mt-3 mb-3", data: {toggle: "modal", target: "#editKidModal"} %>
     </div>
     <div class="white-card">
@@ -32,7 +32,8 @@
     </div>
     <div class="white-card">
       <p>Types of scanned tweets</p>
-      <%= pie_chart Statistic.group(:tone).count, colors:["#0E10E2", "#7b0901", "#D34E41", "#0099c6", "#3265cc", "#BB1B0F", "#53BFB1"] %>
+      <%# even without the colors this chart is not showing all the options, not sure how to fix. %>
+      <%= pie_chart Statistic.where(tone: %i[0 1 2 3 4 5 6 7]).group(:tone).count, colors:["#0E10E2", "#7b0901", "#D34E41", "#0099c6", "#3265cc", "#BB1B0F", "#53BFB1", "#53BFB2"] %>
     </div>
   </div>
   <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate btn-outline mb-4 float-right"  %>
