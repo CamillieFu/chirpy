@@ -15,8 +15,9 @@ class KidsController < ApplicationController
     if @kid.save
       redirect_to dashboards_path
     else
-      flash.now[:alert] = "Sorry, child wasn't added"
-      render "dashboards/index"
+      render partial: "kids/new"
+      # flash.now[:alert] = "Sorry, child wasn't added"
+      # render "dashboards/index"
     end
   end
 
