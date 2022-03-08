@@ -103,5 +103,4 @@ function sign_out() {
   sign_out_img.classList.remove("visible");
   document.querySelector("#user_signed_in").classList.remove("visible");
   document.querySelector("#user_signed_out").classList.add("visible");
-  alert("You have been signed out");
 }
