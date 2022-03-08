@@ -18,15 +18,35 @@
 
       <div class="page-frame-body-container">
         <div class="page-frame-body">
-          <div>
+          <div id="waiting">
+            <h1>Signing in...</h1>
+          </div>
+          <div id="user_signed_in">
             <h1>Hello, Camille!</h1>
             <p><small class="text-muted">Guardian</small></p>
-          </div>
-
-          <div>
+            <br />
             <h3>Chirpify your content</h3>
             <button id="hide_tweets" class="btn btn-flat">
               <h3>Chirpify</h3>
+            </button>
+          </div>
+          <div id="user_signed_out">
+            <form>
+              <input
+                type="text"
+                id="form_email"
+                name="Email"
+                placeholder="Email"
+              /><br /><br />
+              <input
+                type="password"
+                id="form_api_key"
+                name="API-Key"
+                placeholder="API-Key"
+              /><br /><br />
+            </form>
+            <button id="sign_in" class="btn btn-flat">
+              <h3>Sign In</h3>
             </button>
           </div>
         </div>

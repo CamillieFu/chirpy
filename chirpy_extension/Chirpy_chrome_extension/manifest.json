@@ -3,17 +3,15 @@
   "name": "Chirpy",
   "description": "Chirpy filter with IBM Tone Analyzer",
   "author": "Chirpy team",
-  "version": "1",
-  "permissions": ["tabs"],
+  "version": "2",
+  "permissions": ["tabs", "storage"],
   "content_scripts": [
     {
       "matches": ["https://*.twitter.com/*"],
-      "js": ["scripts/get_tweets.js"]
+      "js": ["scripts/get_tweets.js", "scripts/sign_in.js"]
     }
   ],
-  "background": {
-    // ...
-  },
+  "background": {},
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "Chirpy"
