@@ -6,12 +6,14 @@
       <div class="d-flex mb-3">
         <div class="d-flex align-items-center">
         </div>
-        <div class="align-items-center">
+        <div class="align-items-center article-info">
           <p><em><%= @article.author %></em></p>
           <p><%= @article.date.strftime("%b %d, %Y") %></p>
         </div>
       </div>
-      <p class="article-content"><%= simple_format(@article.content) %></p>
+      <div class="article-content">
+        <%= simple_format(@article.content) %>
+      </div>
     </div>
   </div>
 </div>
