@@ -5,7 +5,9 @@
       <div class="article-card-info ml-2">
         <h6><%= article.title %></h6>
         <p class="author-font"><em>By <%= article.author %></em></p>
-        <p class=""><%= simple_format(article.content.truncate(100, omission: ' ... (continued)')) %></p>
+        <div class="suggested-article-content">
+          <%= simple_format(article.content.truncate(100, omission: ' ... (continued)')) %>
+        </div>
       </div>
     </div>
   <% end %>
