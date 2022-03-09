@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'pages/support'
+  get 'pages/privacy_policy'
 
   resources :dashboards, only: :index
   resources :kids do
