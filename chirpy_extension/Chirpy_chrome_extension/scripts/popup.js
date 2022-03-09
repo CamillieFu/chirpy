@@ -1,8 +1,3 @@
-// Checks on load if the user is authenticated and show the correct screen
-window.onload = (event) => {
-  authFunction();
-};
-
 // Send a message to the active tab to 'hide_tweets'
 function sendHide_tweetsMsg() {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -16,14 +11,19 @@ document
   .querySelector("#hide_tweets")
   .addEventListener("click", (event) => sendHide_tweetsMsg());
 
+// Checks on load if the user is authenticated and show the correct screen
+window.onload = (event) => {
+  authFunction();
+};
+
 // Added an event listener to trigger the functions below when clicking the "sign in" button
 const elem = document.querySelector("#sign_in");
 
 elem.addEventListener("click", (event) => {
   event.preventDefault();
   setEmail_Apikey();
-  sendAuthentic_userMsg();
   authFunction();
+  sendAuth_userMsg_background();
 });
 
 // function to get user input and save it in local storage
@@ -71,19 +71,18 @@ function authFunction() {
     });
 }
 
-// Wrote a function to send stored email & api key to the active tab
-function sendAuthentic_userMsg() {
-  let u = window.localStorage.getItem("user");
-  let k = window.localStorage.getItem("api_key");
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { name: u, key: k, action: "auth" });
-  });
+// Wrote a function to send stored email & api key to the service worker(listens to browser action)
+
+function sendAuth_userMsg_background() {
+  let pop_u = window.localStorage.getItem("user");
+  let pop_k = window.localStorage.getItem("api_key");
+  chrome.runtime.sendMessage({ name: pop_u, key: pop_k, action: "pop_auth" });
 }
 
 // Below sends user to chirpyapp.net
 document
   .querySelector("#go_to_chirpy")
-  .addEventListener("click", (event) => openRequestedPopup());
+  .addEventListener("click", () => openRequestedPopup());
 
 function openRequestedPopup() {
   window.open("https://www.chirpyapp.net/dashboards", "_blank");

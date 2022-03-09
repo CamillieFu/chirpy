@@ -1,18 +1,21 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Chirpy",
-  "description": "Chirpy filter with IBM Tone Analyzer",
+  "description": "Chirpy filter that removes negative content using IBM Tone Analyzer",
   "author": "Chirpy team",
-  "version": "2",
+  "version": "0.2",
   "permissions": ["tabs", "storage"],
+  "host_permissions": ["https://*.twitter.com/*"],
   "content_scripts": [
     {
       "matches": ["https://*.twitter.com/*"],
       "js": ["scripts/get_tweets.js", "scripts/sign_in.js"]
     }
   ],
-  "background": {},
-  "browser_action": {
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
     "default_popup": "popup.html",
     "default_title": "Chirpy"
   },
