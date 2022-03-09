@@ -40,8 +40,8 @@ function get_tweets() {
   document.querySelectorAll("article").forEach((tweet) => {
     let c_list = Array.from(tweet.classList);
     if (!c_list.includes("checked")) {
-      let email_value = window.localStorage.getItem("user");
-      let api_value = window.localStorage.getItem("api_key");
+      let email_value = window.sessionStorage.getItem("user");
+      let api_value = window.sessionStorage.getItem("api_key");
       fetch("https://www.chirpyapp.net/api/v1/statistics", {
         method: "POST",
         body: JSON.stringify({
