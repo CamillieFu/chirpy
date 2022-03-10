@@ -12,7 +12,7 @@
         </li>
         <% end %>
       <% end %>
-      <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-4" do |form| %>
+      <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-2" do |form| %>
         <%= form.text_field :word, placeholder: "Add a word to block", class: "form-control" %>
         <%= form.submit "Add", class: "btn btn-outline-primary" %>
       <% end %>
