@@ -1,24 +1,11 @@
 <% if current_user.photo.attached? %>
-  <div class="profile-card white-card text-center col-lg-4 col-8 mt-3">
-    <h3 class="mt-4">My Profile</h3>
-    <div class="text-center">
-      <div class="d-flex justify-content-center">
-        <div class="profile-card-inner" style="background-image: url('<%= cl_image_path current_user.photo.key, height: 120, width: 113, crop: :fill %>')">
-        </div>
-      </div>
-      <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-      <p><small class="text-muted"><%= "#{current_user.email}" %></small></p>
-      <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
-    </div>
-  </div>
+  <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, class: "profile-card-inner" %>
+  <p><%= "#{current_user.first_name} #{current_user.last_name}" %>
+  <p><%= "#{current_user.email}"%></p>
+  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
 <% else %>
-  <div class="profile-card white-card text-center col-lg-4 col-8 mt-3">
-    <h3 class="mt-4">My Profile</h3>
-    <div class="text-center">
-      <p><i class="fa fa-duotone fa-user"></i></p>
-      <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-      <p><%= "#{current_user.email}" %></p>
-      <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
-    </div>
-  </div>
+  <p><i class="fa fa-duotone fa-user"></i></p>
+  <p><%= "#{current_user.first_name} #{current_user.last_name}" %>
+  <p><%= "#{current_user.email}"%></p>
+  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
 <% end %>
