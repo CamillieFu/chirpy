@@ -102,11 +102,31 @@ puts "done"
 
 puts "making fake stats"
 Statistic.destroy_all
-1000.times do
+
+5000.times do
   Statistic.create(
     tone: rand(0..7),
     kid: Kid.first,
     created_at: rand((DateTime.now - 1.months)..DateTime.now)
   )
 end
+
+puts "still making.... almost done"
+
+2000.times do
+  Statistic.create(
+    tone: rand(0..4),
+    kid: Kid.first,
+    created_at: rand((DateTime.now - 1.months)..DateTime.now)
+  )
+end
+
+700.times do
+  Statistic.create(
+    tone: rand(0..7),
+    kid: Kid.first,
+    created_at: rand((DateTime.now - 2.weeks)..DateTime.now)
+  )
+end
+
 puts "done with stats"
