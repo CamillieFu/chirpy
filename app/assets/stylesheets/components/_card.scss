@@ -8,17 +8,14 @@
   min-width: 80vw;
   color: black;
   &:hover {
-    // padding: -20px;
     h3 {
       color: $chirpy-pink-dark;
     }
   }
 
   h3 {
-    // font-family: utopia-std, Georgia, serif;
     font-size: 1.5rem;
     color: black;
-    // font-weight: 700;
   }
 
   p {
@@ -75,7 +72,7 @@
   margin-bottom: 24px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   .fa-user {
-    padding: 2rem;
+    padding: 2.5rem;
     font-size: 56px;
     background-color: #fcb9bb;
     border-radius: 16px;
@@ -108,9 +105,9 @@
 }
 
 .profile-card-inner {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 16px;
-  height: 120px;
-  width: 113px;
+  height: 150px;
+  width: 145px;
   margin-bottom: 16px;
 }
