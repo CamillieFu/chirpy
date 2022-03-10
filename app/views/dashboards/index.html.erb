@@ -14,12 +14,11 @@
     </div>
     <div class="col-lg-4">
       <div class="profile-card white-card text-center mt-3">
-        <h3 class="mt-4">My Profile</h3>
-        <div class="text-center">
+        <div class="text-center mt-5">
           <p><i class="fa fa-duotone fa-user"></i></p>
           <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
           <p><%= "#{current_user.email}" %></p>
-          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary mb-5" %>
+          <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-primary" %>
           <%# <img src="" alt="avatar if we provide one"> %>
         </div>
       </div>
