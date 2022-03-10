@@ -28,11 +28,11 @@
     </div>
     <div class="white-card">
       <p>Amount of blocked tweets</p>
-      <%= pie_chart Statistic.where(tone: %i[4 5 6 7]).order(:tone).group(:tone).count, colors: ["#BB1B0F", "#7B0901", "#D34E41", "#A23737"] %>
+      <%= pie_chart Statistic.where(tone: %i[4 5 6 7]).order(:tone).group(:tone).count, colors: ["#BB1B0F", "#7B0901", "#D34E41", "#A23737"], donut: true, dataset: {cutout: "35%"} %>
     </div>
     <div class="white-card">
       <p>Types of scanned tweets</p>
-      <%= pie_chart Statistic.where(tone: %i[0 1 2 3 4 5 6 7]).order(:tone).group(:tone).count, colors:["#0099C6", "#3265CC", "#53BFB1", "#0E10E2", "#BB1B0F", "#7B0901", "#D34E41", "#A23737"] %>
+      <%= pie_chart Statistic.where(tone: %i[0 1 2 3 4 5 6 7]).order(:tone).group(:tone).count, colors:["#0099C6", "#3265CC", "#53BFB1", "#0E10E2", "#BB1B0F", "#7B0901", "#D34E41", "#A23737"], donut: true, dataset: {cutout: "35%"} %>
     </div>
   </div>
   <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate btn-outline mb-4 float-right"  %>
