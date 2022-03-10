@@ -12,6 +12,7 @@ background-size: 200% 200%;
 background-position: center;
 height: 100vh;
 animation: bg-animation 5s infinite alternate;
+cursor: default !important;
 }
 
 @keyframes bg-animation {
