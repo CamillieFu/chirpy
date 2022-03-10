@@ -14,13 +14,13 @@
       <% end %>
       <%= form_with url: add_word_path, method: :post, class: "input-group mb-3 mt-2" do |form| %>
         <%= form.text_field :word, placeholder: "Add a word to block", class: "form-control" %>
-        <%= form.submit "Add", class: "btn btn-outline-primary" %>
+        <%= form.submit "Add", class: "btn btn-outline-secondary" %>
       <% end %>
     </div>
     <div class="white-card mt-5 col-lg-4 col-12 text-center">
       <h3><%= "#{@kid.first_name}'s Detail's" %></h3>
       <p>Devices: Macbook Pro, iPhone SE</p>
-      <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path(@kid), class: "btn btn-outline-primary mt-3 mb-3", data: {toggle: "modal", target: "#editKidModal"} %>
+      <%= link_to "Update #{@kid.first_name}'s Details", edit_kid_path(@kid), class: "btn btn-outline-secondary mt-3 mb-3", data: {toggle: "modal", target: "#editKidModal"} %>
     </div>
     <div class="white-card">
       <p>Amount of scanned tweets</p>
