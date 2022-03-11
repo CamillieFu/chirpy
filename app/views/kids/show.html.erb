@@ -1,4 +1,5 @@
-<div class="container">
+<%= render 'shared/sidebar' %>
+<div class="dash-cont">
   <h1 class="border-bottom mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-around">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
@@ -35,7 +36,6 @@
       <%= pie_chart Statistic.where(tone: %i[0 1 2 3 4 5 6 7]).order(:tone).group(:tone).count, colors:["#0099C6", "#3265CC", "#53BFB1", "#0E10E2", "#BB1B0F", "#7B0901", "#D34E41", "#A23737"], donut: true, dataset: {cutout: "35%"} %>
     </div>
   </div>
-  <%= link_to "Back to Dashboard", dashboards_path, class: "btn btn-white btn-animate btn-outline mb-4 float-right"  %>
 </div>
 
 <!-- Modal -->
