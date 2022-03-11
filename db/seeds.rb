@@ -103,7 +103,7 @@ puts "done"
 puts "making fake stats"
 Statistic.destroy_all
 
-4000.times do
+5000.times do
   Statistic.create(
     tone: rand(0..7),
     kid: Kid.first,
@@ -113,7 +113,7 @@ end
 
 puts "still making.... almost done"
 
-3600.times do
+2600.times do
   Statistic.create(
     tone: rand(4..7),
     kid: Kid.first,
