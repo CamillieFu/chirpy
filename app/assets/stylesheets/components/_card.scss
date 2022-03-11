@@ -92,6 +92,15 @@
   height: 200px;
   width: 350px;
   overflow: scroll;
+  border-radius: 6px;
+  h6 {
+    font-weight: 800;
+  }
+  &:hover {
+    h6 {
+      color: $chirpy-pink-dark;
+    }
+  }
   .author-font {
     font-size: 14px;
   }
