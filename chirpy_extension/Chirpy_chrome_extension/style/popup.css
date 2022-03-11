@@ -100,8 +100,9 @@ a {
 }
 
 .btn-flat:active {
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-  transform: translateY(4px);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(2px);
+  transition: ease 0.2s;
 }
 
 #go_to_chirpy {
