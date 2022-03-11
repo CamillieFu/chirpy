@@ -115,7 +115,7 @@ puts "still making.... almost done"
 
 2000.times do
   Statistic.create(
-    tone: rand(0..4),
+    tone: rand(2..6),
     kid: Kid.first,
     created_at: rand((DateTime.now - 1.months)..DateTime.now)
   )
