@@ -99,6 +99,12 @@ a {
   cursor: pointer;
 }
 
+.btn-flat:active {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+  transform: translateY(2px);
+  transition: ease 0.2s;
+}
+
 #go_to_chirpy {
   margin-left: 24px;
 }
