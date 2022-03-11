@@ -14,10 +14,8 @@
   }
 
   h3 {
-    // font-family: utopia-std, Georgia, serif;
     font-size: 1.5rem;
     color: black;
-    // font-weight: 700;
   }
 
   p {
@@ -94,15 +92,6 @@
   height: 200px;
   width: 350px;
   overflow: scroll;
-  border-radius: 6px;
-  h6 {
-    font-weight: 800;
-  }
-  &:hover {
-    h6 {
-      color: $chirpy-pink-dark;
-    }
-  }
   .author-font {
     font-size: 14px;
   }
@@ -113,13 +102,13 @@
 
 
 .profile-card {
-  height: 27rem;
+  height: 26rem;
 }
 
 .profile-card-inner {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 16px;
-  height: 120px;
-  width: 113px;
+  height: 150px;
+  width: 145px;
   margin-bottom: 16px;
 }

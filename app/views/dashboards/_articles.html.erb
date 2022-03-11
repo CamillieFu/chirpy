@@ -6,7 +6,7 @@
         <h6><%= article.title %></h6>
         <p class="author-font"><em>By <%= article.author %></em></p>
         <div class="suggested-article-content">
-          <%= simple_format(article.content.truncate(90, omission: ' ... (continued)')) %>
+          <%= simple_format(article.content.truncate(70, omission: ' ... (continued)')) %>
         </div>
       </div>
     </div>
