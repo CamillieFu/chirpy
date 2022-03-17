@@ -41,30 +41,20 @@
   color: #fff9f9;
 }
 
-@media screen and (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-}
-
 .dash-cont {
   margin-left: 275px;
   margin-right: 46px;
 }
 
 @media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .dash-cont {
     margin-left: 46px;
     margin-right: 46px;
-  }
-
-  .suggested-articles {
-    h3 {
-      text-align: center;
-    }
-  }
-
-  .suggested-article {
-    width: 80vw;
   }
 }
