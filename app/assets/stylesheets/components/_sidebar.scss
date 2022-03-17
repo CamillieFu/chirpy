@@ -51,3 +51,10 @@
   margin-left: 275px;
   margin-right: 46px;
 }
+
+@media screen and (max-width: 600px) {
+  .dash-cont {
+    margin-left: 46px;
+    margin-right: 46px;
+  }
+}
