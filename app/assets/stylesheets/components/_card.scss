@@ -86,11 +86,11 @@
 .suggested-article {
   padding: 16px;
   // overflow: scroll;
-  margin: 8px 0px 0px 16px;
+  margin: 8px 0px 0px 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
   color: black;
   // height: 200px;
-  width: 20vw;
+  width: 25vw;
   overflow: scroll;
   border-radius: 6px;
   h6 {
@@ -120,4 +120,22 @@
   height: 150px;
   width: 145px;
   margin-bottom: 16px;
+}
+
+@media screen and (max-width: 800px) {
+  .suggested-article {
+    width: 55vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .suggested-articles {
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .suggested-article {
+    width: 80vw;
+  }
 }
