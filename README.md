@@ -30,7 +30,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 <!-- Authors -->
-###W ho is Chirpy?
+### Who is Chirpy?
 [Keiran Brown](https://github.com/KeiranBrown1301) 🍻
 [Steven Vasquez](https://github.com/angrysun) 🌞
 [Gary Yau](https://github.com/Gazwai) 🆒
