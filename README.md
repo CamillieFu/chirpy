@@ -8,7 +8,7 @@ Using the Watson API from IBM we are able to get rid of tweets that are deemed t
 As well as this, users are able to create their own blacklist of words that they want to be removed.
 
 ### Installation
-Create and account and download the extension into your browser, then you're good to go.
+Create an account and download the extension into your browser, then you're good to go.
 
 
 <!-- Badges -->
@@ -19,7 +19,7 @@ Create and account and download the extension into your browser, then you're goo
 **Need to make some gifs for here.**
 
 ### Roadmap
-THe Chirpy team is planning to extend the usage to other social media sites such as Facebook or Instagram for browsers. But as this is a passion project, we do not have an approximate timeline as of this time.
+The Chirpy team is planning to extend the usage to other social media sites such as Facebook or Instagram for browsers. But as this is a passion project, we do not have an approximate timeline as of this time.
 
 ### Support
 Please contact us directly at chirpyapp@gmail.com for any enquiries or questions.
@@ -36,4 +36,4 @@ Please make sure to update tests as appropriate.
 [Gary Yau](https://github.com/Gazwai) 🆒
 [Camille Fujisaki](https://github.com/CamillieFu) 👨‍👩‍👧
 
-Special shoutouts to [Yann Klein](https://github.com/yannklein) and the all the team at [Le Wagon Tokyo](https://www.lewagon.com/tokyo).
+Special shoutouts to [Yann Klein](https://github.com/yannklein) and all the team at [Le Wagon Tokyo](https://www.lewagon.com/tokyo).
