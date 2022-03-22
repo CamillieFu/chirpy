@@ -1,27 +1,29 @@
 <section id="banner">
-  <%# <%= image_tag('logo.png') %>
 
   <div class="banner-text" data-aos="fade">
+
     <h1>Chirpy.</h1>
+
     <p>
     Towards a more positive future, together.
       <%# <span id="banner-typed-text"></span> %>
       <%# Above is the typed.js id for the animated p %>
     </p>
+
     <div class="banner-btn">
       <% if user_signed_in? %>
         <%= link_to 'Dashboard', dashboards_path, class: "btn btn-white btn-animate" %>
-        <%# would be nice to use the chirpy icon maybe here? instead of a button? %>
       <%  else %>
         <%= link_to 'Log In', new_user_session_path, class: "btn btn-white btn-animate" %>
       <% end %>
-      <%# <a href="#" class="btn btn-white btn-animate">Start Here</a> %>
     </div>
+
   </div>
 </section>
 
 <%# features %>
 <section class="feature">
+
   <div class="title-text" data-aos="fade">
     <h1>WHAT'S CHIRPY ALL ABOUT?</h1>
     <%# <h1>Why use Chirpy?</h1> %>
@@ -45,7 +47,6 @@
         </div>
 
       <h2>Here to Help.</h2>
-
         <div class="features-description">
           <div class="feature-text">
             <p>We totally get that the internet can feel like a big, scary place at times. We want to help make it safer place for your children.</p>
@@ -59,7 +60,7 @@
     </div>
 
     <div class="features-img">
-      <img src="https://images.unsplash.com/photo-1605169935945-4b54e1373e6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1605169935945-4b54e1373e6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt=" young girl using a laptop">
     </div>
 
   </div>
@@ -68,42 +69,39 @@
 
 
 <section id="feature">
+
   <div class="title-text" data-aos="fade">
     <h1>WHY CHOOSE CHIRPY?</h1>
-    <%# <h1>Why use Chirpy?</h1> %>
   </div>
+
   <div class="feature-box" data-aos="fade-left">
     <div class="features-img">
-      <img src="https://images.unsplash.com/photo-1643818656778-714d7ba6b420?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFtaWx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+      <img src="https://images.unsplash.com/photo-1643818656778-714d7ba6b420?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8ZmFtaWx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="father with his daughter on his shoulders">
     </div>
+
     <div class="features">
+
       <h2>Complete Customization.</h2>
       <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
         <div class="feature-text">
           <p>No need to stress. You can have total control over what your child can see while browsing the web.</p>
         </div>
       </div>
+
       <h2>Non-invasive Design.</h2>
       <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
         <div class="feature-text">
           <p>Protect those who are important to you without making a big deal about it. We use a Chrome extension to do all the work, behind the scenes.</p>
         </div>
       </div>
+
       <h2>Simple as Cake.</h2>
       <div class="features-description">
-        <%# <div class="feature-icon">
-          <i class="fa fa-solid fa-hand-holding-heart"></i>
-        </div> %>
         <div class="feature-text">
           <p>At just the press of a button, Chirpy works to remove harmful content that children shouldn't be exposed to.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -111,40 +109,52 @@
 <%# testimonials %>
 
 <section id="testimonial">
+
   <div class="title-text" data-aos="fade">
     <h1>WHAT DO OUR USERS HAVE TO SAY?</h1>
   </div>
+
   <div class="test-row" data-aos="fade-up">
+
     <div class="testimonial-col">
       <div class="user">
-        <%= image_tag "https://source.unsplash.com/IF9TK5Uy-KI/480x480", alt: "avatar" %>
+        <%= image_tag "https://source.unsplash.com/IF9TK5Uy-KI/480x480", alt: "avatar image" %>
         <div class="user-info">
-          <h4>Janet A, UK<i class="fab fa-twitter"></i></h4>
+          <h4>Janet A, UK
+            <i class="fab fa-twitter"></i>
+          </h4>
           <p>@LittleLady</p>
         </div>
       </div>
-      <p>Since starting to use Chirpy and their extension, I never feel the need to be paranoid about what my kids see.</p>
+        <p>Since starting to use Chirpy and their extension, I never feel the need to be paranoid about what my kids see.</p>
     </div>
+
     <div class="testimonial-col">
       <div class="user">
-        <%= image_tag "https://source.unsplash.com/5aGUyCW_PJw/480x480", alt: "avatar" %>
+        <%= image_tag "https://source.unsplash.com/5aGUyCW_PJw/480x480", alt: "avatar image" %>
         <div class="user-info">
-          <h4>Claude M, FR<i class="fab fa-twitter"></i></h4>
+          <h4>Claude M, FR
+            <i class="fab fa-twitter"></i>
+          </h4>
           <p>@PondOfLilies99</p>
         </div>
+      </div>
+      <p>The internet is different to when I was young, so I want my kids to be safe when they are surfing the web.</p>
     </div>
-    <p>The internet is different to when I was young, so I want my kids to be safe when they are surfing the web.</p>
-    </div>
+
     <div class="testimonial-col">
       <div class="user">
-        <%= image_tag "https://source.unsplash.com/wlOknLg6i94/480x480", alt: "avatar" %>
+        <%= image_tag "https://source.unsplash.com/wlOknLg6i94/480x480", alt: "avatar image" %>
       <div class="user-info">
-        <h4>Judy B, USA<i class="fab fa-twitter"></i></h4>
+        <h4>Judy B, USA
+          <i class="fab fa-twitter"></i>
+        </h4>
         <p>@TigerEyes</p>
      </div>
     </div>
     <p>I feel more confident to talk to my kids about recent trends online, all because of Chirpy and their platform.</p>
     </div>
+
   </div>
 </section>
 
