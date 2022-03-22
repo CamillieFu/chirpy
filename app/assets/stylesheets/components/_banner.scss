@@ -1,0 +1,51 @@
+#banner {
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  background-size: 200% 200%;
+  // Uncomment this and comment out line 9 and also 14 here.
+  // background-size: contain;
+  background-position: center;
+  height: 100vh;
+  animation: bg-animation 5s infinite alternate;
+  cursor: default !important;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+.banner-text {
+  text-align: center;
+  padding-top: 180px;
+  color: white;
+
+  h1 {
+    font-size: 180px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.banner-btn {
+  margin: 70px auto 0;
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 770px) {
+  .banner-text h1 {
+    font-size: 44px;
+  }
+
+  .banner-btn a {
+    display: block;
+    margin: 20px auto;
+  }
+}
