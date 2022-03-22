@@ -36,6 +36,10 @@ function setEmail_Apikey() {
     "api_key",
     document.getElementById("form_api_key").value
   );
+  window.localStorage.setItem(
+    "child_user",
+    document.getElementById("child_user").checked
+  );
   document.getElementById("form_email").value = "";
   document.getElementById("form_api_key").value = "";
 }
@@ -44,6 +48,7 @@ function setEmail_Apikey() {
 function authFunction() {
   let email_value = window.localStorage.getItem("user");
   let api_value = window.localStorage.getItem("api_key");
+  const child_user = document.getElementById("user_type");
   fetch("https://www.chirpyapp.net/api/v1/pages", {
     method: "POST",
     body: JSON.stringify({
@@ -57,10 +62,18 @@ function authFunction() {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data["authentic_user"] === "true") {
-        console.log("user is authentic");
+      if (data["authentic_user"] === "true" && child_user.checked === false) {
+        console.log("user is authentic guardian");
         sign_out_img.classList.add("visible");
         document.querySelector("#user_signed_in").classList.add("visible");
+        document.querySelector("#waiting").classList.add("hidden");
+        document.querySelector("#user_signed_out").classList.remove("visible");
+      } else if (
+        data["authentic_user"] === "true" &&
+        child_user.checked === true
+      ) {
+        console.log("user is authentic child");
+        document.querySelector("#child_signed_in").classList.add("visible");
         document.querySelector("#waiting").classList.add("hidden");
         document.querySelector("#user_signed_out").classList.remove("visible");
       } else {
