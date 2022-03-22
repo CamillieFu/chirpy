@@ -21,8 +21,9 @@
           <div id="waiting">
             <h1>Signing in...</h1>
           </div>
+
           <div id="user_signed_in">
-            <h1>Hello, Camille!</h1>
+            <h1>Hello!</h1>
             <p><small class="text-muted">Guardian</small></p>
             <br />
             <h3>Chirpify your content</h3>
@@ -30,6 +31,19 @@
               <h3>Chirpify</h3>
             </button>
           </div>
+
+          <div id="child_signed_in">
+            <input
+              type="password"
+              id="child_form_api_key"
+              name="API-Key"
+              placeholder="API-Key"
+            /><br /><br />
+            <button id="child_sign_out" class="btn btn-flat">
+              <h3>Sign Out</h3>
+            </button>
+          </div>
+
           <div id="user_signed_out">
             <form>
               <input
@@ -45,12 +59,12 @@
                 placeholder="API-Key"
               /><br /><br />
               <input
-                type="radio"
+                type="checkbox"
                 id="user_type"
                 name="user_type"
-                value="Guardian"
+                value="Child"
               />
-              <label for="Guardian">Click for child</label><br /><br />
+              <label for="Child">Click for child</label><br /><br />
             </form>
             <button id="sign_in" class="btn btn-flat">
               <h3>Sign In</h3>
