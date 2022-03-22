@@ -62,7 +62,7 @@ function authFunction() {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data["authentic_user"] === "true" && child_user.checked === false) {
+      if (data["authentic_user"] === "true" && child_user === "false") {
         console.log("user is authentic guardian");
         sign_out_img.classList.add("visible");
         document.querySelector("#user_signed_in").classList.add("visible");
@@ -100,16 +100,31 @@ function openRequestedPopup() {
 
 // Sign out button
 const sign_out_img = document.querySelector("#signout_icon");
+const sign_out_button = document.querySelector("#child_sign_out");
 
 sign_out_img.addEventListener("click", (event) => {
   event.preventDefault();
   sign_out();
 });
 
+sign_out_button.addEventListener("click", (event) => {
+  event.preventDefault();
+  const api_key = window.localStorage.getItem("api_key");
+  const api_input = document.getElementById("child_form_api_key");
+  if (api_key === api_input.value) {
+    sign_out();
+  } else {
+    api_input.value = "";
+    alert("Wrong API key");
+  }
+});
+
 function sign_out() {
   window.localStorage.removeItem("user");
   window.localStorage.removeItem("api_key");
+  window.localStorage.removeItem("child_user");
   sign_out_img.classList.remove("visible");
   document.querySelector("#user_signed_in").classList.remove("visible");
+  document.querySelector("#child_signed_in").classList.remove("visible");
   document.querySelector("#user_signed_out").classList.add("visible");
 }
