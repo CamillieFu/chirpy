@@ -48,7 +48,7 @@ function setEmail_Apikey() {
 function authFunction() {
   let email_value = window.localStorage.getItem("user");
   let api_value = window.localStorage.getItem("api_key");
-  const child_user = document.getElementById("user_type");
+  let child_user = window.localStorage.getItem("child_user");
   fetch("https://www.chirpyapp.net/api/v1/pages", {
     method: "POST",
     body: JSON.stringify({
@@ -68,10 +68,7 @@ function authFunction() {
         document.querySelector("#user_signed_in").classList.add("visible");
         document.querySelector("#waiting").classList.add("hidden");
         document.querySelector("#user_signed_out").classList.remove("visible");
-      } else if (
-        data["authentic_user"] === "true" &&
-        child_user.checked === true
-      ) {
+      } else if (data["authentic_user"] === "true" && child_user == "true") {
         console.log("user is authentic child");
         document.querySelector("#child_signed_in").classList.add("visible");
         document.querySelector("#waiting").classList.add("hidden");
