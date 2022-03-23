@@ -21,33 +21,33 @@ const elem = document.querySelector("#sign_in");
 
 elem.addEventListener("click", (event) => {
   event.preventDefault();
-  setEmail_Apikey();
+  setEmail_Apitoken();
   authFunction();
   sendAuth_userMsg_background();
 });
 
 // function to get user input and save it in local storage
-function setEmail_Apikey() {
+function setEmail_Apitoken() {
   window.localStorage.setItem(
     "user",
     document.getElementById("form_email").value
   );
   window.localStorage.setItem(
-    "api_key",
-    document.getElementById("form_api_key").value
+    "api_token",
+    document.getElementById("form_api_token").value
   );
   window.localStorage.setItem(
     "child_user",
     document.getElementById("child_user").checked
   );
   document.getElementById("form_email").value = "";
-  document.getElementById("form_api_key").value = "";
+  document.getElementById("form_api_token").value = "";
 }
 
 // Checks if the user is authenticated and show the correct screen
 function authFunction() {
   let email_value = window.localStorage.getItem("user");
-  let api_value = window.localStorage.getItem("api_key");
+  let api_value = window.localStorage.getItem("api_token");
   let child_user = window.localStorage.getItem("child_user");
   fetch("https://www.chirpyapp.net/api/v1/pages", {
     method: "POST",
@@ -81,12 +81,12 @@ function authFunction() {
     });
 }
 
-// Wrote a function to send stored email & api key to the service worker(listens to browser action)
+// Wrote a function to send stored email & api token to the service worker(listens to browser action)
 
 function sendAuth_userMsg_background() {
   let pop_u = window.localStorage.getItem("user");
-  let pop_k = window.localStorage.getItem("api_key");
-  chrome.runtime.sendMessage({ name: pop_u, key: pop_k, action: "pop_auth" });
+  let pop_k = window.localStorage.getItem("api_token");
+  chrome.runtime.sendMessage({ name: pop_u, token: pop_k, action: "pop_auth" });
 }
 
 // Below sends user to chirpyapp.net
@@ -109,19 +109,19 @@ sign_out_img.addEventListener("click", (event) => {
 
 sign_out_button.addEventListener("click", (event) => {
   event.preventDefault();
-  const api_key = window.localStorage.getItem("api_key");
-  const api_input = document.getElementById("child_form_api_key");
-  if (api_key === api_input.value) {
+  const api_token = window.localStorage.getItem("api_token");
+  const api_input = document.getElementById("child_form_api_token");
+  if (api_token === api_input.value) {
     sign_out();
   } else {
     api_input.value = "";
-    alert("Wrong API key");
+    alert("Wrong API token");
   }
 });
 
 function sign_out() {
   window.localStorage.removeItem("user");
-  window.localStorage.removeItem("api_key");
+  window.localStorage.removeItem("api_token");
   window.localStorage.removeItem("child_user");
   sign_out_img.classList.remove("visible");
   document.querySelector("#user_signed_in").classList.remove("visible");

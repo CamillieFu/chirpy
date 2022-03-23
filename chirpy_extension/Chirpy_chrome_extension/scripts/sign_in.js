@@ -9,9 +9,9 @@ if (window.location.href.includes("twitter.com")) {
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "back_auth") {
     let back_user = request.name;
-    let back_key = request.key;
+    let back_token = request.token;
     window.sessionStorage.setItem("user", back_user);
-    window.sessionStorage.setItem("api_key", back_key);
+    window.sessionStorage.setItem("api_token", back_token);
     console.log("changed");
   }
 });

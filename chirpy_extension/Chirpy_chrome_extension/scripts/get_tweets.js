@@ -41,7 +41,7 @@ function get_tweets() {
     let c_list = Array.from(tweet.classList);
     if (!c_list.includes("checked")) {
       let email_value = window.sessionStorage.getItem("user");
-      let api_value = window.sessionStorage.getItem("api_key");
+      let api_value = window.sessionStorage.getItem("api_token");
       fetch("https://www.chirpyapp.net/api/v1/statistics", {
         method: "POST",
         body: JSON.stringify({
