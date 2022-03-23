@@ -1,3 +1,8 @@
+![GitHub contributors](https://img.shields.io/github/contributors/CamillieFu/chirpy)
+![GitHub last commit](https://img.shields.io/github/last-commit/CamillieFu/chirpy)
+![GitHub language count](https://img.shields.io/github/languages/count/CamillieFu/chirpy)
+![GitHub top language](https://img.shields.io/github/languages/top/CamillieFu/chirpy)
+
 <!-- Name -->
 # Chirpy 🐣💕
 <!-- Description -->
