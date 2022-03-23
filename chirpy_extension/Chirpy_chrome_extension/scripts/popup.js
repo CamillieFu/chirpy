@@ -85,8 +85,8 @@ function authFunction() {
 
 function sendAuth_userMsg_background() {
   let pop_u = window.localStorage.getItem("user");
-  let pop_k = window.localStorage.getItem("api_token");
-  chrome.runtime.sendMessage({ name: pop_u, token: pop_k, action: "pop_auth" });
+  let pop_t = window.localStorage.getItem("api_token");
+  chrome.runtime.sendMessage({ name: pop_u, token: pop_t, action: "pop_auth" });
 }
 
 // Below sends user to chirpyapp.net
