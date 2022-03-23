@@ -3,9 +3,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     let service_worker_name = request.name;
     let service_worker_token = request.token;
     let service_worker_child = request.child;
-    chrome.storage.sync.set({ user: service_worker_name });
-    chrome.storage.sync.set({ api_token: service_worker_token });
-    chrome.storage.sync.set({ child_user: service_worker_child });
+    chrome.storage.sync.set({
+      user: service_worker_name,
+      api_token: service_worker_token,
+      child_user: service_worker_child,
+    });
     console.log(request.name);
     console.log("changed");
     return true;
