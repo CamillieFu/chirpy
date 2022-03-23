@@ -36,6 +36,10 @@ function setEmail_Apikey() {
     "api_key",
     document.getElementById("form_api_key").value
   );
+  window.localStorage.setItem(
+    "child_user",
+    document.getElementById("child_user").checked
+  );
   document.getElementById("form_email").value = "";
   document.getElementById("form_api_key").value = "";
 }
@@ -44,6 +48,7 @@ function setEmail_Apikey() {
 function authFunction() {
   let email_value = window.localStorage.getItem("user");
   let api_value = window.localStorage.getItem("api_key");
+  let child_user = window.localStorage.getItem("child_user");
   fetch("https://www.chirpyapp.net/api/v1/pages", {
     method: "POST",
     body: JSON.stringify({
@@ -57,10 +62,15 @@ function authFunction() {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data["authentic_user"] === "true") {
-        console.log("user is authentic");
+      if (data["authentic_user"] === "true" && child_user === "false") {
+        console.log("user is authentic guardian");
         sign_out_img.classList.add("visible");
         document.querySelector("#user_signed_in").classList.add("visible");
+        document.querySelector("#waiting").classList.add("hidden");
+        document.querySelector("#user_signed_out").classList.remove("visible");
+      } else if (data["authentic_user"] === "true" && child_user == "true") {
+        console.log("user is authentic child");
+        document.querySelector("#child_signed_in").classList.add("visible");
         document.querySelector("#waiting").classList.add("hidden");
         document.querySelector("#user_signed_out").classList.remove("visible");
       } else {
@@ -90,16 +100,31 @@ function openRequestedPopup() {
 
 // Sign out button
 const sign_out_img = document.querySelector("#signout_icon");
+const sign_out_button = document.querySelector("#child_sign_out");
 
 sign_out_img.addEventListener("click", (event) => {
   event.preventDefault();
   sign_out();
 });
 
+sign_out_button.addEventListener("click", (event) => {
+  event.preventDefault();
+  const api_key = window.localStorage.getItem("api_key");
+  const api_input = document.getElementById("child_form_api_key");
+  if (api_key === api_input.value) {
+    sign_out();
+  } else {
+    api_input.value = "";
+    alert("Wrong API key");
+  }
+});
+
 function sign_out() {
   window.localStorage.removeItem("user");
   window.localStorage.removeItem("api_key");
+  window.localStorage.removeItem("child_user");
   sign_out_img.classList.remove("visible");
   document.querySelector("#user_signed_in").classList.remove("visible");
+  document.querySelector("#child_signed_in").classList.remove("visible");
   document.querySelector("#user_signed_out").classList.add("visible");
 }
