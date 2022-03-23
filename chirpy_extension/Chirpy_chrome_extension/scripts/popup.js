@@ -86,7 +86,13 @@ function authFunction() {
 function sendAuth_userMsg_background() {
   let pop_u = window.localStorage.getItem("user");
   let pop_t = window.localStorage.getItem("api_token");
-  chrome.runtime.sendMessage({ name: pop_u, token: pop_t, action: "pop_auth" });
+  let pop_c = window.localStorage.getItem("child_user");
+  chrome.runtime.sendMessage({
+    name: pop_u,
+    token: pop_t,
+    child: pop_c,
+    action: "pop_auth",
+  });
 }
 
 // Below sends user to chirpyapp.net
@@ -105,6 +111,7 @@ const sign_out_button = document.querySelector("#child_sign_out");
 sign_out_img.addEventListener("click", (event) => {
   event.preventDefault();
   sign_out();
+  sendAuth_userMsg_background();
 });
 
 sign_out_button.addEventListener("click", (event) => {
@@ -113,6 +120,7 @@ sign_out_button.addEventListener("click", (event) => {
   const api_input = document.getElementById("child_form_api_token");
   if (api_token === api_input.value) {
     sign_out();
+    sendAuth_userMsg_background();
   } else {
     api_input.value = "";
     alert("Wrong API token");
