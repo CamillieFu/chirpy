@@ -1,10 +1,11 @@
+// Checks if the user is a child_user and checks every 5 seconds
 const interval = setInterval(function () {
   let = child_user = window.sessionStorage.getItem("child_user");
   if (child_user === "true") {
     get_tweets();
     console.log("child working");
   }
-}, 3000);
+}, 5000);
 
 interval;
 
@@ -40,7 +41,6 @@ function get_tweets() {
             console.log("not bad");
           } else {
             console.log(data);
-            clearInterval(interval);
           }
         });
     }
