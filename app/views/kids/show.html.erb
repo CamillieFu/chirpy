@@ -26,15 +26,15 @@
     </div>
     <div class="white-card">
       <p>Amount of scanned tweets</p>
-      <%= line_chart Statistic.group_by_day(:created_at).count, label: " scanned tweets", min:0, max:400, curve: false %>
+      <%= line_chart Statistic.where(kid_id: @kid.id).group_by_day(:created_at).count, label: " scanned tweets", min:0, max:400, curve: false %>
     </div>
     <div class="white-card">
       <p>Amount of blocked tweets</p>
-      <%= pie_chart Statistic.where(tone: %i[4 5 6 7]).order(:tone).group(:tone).count, colors: ["#9b2226", "#bb3e03", "#ca6702", "#ee9b00"], donut: true, dataset: {cutout: "40%"} %>
+      <%= pie_chart Statistic.where(kid_id: @kid.id).where(tone: %i[4 5 6 7]).order(:tone).group(:tone).count, colors: ["#9b2226", "#bb3e03", "#ca6702", "#ee9b00"], donut: true, dataset: {cutout: "40%"} %>
     </div>
     <div class="white-card">
       <p>Types of scanned tweets</p>
-      <%= pie_chart Statistic.where(tone: %i[0 1 2 3 4 5 6 7]).order(:tone).group(:tone).count, colors:["#005f73", "#0a9396", "#0096c7", "#94d2bd", "#9b2226", "#bb3e03", "#ca6702", "#ee9b00"], donut: true, dataset: {cutout: "40%"} %>
+      <%= pie_chart Statistic.where(kid_id: @kid.id).where(tone: %i[0 1 2 3 4 5 6 7]).order(:tone).group(:tone).count, colors:["#005f73", "#0a9396", "#0096c7", "#94d2bd", "#9b2226", "#bb3e03", "#ca6702", "#ee9b00"], donut: true, dataset: {cutout: "40%"} %>
     </div>
   </div>
 </div>
