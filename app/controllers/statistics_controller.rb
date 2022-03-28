@@ -1,22 +1,5 @@
 class StatisticsController < ApplicationController
   def create
-    # tones = [
-    #   {
-    #     "score": 0.685309,
-    #     "tone_id": "anger",
-    #     "tone_name": "Anger"
-    #   },
-    #   {
-    #     "score": 0.568183,
-    #     "tone_id": "fear",
-    #     "tone_name": "Fear"
-    #   },
-    #   {
-    #     "score": 0.724923,
-    #     "tone_id": "confident",
-    #     "tone_name": "Confident"
-    #   }
-    # ]
     @statistic = Statistic.new
     authorize @statistic
     tweet_scores = tones.map { |tone| tone[:score] }
