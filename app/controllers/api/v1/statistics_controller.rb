@@ -54,14 +54,11 @@ class Api::V1::StatisticsController < Api::V1::BaseController
     end
     if word_array.any?(true)
       statistic = Statistic.new
-      statistic.kid = Kid.first
+      statistic.kid = current_user.kids.first
       statistic.tone = 7
       statistic.save
-      # can return a boolean since we know that it is true
       true
     else
-      # basically will be false - can also change this to just 'return false'
-      # word_array.any?(true)
       false
     end
   end
