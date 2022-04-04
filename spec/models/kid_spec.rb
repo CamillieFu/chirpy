@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Kid, type: :model do
   let!(:user) { User.new(first_name: 'Gill', last_name: 'Beans') }
-  let!(:dictionary) { Dictionary.new() }
+  let!(:dictionary) { Dictionary.new(words: 'mofo') }
   let!(:kid) { Kid.new(first_name: 'Brand', last_name: 'New', birthday: '2022-04-01',
               user: user, dictionary: dictionary)}
 
