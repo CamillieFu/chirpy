@@ -1,10 +1,10 @@
 <%= render 'shared/navbar' %>
 <div class="dash-cont">
-  <h2 class="mt-5 ml-3 mb-4">Hello, <%= current_user.first_name %></h2>
+  <h2 class="mt-5 ml-3 mb-4" id="header-center">Hello, <%= current_user.first_name %></h2>
   <%= render 'shared/sidebar' %>
   <div class="content row justify-content-around">
     <div class="col-lg-8">
-      <div class="kid-cards d-flex align-items-center flex-wrap">
+      <div class="kid-cards d-flex align-items-center flex-wrap" id="card-center">
         <%= render 'kids', kids: @kids %>
         <div class="new-kid ml-5 mb-3">
           <%= link_to "+", new_kid_path, class: "m-3 add-kid", data: {toggle: "modal", target: "#newKidModal"} %>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="col-lg-4">
-      <div class="profile-card white-card text-center mt-3">
+      <div class="profile-card white-card text-center mt-3" id="margin-left-zero">
         <div class="text-center mt-5">
           <%= render 'profile_card' %>
         </div>
