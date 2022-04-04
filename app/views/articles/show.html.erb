@@ -1,7 +1,6 @@
-<%= render 'shared/sidebar'%>
-<div class="container dash-cont my-5">
+<div class="container dash-cont-article my-5">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-8 article">
+    <div class="col-12 article">
     <h1 class="my-5 article-title"><%= @article.title %></h1>
       <div class="d-flex mb-3">
         <div class="d-flex align-items-center">
@@ -15,5 +14,6 @@
         <%= simple_format(@article.content) %>
       </div>
     </div>
+    <%= link_to "Back to Articles", articles_path, class: "btn btn-pinky btn-animate", id: "button-display" %>
   </div>
 </div>

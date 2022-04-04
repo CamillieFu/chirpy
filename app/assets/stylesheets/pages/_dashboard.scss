@@ -19,3 +19,32 @@
     transition: ease, 30ms;
   }
 }
+
+.new-kid {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  #header-center {
+    text-align: center;
+    margin-left: 0 !important;
+  }
+
+  #card-center {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .white-card {
+    margin-left: 0;
+  }
+
+  .kid-card {
+    margin-right: 0;
+  }
+
+  .new-kid {
+    margin-left: 0;
+  }
+}

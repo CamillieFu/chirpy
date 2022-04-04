@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/sidebar' %>
 <div class="dash-cont">
-  <h1 class="border-bottom mt-5 ml-3"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
+  <h1 class="border-bottom mt-5 ml-3" id="header-center"><%= "#{@kid.first_name} #{@kid.last_name}'s Information" %></h1>
   <div class="row justify-content-around">
     <div class="col-lg-7 col-12 mt-5 dictionary-card white-card text-center">
       <h3><%= "#{@kid.first_name}'s Blocked Word List" %></h3>

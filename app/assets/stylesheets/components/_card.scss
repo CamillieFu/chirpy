@@ -141,6 +141,13 @@
   }
 
   .suggested-article {
-    width: 80vw;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+
+  .article {
+    padding-right: 35px !important;
+    padding-left: 35px !important;
   }
 }
