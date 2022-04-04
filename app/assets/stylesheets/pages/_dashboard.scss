@@ -20,14 +20,20 @@
   }
 }
 
+.new-kid {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 600px) {
   #header-center {
     text-align: center;
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 
   #card-center {
     justify-content: center;
+    flex-direction: column;
   }
 
   .white-card {
@@ -38,17 +44,7 @@
     margin-right: 0;
   }
 
-  .suggested-article {
+  .new-kid {
     margin-left: 0;
-    margin-bottom: 12px;
-    width: 76vw vw;
   }
-}
-
-@media screen and (max-width: 600px) {
-  // #margin-left-zero {
-  //   margin-left: 0;
-  // }
-
-
 }

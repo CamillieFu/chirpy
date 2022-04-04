@@ -8,6 +8,6 @@
   <p><i class="fa fa-duotone fa-user"></i></p>
   <p><%= "#{current_user.first_name} #{current_user.last_name}" %>
   <p><%= "#{current_user.email}"%></p>
-  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-secondary" %>
   <p><%= "API Token: #{current_user.authentication_token}" %></p>
+  <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn btn-outline-secondary" %>
 <% end %>

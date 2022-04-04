@@ -45,9 +45,17 @@
   margin-right: 46px;
 }
 
-@media screen and (max-width: 600px) {
-  .sidebar {
+@media screen and (max-width: 1240px) {
+  #display-none {
     display: none;
+  }
+}
+
+
+
+@media screen and (max-width: 1199px) {
+  #button-display {
+    display: block;
   }
 }
 
@@ -60,5 +68,9 @@
   .dash-cont-article {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .sidebar {
+    display: none;
   }
 }
