@@ -18,12 +18,5 @@ RSpec.describe Statistic, type: :model do
         expect(statistic.errors.messages).to eq({ kid: ["must exist"] })
       end
     end
-
-    # context 'incorrect tone not included in enum' do
-    #   before { statistic.tone = :pizza }
-    #   it 'returns an invalid statistic' do
-    #     expect(statistic.tone.errors.messages).to eq("'pizza' is not a valid tone")
-    #   end
-    # end
   end
 end
