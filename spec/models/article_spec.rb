@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   let!(:article) { Article.new(title: 'Title', date: '2022-04-04', author: 'Franz Kafka',
-                              content: 'Content is present and accounted for')}
+                              content: 'Content is present and accounted for') }
 
   describe '#initialize' do
     context 'when valid' do

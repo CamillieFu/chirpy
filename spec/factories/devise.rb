@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :user do
-    id {1}
-    email {"yuna@gmail.com"}
-    password {"jerkins20"}
-    first_name {"Yuna"}
-    last_name {"Jackson"}
+    id { 1 }
+    email { "yuna@gmail.com" }
+    password { "jerkins20" }
+    first_name { "Yuna" }
+    last_name { "Jackson" }
     # Add additional fields as required via your User model
   end
 
