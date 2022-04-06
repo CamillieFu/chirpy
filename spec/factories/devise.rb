@@ -5,7 +5,6 @@ FactoryBot.define do
     password { "jerkins20" }
     first_name { "Yuna" }
     last_name { "Jackson" }
-    # Add additional fields as required via your User model
   end
 
   # An example of different user types

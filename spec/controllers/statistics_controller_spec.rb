@@ -1,9 +1,12 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Class, type: :mvc_type do
-  describe '#method' do
-    it 'description of test' do
-      expect(value).to eq(expected_result)
-    end
-  end
-end
+# RSpec.describe StatisticsController, type: :controller do
+#   let!(:kid) { Kid.new(first_name: 'Basic', last_name: 'Stan', birthday: '2022-04-01')}
+
+#   describe '#create' do
+#     it 'creates a statistic' do
+#       post :create, params: { statistic: { tone: :joy }, kid: 'kid1' }
+#       expect(Statistic.find_by(kid: 'kid1')).tone.to eq(:joy)
+#     end
+#   end
+# end
