@@ -7,7 +7,6 @@ FactoryBot.define do
     last_name { "Jackson" }
   end
 
-  # An example of different user types
   # factory :admin do
   #   id {2}
   #   email {"test@admin.com"}

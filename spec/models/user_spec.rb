@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:user) { User.new(first_name: 'Himiko', last_name: 'Suzuki', email: 'fugupaawaa@gmail.com',
-                password: 'thirtyFivecents')}
+  let!(:user) do
+    User.new(first_name: 'Himiko', last_name: 'Suzuki', email: 'fugupaawaa@gmail.com',
+             password: 'thirtyFivecents')
+  end
   let!(:dictionary) { Dictionary.new(words: ['garbage']) }
   let!(:kid) { Kid.new(first_name: 'Basic', last_name: 'Stan', birthday: '2022-04-01')}
 

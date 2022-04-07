@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let!(:article) { Article.new(title: 'Title', date: '2022-04-04', author: 'Franz Kafka',
-                              content: 'Content is present and accounted for') }
+  let!(:article) do
+    Article.new(title: 'Title', date: '2022-04-04', author: 'Franz Kafka',
+                content: 'Content is present and accounted for')
+  end
 
   describe '#initialize' do
     context 'when valid' do
@@ -14,7 +16,6 @@ RSpec.describe Article, type: :model do
     context 'without title' do
       before { article.title = nil }
       it 'returns an invalid article without title' do
-        # expect(article.valid?).to eq(false)
         article.valid?
         expect(article.errors.messages).to eq({ title: ["can't be blank"] })
       end

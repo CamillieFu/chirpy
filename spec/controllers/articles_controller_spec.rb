@@ -1,14 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  let!(:article1) { Article.create(title: 'Title', date: '2000-12-25', author: 'Franz Kafka',
-                                   content: 'Content is present and accounted for') }
-  let!(:article2) { Article.create(title: 'Another Title', date: '2001-01-01', author: 'Bill Splatnum',
-                                   content: 'Why oh why do we need content?') }
-
-  describe '#index' do
+  describe 'GET articles#index' do
     before do
       get :index
+      create_list(:article, 2)
     end
 
     it 'renders index' do
@@ -20,9 +16,14 @@ RSpec.describe ArticlesController, type: :controller do
     end
   end
 
-  # describe 'GET #show/:id' do
-  #   before do
-  #     get :show(:article1)
-  #   end
-  # end
+  describe 'GET articles#show' do
+    before do
+      article = create(:article)
+      visit article_path(article.id)
+    end
+
+    it 'renders an article' do
+      expect(response).to render_template(:show)
+    end
+  end
 end
