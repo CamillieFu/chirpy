@@ -19,11 +19,15 @@ RSpec.describe ArticlesController, type: :controller do
   describe 'GET articles#show' do
     before do
       article = create(:article)
-      visit article_path(article.id)
+      get "articles/#{article.id}"
     end
 
-    it 'renders an article' do
+    it 'renders show' do
       expect(response).to render_template(:show)
+    end
+
+    it 'assigns an article' do
+      expect(assigns(:article)).to eq(article)
     end
   end
 end
