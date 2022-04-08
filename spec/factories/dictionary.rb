@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :dictionary do
-    id { 1 }
+    id { 9 }
     words { ['lucky', 'ducky'] }
   end
 end
