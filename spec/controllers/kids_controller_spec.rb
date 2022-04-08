@@ -21,10 +21,19 @@ RSpec.describe KidsController, type: :controller do
     end
   end
 
-  # describe '#show' do
-  #   it 'displays a kid' do
-  #     get :show
-  #     expect(Kid.)
-  #   end
-  # end
+  describe 'GET kids#show' do
+    before do
+      create(:dictionary)
+      kid = create(:kid)
+      get :show, params: { id: kid.id }
+    end
+
+    it 'renders show' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'assigns a kid' do
+      expect(assigns(:kid)).to eq(Kid.first)
+    end
+  end
 end
