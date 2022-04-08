@@ -5,6 +5,6 @@ FactoryBot.define do
     age { 15 }
     birthday { "2001-01-01" }
     user_id { 1 }
-    dictionary_id { 1 }
+    dictionary_id { 9 }
   end
 end
