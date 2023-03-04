@@ -1,7 +1,7 @@
 require "json"
 require "ibm_watson"
 require "ibm_watson/authenticators"
-require "ibm_watson/tone_analyzer_v3"
+# require "ibm_watson/tone_analyzer/v3"
 
 class IBMToneAnalyzer::Tones
   def self.analyze_tone(text)
